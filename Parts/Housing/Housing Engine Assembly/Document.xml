@@ -29,7 +29,7 @@
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-28T16:35:50Z"/>
+            <String value="2021-12-28T20:27:49Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -108,7 +108,7 @@
         <Object type="PartDesign::CoordinateSystem" name="LCS_Origin" id="2114" />
         <Object type="App::Link" name="Frame" id="2115" />
         <Object type="App::Link" name="Bearing_Block" id="2116" />
-        <Object type="App::Link" name="Nema_17" id="2119" Touched="1" />
+        <Object type="App::Link" name="Nema_17" id="2119" />
         <Object type="App::Link" name="Coupling" id="2120" />
     </Objects>
     <ObjectData Count="13">
@@ -528,12 +528,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
+                            <DocMap name="Bearing_Block_Engine_Assembly" label="Bearing Block Engine Assembly" index="0"/>
                             <DocMap name="Housing_Frame" label="Housing Frame" index="1"/>
-                            <DocMap name="Bearing_Block_Assembly" label="Bearing Block Assembly" index="0"/>
-                            <XLink file="../Bearing Block/Bearing Block Assembly.FCStd" stamp="2021-12-28T16:35:50Z" name="Plane_Base"/>
+                            <XLink file="../Bearing Block/Bearing Block Engine Assembly.FCStd" stamp="2021-12-28T20:05:16Z" name="Plane_Base"/>
                             <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="Plane_Front"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Housing_Frame#Plane_Front.Placement * AttachmentOffset * Bearing_Block_Assembly#Plane_Base.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Housing_Frame#Plane_Front.Placement * AttachmentOffset * Bearing_Block_Engine_Assembly#Plane_Base.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -546,16 +546,16 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-27.5000000000000000" Pz="0.0000000000000061" Q0="0.6532814824381882" Q1="-0.2705980500730986" Q2="0.2705980500730986" Q3="0.6532814824381884" A="1.7177715174584014" Ox="0.8628562094610168" Oy="-0.3574067443365934" Oz="0.3574067443365934"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-27.5000000000000000" Pz="0.0000000000000061" Q0="0.6532814824381882" Q1="-0.2705980500730983" Q2="0.2705980500730985" Q3="0.6532814824381884" A="1.7177715174584014" Ox="0.8628562094610168" Oy="-0.3574067443365931" Oz="0.3574067443365933"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="../Bearing Block/Bearing Block Assembly.FCStd" stamp="2021-12-28T16:35:50Z" name="Model"/>
+                    <XLink file="../Bearing Block/Bearing Block Engine Assembly.FCStd" stamp="2021-12-28T20:05:16Z" name="Model"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-27.5000000000000000" Pz="0.0000000000000061" Q0="0.6532814824381882" Q1="-0.2705980500730986" Q2="0.2705980500730986" Q3="0.6532814824381884" A="1.7177715174584014" Ox="0.8628562094610168" Oy="-0.3574067443365934" Oz="0.3574067443365934"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-27.5000000000000000" Pz="0.0000000000000061" Q0="0.6532814824381882" Q1="-0.2705980500730983" Q2="0.2705980500730985" Q3="0.6532814824381884" A="1.7177715174584014" Ox="0.8628562094610168" Oy="-0.3574067443365931" Oz="0.3574067443365933"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList1"/>
@@ -612,9 +612,9 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Housing_Frame" label="Housing Frame" index="1"/>
                             <DocMap name="Assembly" label="Assembly" index="0"/>
-                            <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-28T16:35:37Z" name="Plane_Top"/>
+                            <DocMap name="Housing_Frame" label="Housing Frame" index="1"/>
+                            <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-22T17:18:46Z" name="Plane_Top"/>
                             <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="Plane_Behind"/>
                         </XLinks>
                         <Expression path="Placement" expression="Frame.Placement * Housing_Frame#Plane_Behind.Placement * AttachmentOffset * Assembly#Plane_Top.Placement ^ -1"/>
@@ -635,8 +635,8 @@
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
-                <Property name="LinkedObject" type="App::PropertyXLink" status="257">
-                    <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-28T16:35:37Z" name="Model"/>
+                <Property name="LinkedObject" type="App::PropertyXLink" status="256">
+                    <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-22T17:18:46Z" name="Model"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="25.5000000000000000" Pz="-0.0000000000000056" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="-0.7071067811865476" Q3="0.0000000000000000" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.7071067811865475" Oz="-0.7071067811865476"/>
@@ -696,10 +696,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Assembly1" label="Assembly" index="1"/>
                             <DocMap name="Assembly" label="Assembly" index="0"/>
-                            <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-28T16:35:37Z" name="Plane_Axis"/>
-                            <XLink file="../Coupling/Assembly.FCStd" stamp="2021-12-28T16:35:42Z" name="Plane_Axis"/>
+                            <DocMap name="Assembly1" label="Assembly" index="1"/>
+                            <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-22T17:18:46Z" name="Plane_Axis"/>
+                            <XLink file="../Coupling/Assembly.FCStd" stamp="2021-12-23T12:46:08Z" name="Plane_Axis"/>
                         </XLinks>
                         <Expression path="Placement" expression="Nema_17.Placement * Assembly#Plane_Axis.Placement * AttachmentOffset * Assembly1#Plane_Axis.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -720,7 +720,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="../Coupling/Assembly.FCStd" stamp="2021-12-28T16:35:42Z" name="Model"/>
+                    <XLink file="../Coupling/Assembly.FCStd" stamp="2021-12-23T12:46:08Z" name="Model"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="9.5000000000000000" Pz="-0.0000000000000021" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="-0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="1.0000000000000000" Oy="0.0000000000000001" Oz="-0.0000000000000001"/>

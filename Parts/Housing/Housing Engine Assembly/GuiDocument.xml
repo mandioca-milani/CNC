@@ -75,7 +75,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Size" type="App::PropertyVector" status="5">
-                    <PropertyVector valueX="33.1377807617187514" valueY="74.7500099182128963" valueZ="35.1000099182128906"/>
+                    <PropertyVector valueX="33.1377782821655273" valueY="74.7500099182128963" valueZ="35.1000099182128906"/>
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="1">
                     <Bool value="false"/>
@@ -574,5 +574,5 @@
             </Properties>
         </ViewProvider>
     </ViewProviderData>
-    <Camera settings="OrthographicCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 24.882616 -34.098072 35.600784&#10;  orientation 0.86492187 0.23175442 0.44519675  1.0835806&#10;  nearDistance 0.85118347&#10;  farDistance 120.77317&#10;  aspectRatio 1&#10;  focalDistance 60.752262&#10;  height 121.50452&#10;&#10;}&#10;"/>
+    <Camera settings="OrthographicCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 24.882618 -34.098068 35.600792&#10;  orientation 0.86492187 0.23175442 0.44519675  1.0835806&#10;  nearDistance 0.85117966&#10;  farDistance 120.77317&#10;  aspectRatio 1&#10;  focalDistance 60.752266&#10;  height 121.50453&#10;&#10;}&#10;"/>
 </Document>
