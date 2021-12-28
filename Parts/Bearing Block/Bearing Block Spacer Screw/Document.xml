@@ -17,19 +17,19 @@
             <String value=""/>
         </Property>
         <Property name="CreationDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-23T22:00:19Z"/>
+            <String value="2021-12-28T19:46:14Z"/>
         </Property>
         <Property name="Id" type="App::PropertyString">
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Bearing Block Bracket Screw"/>
+            <String value="Bearing Block Spacer Screw"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-28T19:40:44Z"/>
+            <String value="2021-12-28T19:51:30Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -37,11 +37,11 @@
         <Property name="LicenseURL" type="App::PropertyString" status="1">
             <String value="http://en.wikipedia.org/wiki/All_rights_reserved"/>
         </Property>
-        <Property name="Material" type="App::PropertyMap" status="1">
+        <Property name="Material" type="App::PropertyMap">
             <Map count="0">
             </Map>
         </Property>
-        <Property name="Meta" type="App::PropertyMap" status="1">
+        <Property name="Meta" type="App::PropertyMap">
             <Map count="0">
             </Map>
         </Property>
@@ -52,14 +52,14 @@
             <String value=""/>
         </Property>
         <Property name="Uid" type="App::PropertyUUID" status="16777217">
-            <Uuid value="f2c56772-de78-43d8-85ba-98c6855693d9"/>
+            <Uuid value="06155fe5-12b3-4602-bbc0-c3b7dd8bb14d"/>
         </Property>
     </Properties>
     <Objects Count="11" Dependencies="1">
-        <ObjectDeps Name="Screw" Count="0"/>
+        <ObjectDeps Name="PcbSpacer" Count="0"/>
         <ObjectDeps Name="Body" Count="5">
             <Dep Name="BaseFeature"/>
-            <Dep Name="Screw"/>
+            <Dep Name="PcbSpacer"/>
             <Dep Name="Origin"/>
             <Dep Name="BaseFeature"/>
             <Dep Name="Point_Origin"/>
@@ -79,33 +79,33 @@
         <ObjectDeps Name="XZ_Plane" Count="0"/>
         <ObjectDeps Name="YZ_Plane" Count="0"/>
         <ObjectDeps Name="BaseFeature" Count="2">
-            <Dep Name="Screw"/>
+            <Dep Name="PcbSpacer"/>
             <Dep Name="Body"/>
         </ObjectDeps>
         <ObjectDeps Name="Point_Origin" Count="1">
             <Dep Name="BaseFeature"/>
         </ObjectDeps>
-        <Object type="Part::FeaturePython" name="Screw" id="1" />
-        <Object type="PartDesign::Body" name="Body" id="3" />
-        <Object type="App::Origin" name="Origin" id="4" />
-        <Object type="App::Line" name="X_Axis" id="5" />
-        <Object type="App::Line" name="Y_Axis" id="6" />
-        <Object type="App::Line" name="Z_Axis" id="7" />
-        <Object type="App::Plane" name="XY_Plane" id="8" />
-        <Object type="App::Plane" name="XZ_Plane" id="9" />
-        <Object type="App::Plane" name="YZ_Plane" id="10" />
-        <Object type="PartDesign::FeatureBase" name="BaseFeature" id="11" />
-        <Object type="PartDesign::Point" name="Point_Origin" id="12" />
+        <Object type="Part::FeaturePython" name="PcbSpacer" id="4847" />
+        <Object type="PartDesign::Body" name="Body" id="4848" />
+        <Object type="App::Origin" name="Origin" id="4849" />
+        <Object type="App::Line" name="X_Axis" id="4850" />
+        <Object type="App::Line" name="Y_Axis" id="4851" />
+        <Object type="App::Line" name="Z_Axis" id="4852" />
+        <Object type="App::Plane" name="XY_Plane" id="4853" />
+        <Object type="App::Plane" name="XZ_Plane" id="4854" />
+        <Object type="App::Plane" name="YZ_Plane" id="4855" />
+        <Object type="PartDesign::FeatureBase" name="BaseFeature" id="4856" />
+        <Object type="PartDesign::Point" name="Point_Origin" id="4859" />
     </Objects>
     <ObjectData Count="11">
-        <Object name="Screw">
-            <Properties Count="16" TransientCount="0">
+        <Object name="PcbSpacer">
+            <Properties Count="13" TransientCount="0">
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="0">
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="M3x16-Screw"/>
+                    <String value="M3x5.5x35-Spacer"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -114,119 +114,69 @@
                     <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Proxy" type="App::PropertyPythonObject">
-                    <Python value="eyJpdGVtVGV4dCI6ICJTY3JldyIsICJ0eXBlIjogIklTTzQ3NjIiLCAiZGlhbWV0ZXIiOiAiTTMiLCAibWF0Y2hPdXRlciI6IGZhbHNlLCAibGVuZ3RoIjogIjE2IiwgImN1c3RvbWxlbiI6IDE2LjAsICJyZWFsVGhyZWFkIjogZmFsc2V9" encoded="yes" module="FastenersCmd" class="FSScrewObject"/>
+                    <Python value="eyJpdGVtVGV4dCI6ICJQY2JTcGFjZXIiLCAiZGlhbWV0ZXIiOiAiTTMiLCAibGVuZ3RoIjogIjM1IiwgIndpZHRoIjogIjUuNSJ9" encoded="yes" module="PEMInserts" class="FSPcbSpacerObject"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape.brp"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
                 <Property name="baseObject" type="App::PropertyXLinkSub" group="Parameters" doc="Base object" attr="0" ro="0" hide="0" status="2097152">
                     <XLink file="" stamp="" name=""/>
                 </Property>
-                <Property name="diameter" type="App::PropertyEnumeration" group="Parameters" doc="Screw diameter standard" attr="0" ro="0" hide="0" status="2097152">
-                    <Integer value="4" CustomEnum="true"/>
-                    <CustomEnumList count="21">
+                <Property name="diameter" type="App::PropertyEnumeration" group="Parameters" doc="Standoff thread diameter" attr="0" ro="0" hide="0" status="2097152">
+                    <Integer value="2" CustomEnum="true"/>
+                    <CustomEnumList count="6">
                         <Enum value="Auto"/>
-                        <Enum value="M1.6"/>
-                        <Enum value="M2"/>
                         <Enum value="M2.5"/>
                         <Enum value="M3"/>
                         <Enum value="M4"/>
                         <Enum value="M5"/>
                         <Enum value="M6"/>
-                        <Enum value="M8"/>
-                        <Enum value="M10"/>
-                        <Enum value="M12"/>
-                        <Enum value="(M14)"/>
-                        <Enum value="M16"/>
-                        <Enum value="M20"/>
-                        <Enum value="M24"/>
-                        <Enum value="M30"/>
-                        <Enum value="M36"/>
-                        <Enum value="M42"/>
-                        <Enum value="M48"/>
-                        <Enum value="M56"/>
-                        <Enum value="M64"/>
                     </CustomEnumList>
                 </Property>
                 <Property name="invert" type="App::PropertyBool" group="Parameters" doc="Invert screw direction" attr="0" ro="0" hide="0" status="2097152">
                     <Bool value="false"/>
                 </Property>
-                <Property name="length" type="App::PropertyEnumeration" group="Parameters" doc="Screw length" attr="0" ro="0" hide="0" status="2097152">
-                    <Integer value="6" CustomEnum="true"/>
-                    <CustomEnumList count="11">
+                <Property name="length" type="App::PropertyEnumeration" group="Parameters" doc="Standoff length" attr="0" ro="0" hide="0" status="2097152">
+                    <Integer value="22" CustomEnum="true"/>
+                    <CustomEnumList count="25">
                         <Enum value="5"/>
                         <Enum value="6"/>
+                        <Enum value="7"/>
                         <Enum value="8"/>
+                        <Enum value="9"/>
                         <Enum value="10"/>
+                        <Enum value="11"/>
                         <Enum value="12"/>
+                        <Enum value="13"/>
                         <Enum value="14"/>
+                        <Enum value="15"/>
                         <Enum value="16"/>
+                        <Enum value="17"/>
+                        <Enum value="18"/>
+                        <Enum value="19"/>
                         <Enum value="20"/>
+                        <Enum value="21"/>
+                        <Enum value="22"/>
+                        <Enum value="23"/>
                         <Enum value="25"/>
+                        <Enum value="27"/>
                         <Enum value="30"/>
+                        <Enum value="35"/>
+                        <Enum value="40"/>
                         <Enum value="Custom"/>
                     </CustomEnumList>
-                </Property>
-                <Property name="lengthCustom" type="App::PropertyLength" group="Parameters" doc="Custom length" attr="0" ro="0" hide="0" status="2097152">
-                    <Float value="16.0000000000000000"/>
-                </Property>
-                <Property name="matchOuter" type="App::PropertyBool" group="Parameters" doc="Match outer thread diameter" attr="0" ro="0" hide="0" status="2097152">
-                    <Bool value="false"/>
                 </Property>
                 <Property name="offset" type="App::PropertyDistance" group="Parameters" doc="Offset from surface" attr="0" ro="0" hide="0" status="2097152">
                     <Float value="0.0000000000000000"/>
                 </Property>
-                <Property name="thread" type="App::PropertyBool" group="Parameters" doc="Generate real thread" attr="0" ro="0" hide="0" status="2097152">
-                    <Bool value="false"/>
-                </Property>
-                <Property name="type" type="App::PropertyEnumeration" group="Parameters" doc="Screw type" attr="0" ro="0" hide="0" status="2097152">
-                    <Integer value="34" CustomEnum="true"/>
-                    <CustomEnumList count="42">
-                        <Enum value="ASMEB18.2.1.6"/>
-                        <Enum value="ASMEB18.2.1.8"/>
-                        <Enum value="ASMEB18.3.1A"/>
-                        <Enum value="ASMEB18.3.2"/>
-                        <Enum value="ASMEB18.3.3A"/>
-                        <Enum value="ASMEB18.3.3B"/>
-                        <Enum value="ASMEB18.3.4"/>
-                        <Enum value="ASMEB18.3.5A"/>
-                        <Enum value="ASMEB18.3.5B"/>
-                        <Enum value="ASMEB18.3.5C"/>
-                        <Enum value="ASMEB18.3.5D"/>
-                        <Enum value="ASMEB18.5.2"/>
-                        <Enum value="ASMEB18.6.3.1A"/>
-                        <Enum value="DIN6912"/>
-                        <Enum value="DIN7984"/>
-                        <Enum value="DIN967"/>
-                        <Enum value="EN1662"/>
-                        <Enum value="EN1665"/>
-                        <Enum value="ISO10642"/>
-                        <Enum value="ISO1207"/>
-                        <Enum value="ISO14579"/>
-                        <Enum value="ISO14580"/>
-                        <Enum value="ISO14582"/>
-                        <Enum value="ISO14583"/>
-                        <Enum value="ISO14584"/>
-                        <Enum value="ISO1580"/>
-                        <Enum value="ISO2009"/>
-                        <Enum value="ISO2010"/>
-                        <Enum value="ISO4014"/>
-                        <Enum value="ISO4017"/>
-                        <Enum value="ISO4026"/>
-                        <Enum value="ISO4027"/>
-                        <Enum value="ISO4028"/>
-                        <Enum value="ISO4029"/>
-                        <Enum value="ISO4762"/>
-                        <Enum value="ISO7045"/>
-                        <Enum value="ISO7046"/>
-                        <Enum value="ISO7047"/>
-                        <Enum value="ISO7048"/>
-                        <Enum value="ISO7379"/>
-                        <Enum value="ISO7380-1"/>
-                        <Enum value="ISO7380-2"/>
+                <Property name="width" type="App::PropertyEnumeration" group="Parameters" doc="Standoff body width" attr="0" ro="0" hide="0" status="2097152">
+                    <Integer value="1" CustomEnum="true"/>
+                    <CustomEnumList count="2">
+                        <Enum value="5"/>
+                        <Enum value="5.5"/>
                     </CustomEnumList>
                 </Property>
             </Properties>
@@ -237,9 +187,9 @@
                 </Extension>
             </Extensions>
             <Properties Count="10" TransientCount="1">
-                <_Property name="_GroupTouched" type="App::PropertyBool" status="100663424"/>
+                <_Property name="_GroupTouched" type="App::PropertyBool" status="100663425"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
-                    <Link value="Screw"/>
+                    <Link value="PcbSpacer"/>
                 </Property>
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="0">
@@ -412,7 +362,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388616">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865475" A="1.5707963267948968" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865475" A="1.5707963267948968" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="Role" type="App::PropertyString" status="16777216">
                     <String value="XZ_Plane"/>
@@ -449,7 +399,7 @@
             <Properties Count="7" TransientCount="1">
                 <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
-                    <Link value="Screw"/>
+                    <Link value="PcbSpacer"/>
                 </Property>
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="0">
@@ -504,17 +454,17 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-0.0000000000000002" Py="0.0000000000000000" Pz="-0.0000000000000000" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="35.0000000000000000" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape3.brp"/>
                 </Property>
                 <Property name="Support" type="App::PropertyLinkSubList">
                     <LinkSubList count="1">
-                        <Link obj="BaseFeature" sub="Edge9"/>
+                        <Link obj="BaseFeature" sub="Edge2"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>

@@ -23,13 +23,13 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Bearing Block Assembly"/>
+            <String value="Bearing Block Engine Assembly"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-26T18:54:40Z"/>
+            <String value="2021-12-28T20:05:16Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -55,8 +55,8 @@
             <Uuid value="ef3778d3-9cbd-4ac2-8d43-63078862c378"/>
         </Property>
     </Properties>
-    <Objects Count="19" Dependencies="1">
-        <ObjectDeps Name="Model" Count="12">
+    <Objects Count="22" Dependencies="1">
+        <ObjectDeps Name="Model" Count="15">
             <Dep Name="Origin"/>
             <Dep Name="LCS_Origin"/>
             <Dep Name="Frame"/>
@@ -64,11 +64,14 @@
             <Dep Name="Bearing_Screw"/>
             <Dep Name="Bearing_Screw001"/>
             <Dep Name="Bracket"/>
+            <Dep Name="Frame_Screw"/>
+            <Dep Name="Frame_Screw001"/>
             <Dep Name="Bracket_Screw"/>
             <Dep Name="Bracket_Screw001"/>
-            <Dep Name="Engine_Screw"/>
-            <Dep Name="Engine_Screw001"/>
+            <Dep Name="Spacer_Screw"/>
+            <Dep Name="Spacer_Screw001"/>
             <Dep Name="Plane_Base"/>
+            <Dep Name="Plane_Spacer"/>
         </ObjectDeps>
         <ObjectDeps Name="Origin" Count="6">
             <Dep Name="X_Axis"/>
@@ -107,24 +110,35 @@
             <Dep Name="Frame"/>
             <Dep Name="Frame"/>
         </ObjectDeps>
+        <ObjectDeps Name="Frame_Screw" Count="2">
+            <Dep Name="Frame"/>
+            <Dep Name="Frame"/>
+        </ObjectDeps>
+        <ObjectDeps Name="Frame_Screw001" Count="2">
+            <Dep Name="Frame"/>
+            <Dep Name="Frame"/>
+        </ObjectDeps>
         <ObjectDeps Name="Bracket_Screw" Count="2">
-            <Dep Name="Frame"/>
-            <Dep Name="Frame"/>
+            <Dep Name="Bracket"/>
+            <Dep Name="Bracket"/>
         </ObjectDeps>
         <ObjectDeps Name="Bracket_Screw001" Count="2">
-            <Dep Name="Frame"/>
-            <Dep Name="Frame"/>
-        </ObjectDeps>
-        <ObjectDeps Name="Engine_Screw" Count="2">
             <Dep Name="Bracket"/>
             <Dep Name="Bracket"/>
         </ObjectDeps>
-        <ObjectDeps Name="Engine_Screw001" Count="2">
+        <ObjectDeps Name="Spacer_Screw" Count="2">
+            <Dep Name="Bracket"/>
+            <Dep Name="Bracket"/>
+        </ObjectDeps>
+        <ObjectDeps Name="Spacer_Screw001" Count="2">
             <Dep Name="Bracket"/>
             <Dep Name="Bracket"/>
         </ObjectDeps>
         <ObjectDeps Name="Plane_Base" Count="1">
             <Dep Name="X_Axis"/>
+        </ObjectDeps>
+        <ObjectDeps Name="Plane_Spacer" Count="1">
+            <Dep Name="Plane_Base"/>
         </ObjectDeps>
         <Object type="App::Part" name="Model" id="4144" />
         <Object type="App::Origin" name="Origin" id="4145" />
@@ -140,13 +154,16 @@
         <Object type="App::Link" name="Bearing_Screw" id="4165" />
         <Object type="App::Link" name="Bearing_Screw001" id="4166" />
         <Object type="App::Link" name="Bracket" id="4167" />
-        <Object type="App::Link" name="Bracket_Screw" id="4168" />
-        <Object type="App::Link" name="Bracket_Screw001" id="4169" />
-        <Object type="App::Link" name="Engine_Screw" id="4170" />
-        <Object type="App::Link" name="Engine_Screw001" id="4171" />
-        <Object type="PartDesign::Plane" name="Plane_Base" id="4172" />
+        <Object type="App::Link" name="Frame_Screw" id="4173" />
+        <Object type="App::Link" name="Frame_Screw001" id="4174" />
+        <Object type="App::Link" name="Bracket_Screw" id="4175" />
+        <Object type="App::Link" name="Bracket_Screw001" id="4176" />
+        <Object type="App::Link" name="Spacer_Screw" id="4177" />
+        <Object type="App::Link" name="Spacer_Screw001" id="4178" />
+        <Object type="PartDesign::Plane" name="Plane_Base" id="4179" />
+        <Object type="PartDesign::Plane" name="Plane_Spacer" id="4180" />
     </Objects>
-    <ObjectData Count="19">
+    <ObjectData Count="22">
         <Object name="Model" Extensions="True">
             <Extensions Count="2">
                 <Extension type="App::OriginGroupExtension" name="OriginGroupExtension">
@@ -170,18 +187,21 @@
                     </ExpressionEngine>
                 </Property>
                 <Property name="Group" type="App::PropertyLinkList">
-                    <LinkList count="11">
+                    <LinkList count="14">
                         <Link value="LCS_Origin"/>
                         <Link value="Frame"/>
                         <Link value="Bearing"/>
                         <Link value="Bearing_Screw"/>
                         <Link value="Bearing_Screw001"/>
                         <Link value="Bracket"/>
+                        <Link value="Frame_Screw"/>
+                        <Link value="Frame_Screw001"/>
                         <Link value="Bracket_Screw"/>
                         <Link value="Bracket_Screw001"/>
-                        <Link value="Engine_Screw"/>
-                        <Link value="Engine_Screw001"/>
+                        <Link value="Spacer_Screw"/>
+                        <Link value="Spacer_Screw001"/>
                         <Link value="Plane_Base"/>
+                        <Link value="Plane_Spacer"/>
                     </LinkList>
                 </Property>
                 <Property name="Id" type="App::PropertyString">
@@ -265,7 +285,7 @@
                         <Link value="YZ_Plane"/>
                     </LinkList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -833,12 +853,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Bearing_Block_Frame" label="Bearing Block Frame" index="1"/>
-                            <DocMap name="Bearing_Block_Bracket" label="Bearing Block Bracket" index="0"/>
-                            <XLink file="Bearing Block Bracket.FCStd" stamp="2021-12-26T18:47:58Z" name="Plane_Top"/>
+                            <DocMap name="Bearing_Block_Frame" label="Bearing Block Frame" index="0"/>
+                            <DocMap name="Bearing_Block_Front_Bracket" label="Bearing Block Front Bracket" index="1"/>
                             <XLink file="Bearing Block Frame.FCStd" stamp="2021-12-26T18:47:58Z" name="Plane_Base"/>
+                            <XLink file="Bearing Block Front Bracket.FCStd" stamp="2021-12-28T19:53:32Z" name="Plane_Top"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Bearing_Block_Frame#Plane_Base.Placement * AttachmentOffset * Bearing_Block_Bracket#Plane_Top.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Bearing_Block_Frame#Plane_Base.Placement * AttachmentOffset * Bearing_Block_Front_Bracket#Plane_Top.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -857,7 +877,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Bearing Block Bracket.FCStd" stamp="2021-12-26T18:47:58Z" name="Body"/>
+                    <XLink file="Bearing Block Front Bracket.FCStd" stamp="2021-12-28T19:53:32Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-0.0000000000000009" Py="-0.0000000000000009" Pz="-10.0000000000000000" Q0="0.0000000000000000" Q1="-0.0000000000000000" Q2="0.3826834323650899" Q3="-0.9238795325112867" A="5.4977871437821380" Ox="0.0000000000000001" Oy="-0.0000000000000001" Oz="1.0000000000000000"/>
@@ -888,7 +908,7 @@
                 </Property>
             </Properties>
         </Object>
-        <Object name="Bracket_Screw" Extensions="True">
+        <Object name="Frame_Screw" Extensions="True">
             <Extensions Count="1">
                 <Extension type="App::LinkExtension" name="LinkExtension">
                 </Extension>
@@ -920,16 +940,16 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Bearing_Block_Frame" label="Bearing Block Frame" index="1"/>
-                            <DocMap name="Bearing_Block_Bracket_Screw" label="Bearing Block Bracket Screw" index="0"/>
-                            <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-23T22:35:38Z" name="Point_Origin"/>
+                            <DocMap name="Bearing_Block_Frame" label="Bearing Block Frame" index="0"/>
+                            <DocMap name="Bearing_Block_Frame_Screw" label="Bearing Block Frame Screw" index="1"/>
                             <XLink file="Bearing Block Frame.FCStd" stamp="2021-12-26T18:47:58Z" name="Point_Screw"/>
+                            <XLink file="Bearing Block Frame Screw.FCStd" stamp="2021-12-23T22:35:38Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Bearing_Block_Frame#Point_Screw.Placement * AttachmentOffset * Bearing_Block_Bracket_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Bearing_Block_Frame#Point_Screw.Placement * AttachmentOffset * Bearing_Block_Frame_Screw#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Bracket Screw"/>
+                    <String value="Frame Screw"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -944,7 +964,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-23T22:35:38Z" name="Body"/>
+                    <XLink file="Bearing Block Frame Screw.FCStd" stamp="2021-12-23T22:35:38Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-18.0000000000000036" Py="0.0000000000000001" Pz="4.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -975,7 +995,7 @@
                 </Property>
             </Properties>
         </Object>
-        <Object name="Bracket_Screw001" Extensions="True">
+        <Object name="Frame_Screw001" Extensions="True">
             <Extensions Count="1">
                 <Extension type="App::LinkExtension" name="LinkExtension">
                 </Extension>
@@ -1007,16 +1027,16 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Bearing_Block_Frame" label="Bearing Block Frame" index="1"/>
-                            <DocMap name="Bearing_Block_Bracket_Screw" label="Bearing Block Bracket Screw" index="0"/>
-                            <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-23T22:35:38Z" name="Point_Origin"/>
+                            <DocMap name="Bearing_Block_Frame" label="Bearing Block Frame" index="0"/>
+                            <DocMap name="Bearing_Block_Frame_Screw" label="Bearing Block Frame Screw" index="1"/>
                             <XLink file="Bearing Block Frame.FCStd" stamp="2021-12-26T18:47:58Z" name="Point_Screw001"/>
+                            <XLink file="Bearing Block Frame Screw.FCStd" stamp="2021-12-23T22:35:38Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Bearing_Block_Frame#Point_Screw001.Placement * AttachmentOffset * Bearing_Block_Bracket_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Bearing_Block_Frame#Point_Screw001.Placement * AttachmentOffset * Bearing_Block_Frame_Screw#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Bracket Screw001"/>
+                    <String value="Frame Screw001"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -1031,7 +1051,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-23T22:35:38Z" name="Body"/>
+                    <XLink file="Bearing Block Frame Screw.FCStd" stamp="2021-12-23T22:35:38Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="17.9999999999999964" Py="0.0000000000000001" Pz="4.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1062,7 +1082,7 @@
                 </Property>
             </Properties>
         </Object>
-        <Object name="Engine_Screw" Extensions="True">
+        <Object name="Bracket_Screw" Extensions="True">
             <Extensions Count="1">
                 <Extension type="App::LinkExtension" name="LinkExtension">
                 </Extension>
@@ -1094,16 +1114,16 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Bearing_Block_Bracket" label="Bearing Block Bracket" index="0"/>
-                            <DocMap name="Bearing_Block_Engine_Screw" label="Bearing Block Engine Screw" index="1"/>
-                            <XLink file="Bearing Block Bracket.FCStd" stamp="2021-12-26T18:47:58Z" name="Point_Screw"/>
-                            <XLink file="Bearing Block Engine Screw.FCStd" stamp="2021-12-26T18:52:51Z" name="Point_Origin"/>
+                            <DocMap name="Bearing_Block_Bracket_Screw" label="Bearing Block Bracket Screw" index="0"/>
+                            <DocMap name="Bearing_Block_Front_Bracket" label="Bearing Block Front Bracket" index="1"/>
+                            <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-28T19:40:44Z" name="Point_Origin"/>
+                            <XLink file="Bearing Block Front Bracket.FCStd" stamp="2021-12-28T19:53:32Z" name="Point_Screw"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Bracket.Placement * Bearing_Block_Bracket#Point_Screw.Placement * AttachmentOffset * Bearing_Block_Engine_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Bracket.Placement * Bearing_Block_Front_Bracket#Point_Screw.Placement * AttachmentOffset * Bearing_Block_Bracket_Screw#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Engine Screw"/>
+                    <String value="Bracket Screw"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -1118,7 +1138,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Bearing Block Engine Screw.FCStd" stamp="2021-12-26T18:52:51Z" name="Body"/>
+                    <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-28T19:40:44Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000038" Py="21.9203102167829762" Pz="-0.0000000000000018" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650899" Q3="-0.9238795325112867" A="5.4977871437821380" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1149,7 +1169,7 @@
                 </Property>
             </Properties>
         </Object>
-        <Object name="Engine_Screw001" Extensions="True">
+        <Object name="Bracket_Screw001" Extensions="True">
             <Extensions Count="1">
                 <Extension type="App::LinkExtension" name="LinkExtension">
                 </Extension>
@@ -1181,16 +1201,16 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Bearing_Block_Bracket" label="Bearing Block Bracket" index="0"/>
-                            <DocMap name="Bearing_Block_Engine_Screw" label="Bearing Block Engine Screw" index="1"/>
-                            <XLink file="Bearing Block Bracket.FCStd" stamp="2021-12-26T18:47:58Z" name="Point_Screw001"/>
-                            <XLink file="Bearing Block Engine Screw.FCStd" stamp="2021-12-26T18:52:51Z" name="Point_Origin"/>
+                            <DocMap name="Bearing_Block_Bracket_Screw" label="Bearing Block Bracket Screw" index="0"/>
+                            <DocMap name="Bearing_Block_Front_Bracket" label="Bearing Block Front Bracket" index="1"/>
+                            <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-28T19:40:44Z" name="Point_Origin"/>
+                            <XLink file="Bearing Block Front Bracket.FCStd" stamp="2021-12-28T19:53:32Z" name="Point_Screw001"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Bracket.Placement * Bearing_Block_Bracket#Point_Screw001.Placement * AttachmentOffset * Bearing_Block_Engine_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Bracket.Placement * Bearing_Block_Front_Bracket#Point_Screw001.Placement * AttachmentOffset * Bearing_Block_Bracket_Screw#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Engine Screw001"/>
+                    <String value="Bracket Screw001"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -1205,7 +1225,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Bearing Block Engine Screw.FCStd" stamp="2021-12-26T18:52:51Z" name="Body"/>
+                    <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-28T19:40:44Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-0.0000000000000033" Py="-21.9203102167829762" Pz="0.0000000000000018" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650899" Q3="-0.9238795325112867" A="5.4977871437821380" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1236,6 +1256,180 @@
                 </Property>
             </Properties>
         </Object>
+        <Object name="Spacer_Screw" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="App::LinkExtension" name="LinkExtension">
+                </Extension>
+            </Extensions>
+            <Properties Count="23" TransientCount="0">
+                <Property name="AssemblyType" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <String value=""/>
+                </Property>
+                <Property name="AttachedBy" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <String value="#Point_Origin"/>
+                </Property>
+                <Property name="AttachedTo" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <String value="Bracket#Point_Behind_Screw"/>
+                </Property>
+                <Property name="AttachmentOffset" type="App::PropertyPlacement" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="ColoredElements" type="App::PropertyLinkSubHidden" status="67109120">
+                    <LinkSub value="" count="0">
+                    </LinkSub>
+                </Property>
+                <Property name="ElementCount" type="App::PropertyIntegerConstraint" status="256">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="ElementList" type="App::PropertyLinkList" status="266">
+                    <LinkList count="0">
+                    </LinkList>
+                </Property>
+                <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
+                    <ExpressionEngine count="1" xlink="1">
+                        <XLinks count="2" docs="2">
+                            <DocMap name="Bearing_Block_Front_Bracket" label="Bearing Block Front Bracket" index="0"/>
+                            <DocMap name="Bearing_Block_Spacer_Screw" label="Bearing Block Spacer Screw" index="1"/>
+                            <XLink file="Bearing Block Front Bracket.FCStd" stamp="2021-12-28T19:53:32Z" name="Point_Behind_Screw"/>
+                            <XLink file="Bearing Block Spacer Screw.FCStd" stamp="2021-12-28T19:51:30Z" name="Point_Origin"/>
+                        </XLinks>
+                        <Expression path="Placement" expression="Bracket.Placement * Bearing_Block_Front_Bracket#Point_Behind_Screw.Placement * AttachmentOffset * Bearing_Block_Spacer_Screw#Point_Origin.Placement ^ -1"/>
+                    </ExpressionEngine>
+                </Property>
+                <Property name="Label" type="App::PropertyString" status="134217728">
+                    <String value="Spacer Screw"/>
+                </Property>
+                <Property name="Label2" type="App::PropertyString" status="67108992">
+                    <String value=""/>
+                </Property>
+                <Property name="LinkExecute" type="App::PropertyString" status="256">
+                    <String value=""/>
+                </Property>
+                <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
+                    <PropertyPlacement Px="0.0000000000000018" Py="21.9203102167829762" Pz="-45.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650899" Q3="-0.9238795325112867" A="5.4977871437821380" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="LinkTransform" type="App::PropertyBool" status="256">
+                    <Bool value="false"/>
+                </Property>
+                <Property name="LinkedObject" type="App::PropertyXLink" status="256">
+                    <XLink file="Bearing Block Spacer Screw.FCStd" stamp="2021-12-28T19:51:30Z" name="Body"/>
+                </Property>
+                <Property name="Placement" type="App::PropertyPlacement" status="256">
+                    <PropertyPlacement Px="0.0000000000000018" Py="21.9203102167829762" Pz="-45.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650899" Q3="-0.9238795325112867" A="5.4977871437821380" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
+                    <PlacementList file="PlacementList9"/>
+                </Property>
+                <Property name="Scale" type="App::PropertyFloat" status="256">
+                    <Float value="1.0000000000000000"/>
+                </Property>
+                <Property name="ScaleList" type="App::PropertyVectorList" status="256">
+                    <VectorList file="ScaleList9"/>
+                </Property>
+                <Property name="ScaleVector" type="App::PropertyVector" status="67109120">
+                    <PropertyVector valueX="1.0000000000000000" valueY="1.0000000000000000" valueZ="1.0000000000000000"/>
+                </Property>
+                <Property name="ShowElement" type="App::PropertyBool" status="256">
+                    <Bool value="true"/>
+                </Property>
+                <Property name="SolverId" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <String value="Placement::ExpressionEngine"/>
+                </Property>
+                <Property name="Visibility" type="App::PropertyBool" status="648">
+                    <Bool value="true"/>
+                </Property>
+                <Property name="VisibilityList" type="App::PropertyBoolList" status="266">
+                    <BoolList value=""/>
+                </Property>
+            </Properties>
+        </Object>
+        <Object name="Spacer_Screw001" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="App::LinkExtension" name="LinkExtension">
+                </Extension>
+            </Extensions>
+            <Properties Count="23" TransientCount="0">
+                <Property name="AssemblyType" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <String value=""/>
+                </Property>
+                <Property name="AttachedBy" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <String value="#Point_Origin"/>
+                </Property>
+                <Property name="AttachedTo" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <String value="Bracket#Point_Behind_Screw001"/>
+                </Property>
+                <Property name="AttachmentOffset" type="App::PropertyPlacement" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="ColoredElements" type="App::PropertyLinkSubHidden" status="67109120">
+                    <LinkSub value="" count="0">
+                    </LinkSub>
+                </Property>
+                <Property name="ElementCount" type="App::PropertyIntegerConstraint" status="256">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="ElementList" type="App::PropertyLinkList" status="266">
+                    <LinkList count="0">
+                    </LinkList>
+                </Property>
+                <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
+                    <ExpressionEngine count="1" xlink="1">
+                        <XLinks count="2" docs="2">
+                            <DocMap name="Bearing_Block_Front_Bracket" label="Bearing Block Front Bracket" index="0"/>
+                            <DocMap name="Bearing_Block_Spacer_Screw" label="Bearing Block Spacer Screw" index="1"/>
+                            <XLink file="Bearing Block Front Bracket.FCStd" stamp="2021-12-28T19:53:32Z" name="Point_Behind_Screw001"/>
+                            <XLink file="Bearing Block Spacer Screw.FCStd" stamp="2021-12-28T19:51:30Z" name="Point_Origin"/>
+                        </XLinks>
+                        <Expression path="Placement" expression="Bracket.Placement * Bearing_Block_Front_Bracket#Point_Behind_Screw001.Placement * AttachmentOffset * Bearing_Block_Spacer_Screw#Point_Origin.Placement ^ -1"/>
+                    </ExpressionEngine>
+                </Property>
+                <Property name="Label" type="App::PropertyString" status="134217728">
+                    <String value="Spacer Screw001"/>
+                </Property>
+                <Property name="Label2" type="App::PropertyString" status="67108992">
+                    <String value=""/>
+                </Property>
+                <Property name="LinkExecute" type="App::PropertyString" status="256">
+                    <String value=""/>
+                </Property>
+                <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
+                    <PropertyPlacement Px="-0.0000000000000053" Py="-21.9203102167829762" Pz="-45.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650899" Q3="-0.9238795325112867" A="5.4977871437821380" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="LinkTransform" type="App::PropertyBool" status="256">
+                    <Bool value="false"/>
+                </Property>
+                <Property name="LinkedObject" type="App::PropertyXLink" status="256">
+                    <XLink file="Bearing Block Spacer Screw.FCStd" stamp="2021-12-28T19:51:30Z" name="Body"/>
+                </Property>
+                <Property name="Placement" type="App::PropertyPlacement" status="256">
+                    <PropertyPlacement Px="-0.0000000000000053" Py="-21.9203102167829762" Pz="-45.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650899" Q3="-0.9238795325112867" A="5.4977871437821380" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
+                    <PlacementList file="PlacementList10"/>
+                </Property>
+                <Property name="Scale" type="App::PropertyFloat" status="256">
+                    <Float value="1.0000000000000000"/>
+                </Property>
+                <Property name="ScaleList" type="App::PropertyVectorList" status="256">
+                    <VectorList file="ScaleList10"/>
+                </Property>
+                <Property name="ScaleVector" type="App::PropertyVector" status="67109120">
+                    <PropertyVector valueX="1.0000000000000000" valueY="1.0000000000000000" valueZ="1.0000000000000000"/>
+                </Property>
+                <Property name="ShowElement" type="App::PropertyBool" status="256">
+                    <Bool value="true"/>
+                </Property>
+                <Property name="SolverId" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
+                    <String value="Placement::ExpressionEngine"/>
+                </Property>
+                <Property name="Visibility" type="App::PropertyBool" status="648">
+                    <Bool value="true"/>
+                </Property>
+                <Property name="VisibilityList" type="App::PropertyBoolList" status="266">
+                    <BoolList value=""/>
+                </Property>
+            </Properties>
+        </Object>
         <Object name="Plane_Base" Extensions="True">
             <Extensions Count="1">
                 <Extension type="Part::AttachExtension" name="AttachExtension">
@@ -1246,15 +1440,15 @@
                     <String value="Attacher::AttachEnginePlane"/>
                 </Property>
                 <Property name="AttachmentOffset" type="App::PropertyPlacement">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-10.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="-0.3826834323650898" Q3="0.9238795325112867" A="0.7853981633974484" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="-1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-10.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650898" Q3="0.9238795325112867" A="0.7853981633974483" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
-                            <DocMap name="Bearing_Block_Bracket" label="Bearing Block Bracket" index="0"/>
-                            <XLink file="Bearing Block Bracket.FCStd" stamp="2021-12-26T18:47:58Z" name="Pad"/>
+                            <DocMap name="Bearing_Block_Front_Bracket" label="Bearing Block Front Bracket" index="0"/>
+                            <XLink file="Bearing Block Front Bracket.FCStd" stamp="2021-12-28T19:53:32Z" name="Pad"/>
                         </XLinks>
-                        <Expression path=".AttachmentOffset.Base.z" expression="-&lt;&lt;Bearing Block Bracket&gt;&gt;#Pad.Shape.BoundBox.ZLength"/>
+                        <Expression path=".AttachmentOffset.Base.z" expression="-&lt;&lt;Bearing Block Front Bracket&gt;&gt;#Pad.Shape.BoundBox.ZLength"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -1276,7 +1470,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-10.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="-0.3826834323650898" Q3="0.9238795325112867" A="0.7853981633974484" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="-1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-10.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650898" Q3="0.9238795325112867" A="0.7853981633974484" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="ResizeMode" type="App::PropertyEnumeration" status="134217728">
                     <Integer value="1"/>
@@ -1289,7 +1483,68 @@
                         <Link obj="X_Axis" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
+                    <Bool value="false"/>
+                </Property>
+                <Property name="Width" type="App::PropertyLength" status="134217728">
+                    <Float value="100.0000000000000000"/>
+                </Property>
+            </Properties>
+        </Object>
+        <Object name="Plane_Spacer" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Part::AttachExtension" name="AttachExtension">
+                </Extension>
+            </Extensions>
+            <Properties Count="15" TransientCount="0">
+                <Property name="AttacherType" type="App::PropertyString" status="8">
+                    <String value="Attacher::AttachEnginePlane"/>
+                </Property>
+                <Property name="AttachmentOffset" type="App::PropertyPlacement">
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-35.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
+                    <ExpressionEngine count="1" xlink="1">
+                        <XLinks count="1" docs="1">
+                            <DocMap name="Bearing_Block_Spacer_Screw" label="Bearing Block Spacer Screw" index="0"/>
+                            <XLink file="Bearing Block Spacer Screw.FCStd" stamp="2021-12-28T19:51:30Z" name="Body"/>
+                        </XLinks>
+                        <Expression path=".AttachmentOffset.Base.z" expression="-&lt;&lt;Bearing Block Spacer Screw&gt;&gt;#Body.Shape.BoundBox.ZLength"/>
+                    </ExpressionEngine>
+                </Property>
+                <Property name="Label" type="App::PropertyString" status="134217728">
+                    <String value="Plane_Spacer"/>
+                </Property>
+                <Property name="Label2" type="App::PropertyString" status="67108992">
+                    <String value=""/>
+                </Property>
+                <Property name="Length" type="App::PropertyLength" status="134217728">
+                    <Float value="100.0000000000000000"/>
+                </Property>
+                <Property name="MapMode" type="App::PropertyEnumeration">
+                    <Integer value="2"/>
+                </Property>
+                <Property name="MapPathParameter" type="App::PropertyFloat" status="8">
+                    <Float value="0.0000000000000000"/>
+                </Property>
+                <Property name="MapReversed" type="App::PropertyBool">
+                    <Bool value="false"/>
+                </Property>
+                <Property name="Placement" type="App::PropertyPlacement" status="8388612">
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-45.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.3826834323650898" Q3="0.9238795325112867" A="0.7853981633974484" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="ResizeMode" type="App::PropertyEnumeration" status="134217728">
+                    <Integer value="1"/>
+                </Property>
+                <Property name="Shape" type="Part::PropertyPartShape">
+                    <Part file="PartShape2.brp"/>
+                </Property>
+                <Property name="Support" type="App::PropertyLinkSubList">
+                    <LinkSubList count="1">
+                        <Link obj="Plane_Base" sub=""/>
+                    </LinkSubList>
+                </Property>
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
                 <Property name="Width" type="App::PropertyLength" status="134217728">
