@@ -17,19 +17,19 @@
             <String value=""/>
         </Property>
         <Property name="CreationDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-25T23:13:26Z"/>
+            <String value="2021-12-28T14:35:37Z"/>
         </Property>
         <Property name="Id" type="App::PropertyString">
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Assembly"/>
+            <String value="Housing Engine Unilateral Assembly"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-25T23:34:20Z"/>
+            <String value="2021-12-28T15:19:53Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -52,17 +52,15 @@
             <String value=""/>
         </Property>
         <Property name="Uid" type="App::PropertyUUID" status="16777217">
-            <Uuid value="fd446515-9ae3-49c8-87c6-a045281ee3b3"/>
+            <Uuid value="973e934f-2395-41f1-997e-264b3c7f5d01"/>
         </Property>
     </Properties>
-    <Objects Count="14" Dependencies="1">
-        <ObjectDeps Name="Model" Count="7">
+    <Objects Count="12" Dependencies="1">
+        <ObjectDeps Name="Model" Count="5">
             <Dep Name="Origin"/>
             <Dep Name="LCS_Origin"/>
             <Dep Name="Frame"/>
-            <Dep Name="Nema_17"/>
-            <Dep Name="Bearing"/>
-            <Dep Name="Coupling"/>
+            <Dep Name="Housing_Engine"/>
             <Dep Name="Nut"/>
         </ObjectDeps>
         <ObjectDeps Name="Origin" Count="6">
@@ -86,38 +84,28 @@
             <Dep Name="LCS_Origin"/>
             <Dep Name="LCS_Origin"/>
         </ObjectDeps>
-        <ObjectDeps Name="Nema_17" Count="2">
+        <ObjectDeps Name="Housing_Engine" Count="2">
             <Dep Name="Frame"/>
             <Dep Name="Frame"/>
-        </ObjectDeps>
-        <ObjectDeps Name="Bearing" Count="2">
-            <Dep Name="Frame"/>
-            <Dep Name="Frame"/>
-        </ObjectDeps>
-        <ObjectDeps Name="Coupling" Count="2">
-            <Dep Name="Nema_17"/>
-            <Dep Name="Nema_17"/>
         </ObjectDeps>
         <ObjectDeps Name="Nut" Count="2">
             <Dep Name="Frame"/>
             <Dep Name="Frame"/>
         </ObjectDeps>
-        <Object type="App::Part" name="Model" id="2018" />
-        <Object type="App::Origin" name="Origin" id="2019" />
-        <Object type="App::Line" name="X_Axis" id="2020" />
-        <Object type="App::Line" name="Y_Axis" id="2021" />
-        <Object type="App::Line" name="Z_Axis" id="2022" />
-        <Object type="App::Plane" name="XY_Plane" id="2023" />
-        <Object type="App::Plane" name="XZ_Plane" id="2024" />
-        <Object type="App::Plane" name="YZ_Plane" id="2025" />
-        <Object type="PartDesign::CoordinateSystem" name="LCS_Origin" id="2027" />
-        <Object type="App::Link" name="Frame" id="2028" />
-        <Object type="App::Link" name="Nema_17" id="2029" />
-        <Object type="App::Link" name="Bearing" id="2032" />
-        <Object type="App::Link" name="Coupling" id="2035" />
-        <Object type="App::Link" name="Nut" id="2036" />
+        <Object type="App::Part" name="Model" id="4288" />
+        <Object type="App::Origin" name="Origin" id="4289" />
+        <Object type="App::Line" name="X_Axis" id="4290" />
+        <Object type="App::Line" name="Y_Axis" id="4291" />
+        <Object type="App::Line" name="Z_Axis" id="4292" />
+        <Object type="App::Plane" name="XY_Plane" id="4293" />
+        <Object type="App::Plane" name="XZ_Plane" id="4294" />
+        <Object type="App::Plane" name="YZ_Plane" id="4295" />
+        <Object type="PartDesign::CoordinateSystem" name="LCS_Origin" id="4297" />
+        <Object type="App::Link" name="Frame" id="4298" />
+        <Object type="App::Link" name="Housing_Engine" id="4299" />
+        <Object type="App::Link" name="Nut" id="4300" />
     </Objects>
-    <ObjectData Count="14">
+    <ObjectData Count="12">
         <Object name="Model" Extensions="True">
             <Extensions Count="2">
                 <Extension type="App::OriginGroupExtension" name="OriginGroupExtension">
@@ -141,12 +129,10 @@
                     </ExpressionEngine>
                 </Property>
                 <Property name="Group" type="App::PropertyLinkList">
-                    <LinkList count="6">
+                    <LinkList count="4">
                         <Link value="LCS_Origin"/>
                         <Link value="Frame"/>
-                        <Link value="Nema_17"/>
-                        <Link value="Bearing"/>
-                        <Link value="Coupling"/>
+                        <Link value="Housing_Engine"/>
                         <Link value="Nut"/>
                     </LinkList>
                 </Property>
@@ -196,7 +182,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="Uid" type="App::PropertyUUID">
-                    <Uuid value="b2bc3655-6585-4099-bbbd-a819fbe44056"/>
+                    <Uuid value="54d3d28e-97f8-4f72-9a96-346933b7d1e0"/>
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="true"/>
@@ -416,7 +402,7 @@
                         <Link obj="X_Axis" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -431,7 +417,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="AttachedBy" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="#LCS_Origin"/>
+                    <String value="#LCS_Origin002"/>
                 </Property>
                 <Property name="AttachedTo" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
                     <String value="Parent Assembly#LCS_Origin"/>
@@ -453,10 +439,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
-                            <DocMap name="Frame" label="Frame" index="0"/>
-                            <XLink file="Frame.FCStd" stamp="2021-12-25T23:34:19Z" name="LCS_Origin"/>
+                            <DocMap name="Housing_Frame" label="Housing Frame" index="0"/>
+                            <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="LCS_Origin002"/>
                         </XLinks>
-                        <Expression path="Placement" expression="LCS_Origin.Placement * AttachmentOffset * Frame#LCS_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="LCS_Origin.Placement * AttachmentOffset * Housing_Frame#LCS_Origin002.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -469,16 +455,16 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="17.5000000000000071" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Frame.FCStd" stamp="2021-12-25T23:34:19Z" name="Body"/>
+                    <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="Body002"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="17.5000000000000071" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList"/>
@@ -498,7 +484,7 @@
                 <Property name="SolverId" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
                     <String value="Placement::ExpressionEngine"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="true"/>
                 </Property>
                 <Property name="VisibilityList" type="App::PropertyBoolList" status="266">
@@ -506,91 +492,7 @@
                 </Property>
             </Properties>
         </Object>
-        <Object name="Nema_17" Extensions="True">
-            <Extensions Count="1">
-                <Extension type="App::LinkExtension" name="LinkExtension">
-                </Extension>
-            </Extensions>
-            <Properties Count="22" TransientCount="0">
-                <Property name="AssemblyType" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value=""/>
-                </Property>
-                <Property name="AttachedBy" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="#Plane_Top"/>
-                </Property>
-                <Property name="AttachedTo" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="Frame#Plane_Behind"/>
-                </Property>
-                <Property name="ColoredElements" type="App::PropertyLinkSubHidden" status="67109120">
-                    <LinkSub value="" count="0">
-                    </LinkSub>
-                </Property>
-                <Property name="ElementCount" type="App::PropertyIntegerConstraint" status="256">
-                    <Integer value="0"/>
-                </Property>
-                <Property name="ElementList" type="App::PropertyLinkList" status="266">
-                    <LinkList count="0">
-                    </LinkList>
-                </Property>
-                <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
-                    <ExpressionEngine count="1" xlink="1">
-                        <XLinks count="2" docs="2">
-                            <DocMap name="Frame" label="Frame" index="1"/>
-                            <DocMap name="Assembly1" label="Assembly" index="0"/>
-                            <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-25T23:34:20Z" name="Plane_Top"/>
-                            <XLink file="Frame.FCStd" stamp="2021-12-25T23:34:19Z" name="Plane_Behind"/>
-                        </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Frame#Plane_Behind.Placement * AttachmentOffset * Assembly1#Plane_Top.Placement ^ -1"/>
-                    </ExpressionEngine>
-                </Property>
-                <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Nema 17"/>
-                </Property>
-                <Property name="Label2" type="App::PropertyString" status="67108992">
-                    <String value=""/>
-                </Property>
-                <Property name="LinkExecute" type="App::PropertyString" status="256">
-                    <String value=""/>
-                </Property>
-                <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-25.4999999999999929" Pz="0.0000000000000095" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
-                </Property>
-                <Property name="LinkTransform" type="App::PropertyBool" status="256">
-                    <Bool value="false"/>
-                </Property>
-                <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-25T23:34:20Z" name="Model"/>
-                </Property>
-                <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-25.4999999999999929" Pz="0.0000000000000095" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
-                </Property>
-                <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
-                    <PlacementList file="PlacementList1"/>
-                </Property>
-                <Property name="Scale" type="App::PropertyFloat" status="256">
-                    <Float value="1.0000000000000000"/>
-                </Property>
-                <Property name="ScaleList" type="App::PropertyVectorList" status="256">
-                    <VectorList file="ScaleList1"/>
-                </Property>
-                <Property name="ScaleVector" type="App::PropertyVector" status="67109120">
-                    <PropertyVector valueX="1.0000000000000000" valueY="1.0000000000000000" valueZ="1.0000000000000000"/>
-                </Property>
-                <Property name="ShowElement" type="App::PropertyBool" status="256">
-                    <Bool value="true"/>
-                </Property>
-                <Property name="SolverId" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="Placement::ExpressionEngine"/>
-                </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
-                    <Bool value="true"/>
-                </Property>
-                <Property name="VisibilityList" type="App::PropertyBoolList" status="266">
-                    <BoolList value=""/>
-                </Property>
-            </Properties>
-        </Object>
-        <Object name="Bearing" Extensions="True">
+        <Object name="Housing_Engine" Extensions="True">
             <Extensions Count="1">
                 <Extension type="App::LinkExtension" name="LinkExtension">
                 </Extension>
@@ -603,7 +505,7 @@
                     <String value="#LCS_Origin"/>
                 </Property>
                 <Property name="AttachedTo" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="Frame#Plane_Front"/>
+                    <String value="Frame#LCS_Origin002"/>
                 </Property>
                 <Property name="ColoredElements" type="App::PropertyLinkSubHidden" status="67109120">
                     <LinkSub value="" count="0">
@@ -619,16 +521,16 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Frame" label="Frame" index="1"/>
-                            <DocMap name="Assembly2" label="Assembly" index="0"/>
-                            <XLink file="../Bearing Assembly/Assembly.FCStd" stamp="2021-12-25T23:34:20Z" name="LCS_Origin"/>
-                            <XLink file="Frame.FCStd" stamp="2021-12-25T23:34:19Z" name="Plane_Front"/>
+                            <DocMap name="Housing_Frame" label="Housing Frame" index="1"/>
+                            <DocMap name="Housing_Engine_Assembly" label="Housing Engine Assembly" index="0"/>
+                            <XLink file="Housing Engine Assembly.FCStd" stamp="2021-12-28T15:14:56Z" name="LCS_Origin"/>
+                            <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="LCS_Origin002"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Frame#Plane_Front.Placement * AttachmentOffset * Assembly2#LCS_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Housing_Frame#LCS_Origin002.Placement * AttachmentOffset * Housing_Engine_Assembly#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Bearing"/>
+                    <String value="Housing_Engine"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -637,109 +539,25 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="17.5000000000000071" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.7071067811865476" Q2="0.7071067811865475" Q3="0.0000000000000000" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.7071067811865476" Oz="0.7071067811865475"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="../Bearing Assembly/Assembly.FCStd" stamp="2021-12-25T23:34:20Z" name="Model"/>
+                    <XLink file="Housing Engine Assembly.FCStd" stamp="2021-12-28T15:14:56Z" name="Model"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="17.5000000000000071" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.7071067811865476" Q2="0.7071067811865475" Q3="0.0000000000000000" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.7071067811865476" Oz="0.7071067811865475"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
-                    <PlacementList file="PlacementList2"/>
+                    <PlacementList file="PlacementList1"/>
                 </Property>
                 <Property name="Scale" type="App::PropertyFloat" status="256">
                     <Float value="1.0000000000000000"/>
                 </Property>
                 <Property name="ScaleList" type="App::PropertyVectorList" status="256">
-                    <VectorList file="ScaleList2"/>
-                </Property>
-                <Property name="ScaleVector" type="App::PropertyVector" status="67109120">
-                    <PropertyVector valueX="1.0000000000000000" valueY="1.0000000000000000" valueZ="1.0000000000000000"/>
-                </Property>
-                <Property name="ShowElement" type="App::PropertyBool" status="256">
-                    <Bool value="true"/>
-                </Property>
-                <Property name="SolverId" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="Placement::ExpressionEngine"/>
-                </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
-                    <Bool value="true"/>
-                </Property>
-                <Property name="VisibilityList" type="App::PropertyBoolList" status="266">
-                    <BoolList value=""/>
-                </Property>
-            </Properties>
-        </Object>
-        <Object name="Coupling" Extensions="True">
-            <Extensions Count="1">
-                <Extension type="App::LinkExtension" name="LinkExtension">
-                </Extension>
-            </Extensions>
-            <Properties Count="22" TransientCount="0">
-                <Property name="AssemblyType" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value=""/>
-                </Property>
-                <Property name="AttachedBy" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="#Plane_Axis"/>
-                </Property>
-                <Property name="AttachedTo" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="Nema_17#Plane_Axis"/>
-                </Property>
-                <Property name="ColoredElements" type="App::PropertyLinkSubHidden" status="67109120">
-                    <LinkSub value="" count="0">
-                    </LinkSub>
-                </Property>
-                <Property name="ElementCount" type="App::PropertyIntegerConstraint" status="256">
-                    <Integer value="0"/>
-                </Property>
-                <Property name="ElementList" type="App::PropertyLinkList" status="266">
-                    <LinkList count="0">
-                    </LinkList>
-                </Property>
-                <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
-                    <ExpressionEngine count="1" xlink="1">
-                        <XLinks count="2" docs="2">
-                            <DocMap name="Assembly1" label="Assembly" index="0"/>
-                            <DocMap name="Assembly4" label="Assembly" index="1"/>
-                            <XLink file="../Nema 17/Assembly.FCStd" stamp="2021-12-25T23:34:20Z" name="Plane_Axis"/>
-                            <XLink file="../Coupling/Assembly.FCStd" stamp="2021-12-25T23:34:20Z" name="Plane_Axis"/>
-                        </XLinks>
-                        <Expression path="Placement" expression="Nema_17.Placement * Assembly1#Plane_Axis.Placement * AttachmentOffset * Assembly4#Plane_Axis.Placement ^ -1"/>
-                    </ExpressionEngine>
-                </Property>
-                <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Coupling"/>
-                </Property>
-                <Property name="Label2" type="App::PropertyString" status="67108992">
-                    <String value=""/>
-                </Property>
-                <Property name="LinkExecute" type="App::PropertyString" status="256">
-                    <String value=""/>
-                </Property>
-                <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-9.4999999999999929" Pz="0.0000000000000059" Q0="-0.5000000000000000" Q1="-0.5000000000000001" Q2="-0.5000000000000000" Q3="0.4999999999999999" A="2.0943951023931957" Ox="-0.5773502691896257" Oy="-0.5773502691896258" Oz="-0.5773502691896257"/>
-                </Property>
-                <Property name="LinkTransform" type="App::PropertyBool" status="256">
-                    <Bool value="false"/>
-                </Property>
-                <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="../Coupling/Assembly.FCStd" stamp="2021-12-25T23:34:20Z" name="Model"/>
-                </Property>
-                <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-9.4999999999999929" Pz="0.0000000000000059" Q0="-0.5000000000000000" Q1="-0.5000000000000001" Q2="-0.5000000000000000" Q3="0.4999999999999999" A="2.0943951023931957" Ox="-0.5773502691896257" Oy="-0.5773502691896258" Oz="-0.5773502691896257"/>
-                </Property>
-                <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
-                    <PlacementList file="PlacementList3"/>
-                </Property>
-                <Property name="Scale" type="App::PropertyFloat" status="256">
-                    <Float value="1.0000000000000000"/>
-                </Property>
-                <Property name="ScaleList" type="App::PropertyVectorList" status="256">
-                    <VectorList file="ScaleList3"/>
+                    <VectorList file="ScaleList1"/>
                 </Property>
                 <Property name="ScaleVector" type="App::PropertyVector" status="67109120">
                     <PropertyVector valueX="1.0000000000000000" valueY="1.0000000000000000" valueZ="1.0000000000000000"/>
@@ -771,10 +589,10 @@
                     <String value="#Point_Origin"/>
                 </Property>
                 <Property name="AttachedTo" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <String value="Frame#Point_Nut"/>
+                    <String value="Frame#Point_Nut001"/>
                 </Property>
                 <Property name="AttachmentOffset" type="App::PropertyPlacement" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="1.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="ColoredElements" type="App::PropertyLinkSubHidden" status="67109120">
                     <LinkSub value="" count="0">
@@ -790,12 +608,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Frame" label="Frame" index="0"/>
-                            <DocMap name="Nut" label="Nut" index="1"/>
-                            <XLink file="Frame.FCStd" stamp="2021-12-25T23:34:19Z" name="Point_Nut"/>
-                            <XLink file="Nut.FCStd" stamp="2021-12-25T23:34:20Z" name="Point_Origin"/>
+                            <DocMap name="Housing_Frame" label="Housing Frame" index="0"/>
+                            <DocMap name="Housing_Frame_Nut" label="Housing Frame Nut" index="1"/>
+                            <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="Point_Nut001"/>
+                            <XLink file="Housing Frame Nut.FCStd" stamp="2021-12-28T15:14:56Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Frame#Point_Nut.Placement * AttachmentOffset * Nut#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Housing_Frame#Point_Nut001.Placement * AttachmentOffset * Housing_Frame_Nut#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -808,25 +626,25 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000036" Pz="-18.4124999999999979" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-0.6849860000000000" Pz="-18.4125000000000050" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Nut.FCStd" stamp="2021-12-25T23:34:20Z" name="Body"/>
+                    <XLink file="Housing Frame Nut.FCStd" stamp="2021-12-28T15:14:56Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000036" Pz="-18.4124999999999979" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-0.6849860000000000" Pz="-18.4125000000000050" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
-                    <PlacementList file="PlacementList4"/>
+                    <PlacementList file="PlacementList2"/>
                 </Property>
                 <Property name="Scale" type="App::PropertyFloat" status="256">
                     <Float value="1.0000000000000000"/>
                 </Property>
                 <Property name="ScaleList" type="App::PropertyVectorList" status="256">
-                    <VectorList file="ScaleList4"/>
+                    <VectorList file="ScaleList2"/>
                 </Property>
                 <Property name="ScaleVector" type="App::PropertyVector" status="67109120">
                     <PropertyVector valueX="1.0000000000000000" valueY="1.0000000000000000" valueZ="1.0000000000000000"/>

@@ -6,9 +6,11 @@
     <Expand  count="1">
         <Expand name="Model"/>
     </Expand>
-    <ViewProviderData Count="12">
+    <ViewProviderData Count="13">
         <ViewProvider name="LCS_Origin" expanded="0" Extensions="True">
-            <Extensions Count="1">
+            <Extensions Count="2">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
                 <Extension type="PartGui::ViewProviderAttachExtension" name="ViewProviderAttachExtension">
                 </Extension>
             </Extensions>
@@ -54,7 +56,11 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="Origin" expanded="0">
+        <ViewProvider name="Origin" expanded="0" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
+            </Extensions>
             <Properties Count="6" TransientCount="0">
                 <Property name="DisplayMode" type="App::PropertyEnumeration" status="1">
                     <Integer value="0"/>
@@ -76,7 +82,11 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="X_Axis" expanded="0">
+        <ViewProvider name="X_Axis" expanded="0" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
+            </Extensions>
             <Properties Count="11" TransientCount="0">
                 <Property name="BoundingBox" type="App::PropertyBool" status="9">
                     <Bool value="false"/>
@@ -114,8 +124,10 @@
             </Properties>
         </ViewProvider>
         <ViewProvider name="Model" expanded="1" Extensions="True">
-            <Extensions Count="1">
+            <Extensions Count="2">
                 <Extension type="Gui::ViewProviderOriginGroupExtension" name="ViewProviderOriginGroupExtension">
+                </Extension>
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
                 </Extension>
             </Extensions>
             <Properties Count="5" TransientCount="0">
@@ -136,7 +148,11 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="Y_Axis" expanded="0">
+        <ViewProvider name="Y_Axis" expanded="0" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
+            </Extensions>
             <Properties Count="11" TransientCount="0">
                 <Property name="BoundingBox" type="App::PropertyBool" status="9">
                     <Bool value="false"/>
@@ -173,7 +189,11 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="Z_Axis" expanded="0">
+        <ViewProvider name="Z_Axis" expanded="0" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
+            </Extensions>
             <Properties Count="11" TransientCount="0">
                 <Property name="BoundingBox" type="App::PropertyBool" status="9">
                     <Bool value="false"/>
@@ -210,7 +230,11 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="XY_Plane" expanded="0">
+        <ViewProvider name="XY_Plane" expanded="0" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
+            </Extensions>
             <Properties Count="11" TransientCount="0">
                 <Property name="BoundingBox" type="App::PropertyBool" status="9">
                     <Bool value="false"/>
@@ -247,7 +271,11 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="XZ_Plane" expanded="0">
+        <ViewProvider name="XZ_Plane" expanded="0" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
+            </Extensions>
             <Properties Count="11" TransientCount="0">
                 <Property name="BoundingBox" type="App::PropertyBool" status="9">
                     <Bool value="false"/>
@@ -284,7 +312,11 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="YZ_Plane" expanded="0">
+        <ViewProvider name="YZ_Plane" expanded="0" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
+            </Extensions>
             <Properties Count="11" TransientCount="0">
                 <Property name="BoundingBox" type="App::PropertyBool" status="9">
                     <Bool value="false"/>
@@ -372,11 +404,11 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="1">
-                    <Bool value="true"/>
+                    <Bool value="false"/>
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="Housing_Engine" expanded="0" Extensions="True">
+        <ViewProvider name="Bearing_Block" expanded="0" Extensions="True">
             <Extensions Count="1">
                 <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
                 </Extension>
@@ -431,7 +463,62 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="Nut" expanded="0" Extensions="True">
+        <ViewProvider name="Nema_17" expanded="0" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
+            </Extensions>
+            <Properties Count="15" TransientCount="0">
+                <Property name="ChildViewProvider" type="App::PropertyPersistentObject" status="9">
+                    <String value=""/>
+                    <PersistentObject>
+                    </PersistentObject>
+                </Property>
+                <Property name="DisplayMode" type="App::PropertyEnumeration" status="9">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="DrawStyle" type="App::PropertyEnumeration" status="1">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="LineWidth" type="App::PropertyFloatConstraint" status="1">
+                    <Float value="2.0000000000000000"/>
+                </Property>
+                <Property name="MaterialList" type="App::PropertyMaterialList" status="65">
+                    <MaterialList file=""/>
+                </Property>
+                <Property name="OnTopWhenSelected" type="App::PropertyEnumeration" status="1">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="OverrideColorList" type="App::PropertyColorList" status="1">
+                    <ColorList file=""/>
+                </Property>
+                <Property name="OverrideMaterial" type="App::PropertyBool" status="1">
+                    <Bool value="false"/>
+                </Property>
+                <Property name="OverrideMaterialList" type="App::PropertyBoolList" status="1">
+                    <BoolList value=""/>
+                </Property>
+                <Property name="PointSize" type="App::PropertyFloatConstraint" status="1">
+                    <Float value="2.0000000000000000"/>
+                </Property>
+                <Property name="Selectable" type="App::PropertyBool" status="1">
+                    <Bool value="true"/>
+                </Property>
+                <Property name="SelectionStyle" type="App::PropertyEnumeration" status="1">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="ShapeMaterial" type="App::PropertyMaterial" status="33">
+                    <PropertyMaterial ambientColor="858993408" diffuseColor="1728052992" specularColor="0" emissiveColor="0" shininess="0.2000000029802322" transparency="0.0000000000000000"/>
+                </Property>
+                <Property name="ShowInTree" type="App::PropertyBool" status="1">
+                    <Bool value="true"/>
+                </Property>
+                <Property name="Visibility" type="App::PropertyBool" status="1">
+                    <Bool value="true"/>
+                </Property>
+            </Properties>
+        </ViewProvider>
+        <ViewProvider name="Coupling" expanded="0" Extensions="True">
             <Extensions Count="1">
                 <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
                 </Extension>
