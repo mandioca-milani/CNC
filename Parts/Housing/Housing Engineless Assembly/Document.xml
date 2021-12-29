@@ -29,7 +29,7 @@
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-28T20:27:22Z"/>
+            <String value="2021-12-29T01:23:55Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -96,7 +96,7 @@
         <Object type="App::Plane" name="XZ_Plane" id="3373" />
         <Object type="App::Plane" name="YZ_Plane" id="3374" />
         <Object type="PartDesign::CoordinateSystem" name="LCS_Origin" id="3376" />
-        <Object type="App::Link" name="Frame" id="3377" />
+        <Object type="App::Link" name="Frame" id="3377" Touched="1" />
         <Object type="App::Link" name="Bearing_Block" id="3378" />
     </Objects>
     <ObjectData Count="11">
@@ -395,7 +395,7 @@
                         <Link obj="X_Axis" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -433,7 +433,7 @@
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
                             <DocMap name="Housing_Frame" label="Housing Frame" index="0"/>
-                            <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="LCS_Origin"/>
+                            <XLink file="Housing Frame.FCStd" stamp="2021-12-29T01:22:25Z" name="LCS_Origin"/>
                         </XLinks>
                         <Expression path="Placement" expression="LCS_Origin.Placement * AttachmentOffset * Housing_Frame#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -453,8 +453,8 @@
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
-                <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="Body"/>
+                <Property name="LinkedObject" type="App::PropertyXLink" status="257">
+                    <XLink file="Housing Frame.FCStd" stamp="2021-12-29T01:22:25Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -477,7 +477,7 @@
                 <Property name="SolverId" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
                     <String value="Placement::ExpressionEngine"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
                 <Property name="VisibilityList" type="App::PropertyBoolList" status="266">
@@ -516,8 +516,8 @@
                         <XLinks count="2" docs="2">
                             <DocMap name="Housing_Frame" label="Housing Frame" index="1"/>
                             <DocMap name="Bearing_Block_Engineless_Assembly" label="Bearing Block Engineless Assembly" index="0"/>
-                            <XLink file="../Bearing Block/Bearing Block Engineless Assembly.FCStd" stamp="2021-12-28T20:25:53Z" name="Plane_Base"/>
-                            <XLink file="Housing Frame.FCStd" stamp="2021-12-28T15:17:16Z" name="Plane_Front"/>
+                            <XLink file="../Bearing Block/Bearing Block Engineless Assembly.FCStd" stamp="2021-12-29T01:21:58Z" name="Plane_Base"/>
+                            <XLink file="Housing Frame.FCStd" stamp="2021-12-29T01:22:25Z" name="Plane_Front"/>
                         </XLinks>
                         <Expression path="Placement" expression="Frame.Placement * Housing_Frame#Plane_Front.Placement * AttachmentOffset * Bearing_Block_Engineless_Assembly#Plane_Base.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -532,16 +532,16 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-27.5000000000000000" Pz="0.0000000000000061" Q0="0.6532814824381882" Q1="-0.2705980500730985" Q2="0.2705980500730986" Q3="0.6532814824381883" A="1.7177715174584016" Ox="0.8628562094610168" Oy="-0.3574067443365933" Oz="0.3574067443365934"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-27.5000000000000000" Pz="0.0000000000000061" Q0="0.6532814824381883" Q1="0.2705980500730985" Q2="-0.2705980500730986" Q3="0.6532814824381884" A="1.7177715174584014" Ox="0.8628562094610167" Oy="0.3574067443365933" Oz="-0.3574067443365933"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="../Bearing Block/Bearing Block Engineless Assembly.FCStd" stamp="2021-12-28T20:25:53Z" name="Model"/>
+                    <XLink file="../Bearing Block/Bearing Block Engineless Assembly.FCStd" stamp="2021-12-29T01:21:58Z" name="Model"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-27.5000000000000000" Pz="0.0000000000000061" Q0="0.6532814824381882" Q1="-0.2705980500730985" Q2="0.2705980500730986" Q3="0.6532814824381883" A="1.7177715174584016" Ox="0.8628562094610168" Oy="-0.3574067443365933" Oz="0.3574067443365934"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-27.5000000000000000" Pz="0.0000000000000061" Q0="0.6532814824381883" Q1="0.2705980500730985" Q2="-0.2705980500730986" Q3="0.6532814824381884" A="1.7177715174584014" Ox="0.8628562094610167" Oy="0.3574067443365933" Oz="-0.3574067443365933"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList1"/>

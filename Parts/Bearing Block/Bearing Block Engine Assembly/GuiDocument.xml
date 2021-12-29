@@ -959,7 +959,9 @@
             </Properties>
         </ViewProvider>
         <ViewProvider name="Plane_Base" expanded="0" Extensions="True">
-            <Extensions Count="1">
+            <Extensions Count="2">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
                 <Extension type="PartGui::ViewProviderAttachExtension" name="ViewProviderAttachExtension">
                 </Extension>
             </Extensions>
@@ -997,7 +999,9 @@
             </Properties>
         </ViewProvider>
         <ViewProvider name="Plane_Spacer" expanded="0" Extensions="True">
-            <Extensions Count="1">
+            <Extensions Count="2">
+                <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
+                </Extension>
                 <Extension type="PartGui::ViewProviderAttachExtension" name="ViewProviderAttachExtension">
                 </Extension>
             </Extensions>
