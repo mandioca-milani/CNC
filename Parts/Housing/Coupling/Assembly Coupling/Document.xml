@@ -23,13 +23,13 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Coupling Assembly"/>
+            <String value="Assembly Coupling"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-29T01:21:38Z"/>
+            <String value="2022-01-13T23:46:34Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -422,7 +422,7 @@
                         <Link obj="X_Axis" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -459,10 +459,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
-                            <DocMap name="Coupling_Frame" label="Coupling Frame" index="0"/>
-                            <XLink file="Coupling Frame.FCStd" stamp="2021-12-29T01:21:38Z" name="LCS_Origin"/>
+                            <DocMap name="Frame_Coupling" label="Frame Coupling" index="0"/>
+                            <XLink file="Frame Coupling.FCStd" stamp="2021-12-29T01:21:38Z" name="LCS_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="LCS_Origin.Placement * AttachmentOffset * Coupling_Frame#LCS_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="LCS_Origin.Placement * AttachmentOffset * Frame_Coupling#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -481,7 +481,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Coupling Frame.FCStd" stamp="2021-12-29T01:21:38Z" name="Body"/>
+                    <XLink file="Frame Coupling.FCStd" stamp="2021-12-29T01:21:38Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -544,12 +544,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Coupling_Frame" label="Coupling Frame" index="0"/>
-                            <DocMap name="Coupling_Screw" label="Coupling Screw" index="1"/>
-                            <XLink file="Coupling Frame.FCStd" stamp="2021-12-29T01:21:38Z" name="Point_Screw"/>
-                            <XLink file="Coupling Screw.FCStd" stamp="2021-12-29T00:59:04Z" name="Point_Origin"/>
+                            <DocMap name="Frame_Coupling" label="Frame Coupling" index="0"/>
+                            <DocMap name="Screw_Coupling" label="Screw Coupling" index="1"/>
+                            <XLink file="Frame Coupling.FCStd" stamp="2021-12-29T01:21:38Z" name="Point_Screw"/>
+                            <XLink file="Screw Coupling.FCStd" stamp="2021-12-29T00:59:04Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Coupling_Frame#Point_Screw.Placement * AttachmentOffset * Coupling_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Frame_Coupling#Point_Screw.Placement * AttachmentOffset * Screw_Coupling#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -568,7 +568,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Coupling Screw.FCStd" stamp="2021-12-29T00:59:04Z" name="Body"/>
+                    <XLink file="Screw Coupling.FCStd" stamp="2021-12-29T00:59:04Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="8.0296058885809423" Py="-0.0000006392456093" Pz="4.5000019145010652" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
@@ -631,12 +631,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Coupling_Frame" label="Coupling Frame" index="0"/>
-                            <DocMap name="Coupling_Screw" label="Coupling Screw" index="1"/>
-                            <XLink file="Coupling Frame.FCStd" stamp="2021-12-29T01:21:38Z" name="Point_Screw001"/>
-                            <XLink file="Coupling Screw.FCStd" stamp="2021-12-29T00:59:04Z" name="Point_Origin"/>
+                            <DocMap name="Frame_Coupling" label="Frame Coupling" index="0"/>
+                            <DocMap name="Screw_Coupling" label="Screw Coupling" index="1"/>
+                            <XLink file="Frame Coupling.FCStd" stamp="2021-12-29T01:21:38Z" name="Point_Screw001"/>
+                            <XLink file="Screw Coupling.FCStd" stamp="2021-12-29T00:59:04Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Coupling_Frame#Point_Screw001.Placement * AttachmentOffset * Coupling_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Frame_Coupling#Point_Screw001.Placement * AttachmentOffset * Screw_Coupling#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -655,7 +655,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Coupling Screw.FCStd" stamp="2021-12-29T00:59:04Z" name="Body"/>
+                    <XLink file="Screw Coupling.FCStd" stamp="2021-12-29T00:59:04Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="8.8876896785653408" Py="-0.0000010409709006" Pz="20.5000003449898465" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
@@ -718,12 +718,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Coupling_Frame" label="Coupling Frame" index="0"/>
-                            <DocMap name="Coupling_Screw" label="Coupling Screw" index="1"/>
-                            <XLink file="Coupling Frame.FCStd" stamp="2021-12-29T01:21:38Z" name="Point_Screw002"/>
-                            <XLink file="Coupling Screw.FCStd" stamp="2021-12-29T00:59:04Z" name="Point_Origin"/>
+                            <DocMap name="Frame_Coupling" label="Frame Coupling" index="0"/>
+                            <DocMap name="Screw_Coupling" label="Screw Coupling" index="1"/>
+                            <XLink file="Frame Coupling.FCStd" stamp="2021-12-29T01:21:38Z" name="Point_Screw002"/>
+                            <XLink file="Screw Coupling.FCStd" stamp="2021-12-29T00:59:04Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Coupling_Frame#Point_Screw002.Placement * AttachmentOffset * Coupling_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Frame_Coupling#Point_Screw002.Placement * AttachmentOffset * Screw_Coupling#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -742,7 +742,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Coupling Screw.FCStd" stamp="2021-12-29T00:59:04Z" name="Body"/>
+                    <XLink file="Screw Coupling.FCStd" stamp="2021-12-29T00:59:04Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-0.0135315159237668" Py="8.0569282151024080" Pz="4.4999974864778185" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
@@ -805,12 +805,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Coupling_Frame" label="Coupling Frame" index="0"/>
-                            <DocMap name="Coupling_Screw" label="Coupling Screw" index="1"/>
-                            <XLink file="Coupling Frame.FCStd" stamp="2021-12-29T01:21:38Z" name="Point_Screw003"/>
-                            <XLink file="Coupling Screw.FCStd" stamp="2021-12-29T00:59:04Z" name="Point_Origin"/>
+                            <DocMap name="Frame_Coupling" label="Frame Coupling" index="0"/>
+                            <DocMap name="Screw_Coupling" label="Screw Coupling" index="1"/>
+                            <XLink file="Frame Coupling.FCStd" stamp="2021-12-29T01:21:38Z" name="Point_Screw003"/>
+                            <XLink file="Screw Coupling.FCStd" stamp="2021-12-29T00:59:04Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Frame.Placement * Coupling_Frame#Point_Screw003.Placement * AttachmentOffset * Coupling_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Frame.Placement * Frame_Coupling#Point_Screw003.Placement * AttachmentOffset * Screw_Coupling#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -829,7 +829,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Coupling Screw.FCStd" stamp="2021-12-29T00:59:04Z" name="Body"/>
+                    <XLink file="Screw Coupling.FCStd" stamp="2021-12-29T00:59:04Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000019506213889" Py="8.8876721351764676" Pz="20.4999919039821172" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
@@ -875,10 +875,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
-                            <DocMap name="Coupling_Frame" label="Coupling Frame" index="0"/>
-                            <XLink file="Coupling Frame.FCStd" stamp="2021-12-29T01:21:38Z" name="Plane_Axis"/>
+                            <DocMap name="Frame_Coupling" label="Frame Coupling" index="0"/>
+                            <XLink file="Frame Coupling.FCStd" stamp="2021-12-29T01:21:38Z" name="Plane_Axis"/>
                         </XLinks>
-                        <Expression path=".AttachmentOffset.Base.z" expression="&lt;&lt;Coupling Frame&gt;&gt;#Plane_Axis.Placement.Base.z"/>
+                        <Expression path=".AttachmentOffset.Base.z" expression="&lt;&lt;Frame Coupling&gt;&gt;#Plane_Axis.Placement.Base.z"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -913,7 +913,7 @@
                         <Link obj="X_Axis" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
                 <Property name="Width" type="App::PropertyLength" status="134217728">

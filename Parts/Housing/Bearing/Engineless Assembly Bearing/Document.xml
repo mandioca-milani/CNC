@@ -23,13 +23,13 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Bearing Block Engineless Assembly"/>
+            <String value="Engineless Assembly Bearing"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-29T01:25:01Z"/>
+            <String value="2022-01-14T00:42:07Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -111,7 +111,7 @@
         <Object type="App::Plane" name="YZ_Plane" id="4120" />
         <Object type="PartDesign::CoordinateSystem" name="LCS_Origin" id="4122" />
         <Object type="App::Link" name="Bearing_Block_Engine" id="4123" />
-        <Object type="App::Link" name="Bracket" id="4124" Touched="1" />
+        <Object type="App::Link" name="Bracket" id="4124" />
         <Object type="App::Link" name="Screw" id="4125" />
         <Object type="App::Link" name="Screw001" id="4126" />
         <Object type="PartDesign::Plane" name="Plane_Base" id="4127" />
@@ -449,10 +449,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
-                            <DocMap name="Bearing_Block_Engine_Assembly" label="Bearing Block Engine Assembly" index="0"/>
-                            <XLink file="Bearing Block Engine Assembly.FCStd" stamp="2021-12-29T01:25:01Z" name="LCS_Origin"/>
+                            <DocMap name="Engine_Assembly_Bearing" label="Engine Assembly Bearing" index="0"/>
+                            <XLink file="Engine Assembly Bearing.FCStd" stamp="2022-01-14T00:07:38Z" name="LCS_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="LCS_Origin.Placement * AttachmentOffset * Bearing_Block_Engine_Assembly#LCS_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="LCS_Origin.Placement * AttachmentOffset * Engine_Assembly_Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -471,7 +471,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Bearing Block Engine Assembly.FCStd" stamp="2021-12-29T01:25:01Z" name="Model"/>
+                    <XLink file="Engine Assembly Bearing.FCStd" stamp="2022-01-14T00:07:38Z" name="Model"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -534,12 +534,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Bearing_Block_Behind_Bracket" label="Bearing Block Behind Bracket" index="0"/>
-                            <DocMap name="Bearing_Block_Engine_Assembly" label="Bearing Block Engine Assembly" index="1"/>
-                            <XLink file="Bearing Block Behind Bracket.FCStd" stamp="2021-12-29T01:25:01Z" name="Plane_Top"/>
-                            <XLink file="Bearing Block Engine Assembly.FCStd" stamp="2021-12-29T01:25:01Z" name="Plane_Spacer"/>
+                            <DocMap name="Engine_Assembly_Bearing" label="Engine Assembly Bearing" index="1"/>
+                            <DocMap name="Behind_Bracket_Bearing" label="Behind Bracket Bearing" index="0"/>
+                            <XLink file="Behind Bracket Bearing.FCStd" stamp="2021-12-29T01:25:01Z" name="Plane_Top"/>
+                            <XLink file="Engine Assembly Bearing.FCStd" stamp="2022-01-14T00:07:38Z" name="Plane_Spacer"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Bearing_Block_Engine.Placement * Bearing_Block_Engine_Assembly#Plane_Spacer.Placement * AttachmentOffset * Bearing_Block_Behind_Bracket#Plane_Top.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Bearing_Block_Engine.Placement * Engine_Assembly_Bearing#Plane_Spacer.Placement * AttachmentOffset * Behind_Bracket_Bearing#Plane_Top.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -552,16 +552,16 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-55.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.9238795325112867" Q3="-0.3826834323650897" A="3.9269908169872414" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-55.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.9238795325112868" Q3="-0.3826834323650897" A="3.9269908169872414" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
-                <Property name="LinkedObject" type="App::PropertyXLink" status="257">
-                    <XLink file="Bearing Block Behind Bracket.FCStd" stamp="2021-12-29T01:25:01Z" name="Body"/>
+                <Property name="LinkedObject" type="App::PropertyXLink" status="256">
+                    <XLink file="Behind Bracket Bearing.FCStd" stamp="2021-12-29T01:25:01Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-55.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.9238795325112867" Q3="-0.3826834323650897" A="3.9269908169872414" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="-55.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.9238795325112868" Q3="-0.3826834323650897" A="3.9269908169872414" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList1"/>
@@ -621,12 +621,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Bearing_Block_Behind_Bracket" label="Bearing Block Behind Bracket" index="0"/>
-                            <DocMap name="Bearing_Block_Bracket_Screw" label="Bearing Block Bracket Screw" index="1"/>
-                            <XLink file="Bearing Block Behind Bracket.FCStd" stamp="2021-12-29T01:25:01Z" name="Point_Screw"/>
-                            <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-29T01:10:36Z" name="Point_Origin"/>
+                            <DocMap name="Behind_Bracket_Bearing" label="Behind Bracket Bearing" index="0"/>
+                            <DocMap name="Bracket_Screw_Bearing" label="Bracket Screw Bearing" index="1"/>
+                            <XLink file="Behind Bracket Bearing.FCStd" stamp="2021-12-29T01:25:01Z" name="Point_Screw"/>
+                            <XLink file="Bracket Screw Bearing.FCStd" stamp="2021-12-29T01:10:36Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Bracket.Placement * Bearing_Block_Behind_Bracket#Point_Screw.Placement * AttachmentOffset * Bearing_Block_Bracket_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Bracket.Placement * Behind_Bracket_Bearing#Point_Screw.Placement * AttachmentOffset * Bracket_Screw_Bearing#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -639,16 +639,16 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="21.9203102167829762" Py="-0.0000000000000037" Pz="-55.0000000000000000" Q0="-0.3826834323650897" Q1="0.9238795325112868" Q2="0.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="-0.3826834323650897" Oy="0.9238795325112868" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="21.9203102167829762" Py="-0.0000000000000037" Pz="-55.0000000000000000" Q0="-0.3826834323650897" Q1="0.9238795325112868" Q2="0.0000000000000000" Q3="-0.0000000000000000" A="3.1415926535897931" Ox="-0.3826834323650897" Oy="0.9238795325112868" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-29T01:10:36Z" name="Body"/>
+                    <XLink file="Bracket Screw Bearing.FCStd" stamp="2021-12-29T01:10:36Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="21.9203102167829762" Py="-0.0000000000000037" Pz="-55.0000000000000000" Q0="-0.3826834323650897" Q1="0.9238795325112868" Q2="0.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="-0.3826834323650897" Oy="0.9238795325112868" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="21.9203102167829762" Py="-0.0000000000000037" Pz="-55.0000000000000000" Q0="-0.3826834323650897" Q1="0.9238795325112868" Q2="0.0000000000000000" Q3="-0.0000000000000000" A="3.1415926535897931" Ox="-0.3826834323650897" Oy="0.9238795325112868" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList2"/>
@@ -708,12 +708,12 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Bearing_Block_Behind_Bracket" label="Bearing Block Behind Bracket" index="0"/>
-                            <DocMap name="Bearing_Block_Bracket_Screw" label="Bearing Block Bracket Screw" index="1"/>
-                            <XLink file="Bearing Block Behind Bracket.FCStd" stamp="2021-12-29T01:25:01Z" name="Point_Screw001"/>
-                            <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-29T01:10:36Z" name="Point_Origin"/>
+                            <DocMap name="Behind_Bracket_Bearing" label="Behind Bracket Bearing" index="0"/>
+                            <DocMap name="Bracket_Screw_Bearing" label="Bracket Screw Bearing" index="1"/>
+                            <XLink file="Behind Bracket Bearing.FCStd" stamp="2021-12-29T01:25:01Z" name="Point_Screw001"/>
+                            <XLink file="Bracket Screw Bearing.FCStd" stamp="2021-12-29T01:10:36Z" name="Point_Origin"/>
                         </XLinks>
-                        <Expression path="Placement" expression="Bracket.Placement * Bearing_Block_Behind_Bracket#Point_Screw001.Placement * AttachmentOffset * Bearing_Block_Bracket_Screw#Point_Origin.Placement ^ -1"/>
+                        <Expression path="Placement" expression="Bracket.Placement * Behind_Bracket_Bearing#Point_Screw001.Placement * AttachmentOffset * Bracket_Screw_Bearing#Point_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -726,16 +726,16 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="-21.9203102167829762" Py="0.0000000000000034" Pz="-55.0000000000000000" Q0="-0.3826834323650897" Q1="0.9238795325112868" Q2="0.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="-0.3826834323650897" Oy="0.9238795325112868" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="-21.9203102167829762" Py="0.0000000000000034" Pz="-55.0000000000000000" Q0="-0.3826834323650897" Q1="0.9238795325112868" Q2="0.0000000000000000" Q3="-0.0000000000000000" A="3.1415926535897931" Ox="-0.3826834323650897" Oy="0.9238795325112868" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Bearing Block Bracket Screw.FCStd" stamp="2021-12-29T01:10:36Z" name="Body"/>
+                    <XLink file="Bracket Screw Bearing.FCStd" stamp="2021-12-29T01:10:36Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="-21.9203102167829762" Py="0.0000000000000034" Pz="-55.0000000000000000" Q0="-0.3826834323650897" Q1="0.9238795325112868" Q2="0.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="-0.3826834323650897" Oy="0.9238795325112868" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="-21.9203102167829762" Py="0.0000000000000034" Pz="-55.0000000000000000" Q0="-0.3826834323650897" Q1="0.9238795325112868" Q2="0.0000000000000000" Q3="-0.0000000000000000" A="3.1415926535897931" Ox="-0.3826834323650897" Oy="0.9238795325112868" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList3"/>
@@ -778,10 +778,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
-                            <DocMap name="Bearing_Block_Front_Bracket" label="Bearing Block Front Bracket" index="0"/>
-                            <XLink file="Bearing Block Front Bracket.FCStd" stamp="2021-12-29T01:25:01Z" name="Pad"/>
+                            <DocMap name="Front_Bracket_Bearing" label="Front Bracket Bearing" index="0"/>
+                            <XLink file="Front Bracket Bearing.FCStd" stamp="2021-12-29T01:25:01Z" name="Pad"/>
                         </XLinks>
-                        <Expression path=".AttachmentOffset.Base.z" expression="-&lt;&lt;Bearing Block Front Bracket&gt;&gt;#Pad.Shape.BoundBox.ZLength"/>
+                        <Expression path=".AttachmentOffset.Base.z" expression="-&lt;&lt;Front Bracket Bearing&gt;&gt;#Pad.Shape.BoundBox.ZLength"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">

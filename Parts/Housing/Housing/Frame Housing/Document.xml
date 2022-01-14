@@ -23,13 +23,13 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Housing Frame"/>
+            <String value="Frame Housing"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2021-12-29T01:22:25Z"/>
+            <String value="2022-01-13T23:51:40Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -448,7 +448,7 @@
                 <Property name="Tip" type="App::PropertyLink">
                     <Link value="Pad"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="true"/>
                 </Property>
             </Properties>
@@ -661,7 +661,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="../Square Iron Bar Sketch/Square Iron Bar Sketch.FCStd" stamp="2021-12-29T00:19:00Z" name="Binder"/>
+                    <XLink file="../../../Sketches/Square Iron Bar Sketch/Square Iron Bar Sketch.FCStd" stamp="2021-12-29T00:19:00Z" name="Binder"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -746,7 +746,7 @@
         </Object>
         <Object name="Pad">
             <Properties Count="20" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="AddSubShape" type="Part::PropertyPartShape">
                     <Part file="PartShape2.brp"/>
                 </Property>
@@ -856,7 +856,7 @@
                 <Property name="Tip" type="App::PropertyLink">
                     <Link value="Clone"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1034,7 +1034,7 @@
         </Object>
         <Object name="Clone">
             <Properties Count="7" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="BaseFeature"/>
                 </Property>
@@ -1131,7 +1131,7 @@
         </Object>
         <Object name="Pocket">
             <Properties Count="18" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="AddSubShape" type="Part::PropertyPartShape">
                     <Part file="PartShape7.brp"/>
                 </Property>
@@ -1235,7 +1235,7 @@
                 <Property name="Tip" type="App::PropertyLink">
                     <Link value="Clone001"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1413,7 +1413,7 @@
         </Object>
         <Object name="Clone001">
             <Properties Count="7" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="BaseFeature001"/>
                 </Property>
@@ -1520,7 +1520,7 @@
         </Object>
         <Object name="Pocket001">
             <Properties Count="18" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="AddSubShape" type="Part::PropertyPartShape">
                     <Part file="PartShape12.brp"/>
                 </Property>
@@ -1625,7 +1625,7 @@
                 <Property name="Tip" type="App::PropertyLink">
                     <Link value="Clone002"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1803,7 +1803,7 @@
         </Object>
         <Object name="Clone002">
             <Properties Count="7" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="BaseFeature002"/>
                 </Property>
@@ -1900,7 +1900,7 @@
         </Object>
         <Object name="Pocket002">
             <Properties Count="18" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="AddSubShape" type="Part::PropertyPartShape">
                     <Part file="PartShape17.brp"/>
                 </Property>
@@ -2005,7 +2005,7 @@
                 <Property name="Tip" type="App::PropertyLink">
                     <Link value="Clone003"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -2183,7 +2183,7 @@
         </Object>
         <Object name="Clone003">
             <Properties Count="7" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="BaseFeature003"/>
                 </Property>
@@ -2290,7 +2290,7 @@
         </Object>
         <Object name="Pocket003">
             <Properties Count="18" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="AddSubShape" type="Part::PropertyPartShape">
                     <Part file="PartShape22.brp"/>
                 </Property>
@@ -3112,7 +3112,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-18.4124999999999943" Py="0.0000000000000040" Pz="-0.0000000000000004" Q0="0.7071067811865476" Q1="0.7071067811865475" Q2="-0.0000000000000000" Q3="0.0000000000000002" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.7071067811865475" Oz="-0.0000000000000000"/>
+                    <PropertyPlacement Px="-18.4124999999999943" Py="0.0000000000000040" Pz="-0.0000000000000004" Q0="0.7071067811865476" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.0000000000000002" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.7071067811865475" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape38.brp"/>
@@ -3159,7 +3159,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="18.4125000000000014" Py="-0.0000000000000040" Pz="0.0000000000000078" Q0="0.7071067811865476" Q1="0.7071067811865475" Q2="-0.0000000000000000" Q3="0.0000000000000002" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.7071067811865475" Oz="-0.0000000000000000"/>
+                    <PropertyPlacement Px="18.4125000000000014" Py="-0.0000000000000040" Pz="0.0000000000000078" Q0="0.7071067811865476" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.0000000000000002" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.7071067811865475" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape39.brp"/>
@@ -3365,7 +3365,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-18.4124999999999943" Py="0.0000000000000040" Pz="-0.0000000000000004" Q0="0.7071067811865476" Q1="0.7071067811865475" Q2="-0.0000000000000000" Q3="0.0000000000000002" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.7071067811865475" Oz="-0.0000000000000000"/>
+                    <PropertyPlacement Px="-18.4124999999999943" Py="0.0000000000000040" Pz="-0.0000000000000004" Q0="0.7071067811865476" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.0000000000000002" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.7071067811865475" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape43.brp"/>
@@ -3412,7 +3412,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="18.4125000000000014" Py="-0.0000000000000040" Pz="0.0000000000000078" Q0="0.7071067811865476" Q1="0.7071067811865475" Q2="-0.0000000000000000" Q3="0.0000000000000002" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.7071067811865475" Oz="-0.0000000000000000"/>
+                    <PropertyPlacement Px="18.4125000000000014" Py="-0.0000000000000040" Pz="0.0000000000000078" Q0="0.7071067811865476" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.0000000000000002" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.7071067811865475" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape44.brp"/>
@@ -3429,7 +3429,7 @@
         </Object>
         <Object name="BaseFeature">
             <Properties Count="7" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="Body"/>
                 </Property>
@@ -3456,7 +3456,7 @@
         </Object>
         <Object name="BaseFeature001">
             <Properties Count="7" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="Pocket"/>
                 </Property>
@@ -3483,7 +3483,7 @@
         </Object>
         <Object name="BaseFeature002">
             <Properties Count="7" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="Body"/>
                 </Property>
@@ -3510,7 +3510,7 @@
         </Object>
         <Object name="BaseFeature003">
             <Properties Count="7" TransientCount="1">
-                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658241"/>
+                <_Property name="_Body" type="App::PropertyLinkHidden" status="251658240"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="Pocket002"/>
                 </Property>

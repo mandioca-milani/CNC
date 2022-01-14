@@ -614,5 +614,5 @@
             </Properties>
         </ViewProvider>
     </ViewProviderData>
-    <Camera settings="OrthographicCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 25.327782 -43.869125 12.469501&#10;  orientation 0.86492187 0.23175442 0.44519675  1.0835806&#10;  nearDistance 16.174278&#10;  farDistance 107.59535&#10;  aspectRatio 1&#10;  focalDistance 61.839165&#10;  height 123.67833&#10;&#10;}&#10;"/>
+    <Camera settings="OrthographicCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 25.327785 -43.869125 12.469501&#10;  orientation 0.86492187 0.23175442 0.44519675  1.0835806&#10;  nearDistance 16.174278&#10;  farDistance 107.59536&#10;  aspectRatio 1&#10;  focalDistance 61.839165&#10;  height 123.67833&#10;&#10;}&#10;"/>
 </Document>
