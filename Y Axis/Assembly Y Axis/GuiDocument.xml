@@ -1972,5 +1972,5 @@
             </Properties>
         </ViewProvider>
     </ViewProviderData>
-    <Camera settings="OrthographicCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 232.39128 -402.51465 325.44513&#10;  orientation 0.86492187 0.23175442 0.44519675  1.0835806&#10;  nearDistance 102.81239&#10;  farDistance 1032.9088&#10;  aspectRatio 1&#10;  focalDistance 567.396&#10;  height 1134.792&#10;&#10;}&#10;"/>
+    <Camera settings="PerspectiveCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 1369.8151 -3.0517578e-005 -7.6293945e-006&#10;  orientation 0.57735026 0.57735026 0.57735026  2.0943952&#10;  nearDistance 1323.0906&#10;  farDistance 1416.6305&#10;  aspectRatio 1&#10;  focalDistance 1369.8151&#10;  heightAngle 0.78539819&#10;&#10;}&#10;"/>
 </Document>
