@@ -23,7 +23,7 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Skeleton Y Axis"/>
+            <String value="Skeleton X Axis"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
@@ -388,10 +388,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
-                            <DocMap name="Profile_Y_Axis" label="Profile Y Axis" index="0"/>
-                            <XLink file="Profile Y Axis.FCStd" stamp="2022-01-25T18:41:02Z" name="Pad"/>
+                            <DocMap name="Profile_Y_Axis" label="Profile X Axis" index="0"/>
+                            <XLink file="Profile X Axis.FCStd" stamp="2022-01-25T18:41:02Z" name="Pad"/>
                         </XLinks>
-                        <Expression path="Constraints[8]" expression="&lt;&lt;Profile Y Axis&gt;&gt;#&lt;&lt;Pad&gt;&gt;.Shape.BoundBox.YLength"/>
+                        <Expression path="Constraints[8]" expression="&lt;&lt;Profile X Axis&gt;&gt;#&lt;&lt;Pad&gt;&gt;.Shape.BoundBox.YLength"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="ExternalGeometry" type="App::PropertyLinkSubList">

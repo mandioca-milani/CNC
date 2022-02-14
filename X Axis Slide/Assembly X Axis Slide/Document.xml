@@ -23,7 +23,7 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Assembly Y Axis Slide"/>
+            <String value="Assembly X Axis Slide"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
@@ -649,8 +649,8 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="0"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="LCS_Origin"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="0"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="LCS_Origin"/>
                         </XLinks>
                         <Expression path="Placement" expression="LCS_Origin.Placement * AttachmentOffset * Skeleton_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -671,7 +671,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Body"/>
+                    <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -734,10 +734,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Angle_Iron_Bar_Y_Axis_Slide" label="Angle Iron Bar Y Axis Slide" index="0"/>
-                            <XLink file="Angle Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Angle_Bar"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Angle_Iron_Bar_Y_Axis_Slide" label="Angle Iron Bar X Axis Slide" index="0"/>
+                            <XLink file="Angle Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Angle_Bar"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Angle_Bar.Placement * AttachmentOffset * Angle_Iron_Bar_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -758,7 +758,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Angle Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
+                    <XLink file="Angle Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000355" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="1.0000000000000000" Q2="0.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
@@ -821,10 +821,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Angle_Iron_Bar_Y_Axis_Slide" label="Angle Iron Bar Y Axis Slide" index="0"/>
-                            <XLink file="Angle Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Angle_Bar001"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Angle_Iron_Bar_Y_Axis_Slide" label="Angle Iron Bar X Axis Slide" index="0"/>
+                            <XLink file="Angle Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Angle_Bar001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Angle_Bar001.Placement * AttachmentOffset * Angle_Iron_Bar_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -845,7 +845,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Angle Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
+                    <XLink file="Angle Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000355" Pz="84.7000000000000171" Q0="1.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
@@ -908,10 +908,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Angle_Iron_Bar_Y_Axis_Slide" label="Angle Iron Bar Y Axis Slide" index="0"/>
-                            <XLink file="Angle Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Angle_Bar002"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Angle_Iron_Bar_Y_Axis_Slide" label="Angle Iron Bar X Axis Slide" index="0"/>
+                            <XLink file="Angle Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Angle_Bar002"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Angle_Bar002.Placement * AttachmentOffset * Angle_Iron_Bar_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -932,7 +932,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Angle Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
+                    <XLink file="Angle Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="43.7000000000000028" Py="-0.0000000000000355" Pz="-84.7000000000000171" Q0="0.0000000000000001" Q1="0.0000000000000001" Q2="1.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.0000000000000001" Oy="0.0000000000000001" Oz="1.0000000000000000"/>
@@ -995,10 +995,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Angle_Iron_Bar_Y_Axis_Slide" label="Angle Iron Bar Y Axis Slide" index="0"/>
-                            <XLink file="Angle Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Angle_Bar003"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Angle_Iron_Bar_Y_Axis_Slide" label="Angle Iron Bar X Axis Slide" index="0"/>
+                            <XLink file="Angle Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Angle_Bar003"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Angle_Bar003.Placement * AttachmentOffset * Angle_Iron_Bar_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1019,7 +1019,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Angle Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
+                    <XLink file="Angle Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-43.7000000000000028" Py="-0.0000000000000355" Pz="-84.7000000000000028" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1082,10 +1082,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Flat_Iron_Bar_Y_Axis_Slide" label="Flat Iron Bar Y Axis Slide" index="0"/>
-                            <XLink file="Flat Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Flat_Bar"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Flat_Iron_Bar_Y_Axis_Slide" label="Flat Iron Bar X Axis Slide" index="0"/>
+                            <XLink file="Flat Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Flat_Bar"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Flat_Bar.Placement * AttachmentOffset * Flat_Iron_Bar_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1106,7 +1106,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Flat Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
+                    <XLink file="Flat Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="47.3000000000000540" Pz="7.9374999999999574" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1169,10 +1169,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Flat_Iron_Bar_Y_Axis_Slide" label="Flat Iron Bar Y Axis Slide" index="0"/>
-                            <XLink file="Flat Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Flat_Bar001"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Flat_Iron_Bar_Y_Axis_Slide" label="Flat Iron Bar X Axis Slide" index="0"/>
+                            <XLink file="Flat Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Flat_Bar001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Flat_Bar001.Placement * AttachmentOffset * Flat_Iron_Bar_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1193,7 +1193,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Flat Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
+                    <XLink file="Flat Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="47.3000000000000540" Pz="-7.9375000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1256,10 +1256,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Flat_Iron_Bar_Y_Axis_Slide" label="Flat Iron Bar Y Axis Slide" index="0"/>
-                            <XLink file="Flat Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Flat_Bar002"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Flat_Iron_Bar_Y_Axis_Slide" label="Flat Iron Bar X Axis Slide" index="0"/>
+                            <XLink file="Flat Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Flat_Bar002"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Flat_Bar002.Placement * AttachmentOffset * Flat_Iron_Bar_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1280,7 +1280,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Flat Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
+                    <XLink file="Flat Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="-47.3000000000000540" Pz="7.9375000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1343,10 +1343,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Flat_Iron_Bar_Y_Axis_Slide" label="Flat Iron Bar Y Axis Slide" index="0"/>
-                            <XLink file="Flat Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Flat_Bar003"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Flat_Iron_Bar_Y_Axis_Slide" label="Flat Iron Bar X Axis Slide" index="0"/>
+                            <XLink file="Flat Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Flat_Bar003"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Flat_Bar003.Placement * AttachmentOffset * Flat_Iron_Bar_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1367,7 +1367,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Flat Iron Bar Y Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
+                    <XLink file="Flat Iron Bar X Axis Slide.FCStd" stamp="2022-01-28T00:27:34Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="-47.3000000000000540" Pz="-7.9374999999999147" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1430,10 +1430,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="0"/>
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="LCS_Origin"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="0"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="LCS_Origin"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Screw.Placement * AttachmentOffset * Vertical_Screw_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1454,7 +1454,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Body"/>
+                    <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-30.9999999999999964" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
@@ -1517,10 +1517,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="0"/>
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw001"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="LCS_Origin"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="0"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw001"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="LCS_Origin"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Screw001.Placement * AttachmentOffset * Vertical_Screw_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1541,7 +1541,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Body"/>
+                    <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="30.9999999999999964" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
@@ -1604,10 +1604,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="0"/>
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw002"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="LCS_Origin"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="0"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw002"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="LCS_Origin"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Screw002.Placement * AttachmentOffset * Vertical_Screw_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1628,7 +1628,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Body"/>
+                    <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-30.9999999999999964" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
@@ -1691,10 +1691,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="0"/>
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw003"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="LCS_Origin"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="0"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw003"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="LCS_Origin"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Screw003.Placement * AttachmentOffset * Vertical_Screw_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1715,7 +1715,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Body"/>
+                    <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="30.9999999999999964" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
@@ -1778,10 +1778,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="0"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw004"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="0"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw004"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Screw004.Placement * AttachmentOffset * Horizontal_Screw_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1802,7 +1802,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Body"/>
+                    <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000078" Py="34.6000000000000725" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1865,10 +1865,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="0"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw005"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="0"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw005"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Screw005.Placement * AttachmentOffset * Horizontal_Screw_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1889,7 +1889,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Body"/>
+                    <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-0.0000000000000047" Py="34.6000000000000441" Pz="-72.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -1952,10 +1952,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="0"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw006"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="0"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw006"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Screw006.Placement * AttachmentOffset * Horizontal_Screw_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -1976,7 +1976,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Body"/>
+                    <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000078" Py="-34.6000000000000441" Pz="72.0000000000000711" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -2039,10 +2039,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton Y Axis Slide" index="1"/>
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="0"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="LCS_Origin"/>
-                            <XLink file="Skeleton Y Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw007"/>
+                            <DocMap name="Skeleton_Y_Axis_Slide" label="Skeleton X Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="0"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="LCS_Origin"/>
+                            <XLink file="Skeleton X Axis Slide.FCStd" stamp="2022-01-28T23:53:04Z" name="Point_Screw007"/>
                         </XLinks>
                         <Expression path="Placement" expression="Skeleton.Placement * Skeleton_Y_Axis_Slide#Point_Screw007.Placement * AttachmentOffset * Horizontal_Screw_Y_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2063,7 +2063,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Body"/>
+                    <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Body"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="-0.0000000000000047" Py="-34.6000000000000725" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
@@ -2126,10 +2126,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing"/>
                         </XLinks>
                         <Expression path="Placement" expression="Vertical_Screw.Placement * Vertical_Screw_Y_Axis_Slide#Point_Bearing.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2213,10 +2213,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing001"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Vertical_Screw.Placement * Vertical_Screw_Y_Axis_Slide#Point_Bearing001.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2300,10 +2300,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing"/>
                         </XLinks>
                         <Expression path="Placement" expression="Vertical_Screw001.Placement * Vertical_Screw_Y_Axis_Slide#Point_Bearing.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2387,10 +2387,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing001"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Vertical_Screw001.Placement * Vertical_Screw_Y_Axis_Slide#Point_Bearing001.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2474,10 +2474,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing"/>
                         </XLinks>
                         <Expression path="Placement" expression="Vertical_Screw002.Placement * Vertical_Screw_Y_Axis_Slide#Point_Bearing.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2561,10 +2561,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing001"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Vertical_Screw002.Placement * Vertical_Screw_Y_Axis_Slide#Point_Bearing001.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2648,10 +2648,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing"/>
                         </XLinks>
                         <Expression path="Placement" expression="Vertical_Screw003.Placement * Vertical_Screw_Y_Axis_Slide#Point_Bearing.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2735,10 +2735,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Vertical_Screw_Y_Axis_Slide" label="Vertical Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Vertical Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing001"/>
+                            <XLink file="Vertical Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:56Z" name="Point_Bearing001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Vertical_Screw003.Placement * Vertical_Screw_Y_Axis_Slide#Point_Bearing001.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2822,10 +2822,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing"/>
                         </XLinks>
                         <Expression path="Placement" expression="Horizontal_Screw.Placement * Horizontal_Screw_Y_Axis_Slide#Point_Bearing.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2909,10 +2909,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing001"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Horizontal_Screw.Placement * Horizontal_Screw_Y_Axis_Slide#Point_Bearing001.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -2996,10 +2996,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing"/>
                         </XLinks>
                         <Expression path="Placement" expression="Horizontal_Screw001.Placement * Horizontal_Screw_Y_Axis_Slide#Point_Bearing.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -3083,10 +3083,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing001"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Horizontal_Screw001.Placement * Horizontal_Screw_Y_Axis_Slide#Point_Bearing001.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -3170,10 +3170,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing"/>
                         </XLinks>
                         <Expression path="Placement" expression="Horizontal_Screw002.Placement * Horizontal_Screw_Y_Axis_Slide#Point_Bearing.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -3257,10 +3257,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing001"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Horizontal_Screw002.Placement * Horizontal_Screw_Y_Axis_Slide#Point_Bearing001.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -3344,10 +3344,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing"/>
                         </XLinks>
                         <Expression path="Placement" expression="Horizontal_Screw003.Placement * Horizontal_Screw_Y_Axis_Slide#Point_Bearing.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -3431,10 +3431,10 @@
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="2" docs="2">
-                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw Y Axis Slide" index="1"/>
+                            <DocMap name="Horizontal_Screw_Y_Axis_Slide" label="Horizontal Screw X Axis Slide" index="1"/>
                             <DocMap name="Bearing" label="Bearing" index="0"/>
                             <XLink file="../Parts/Bearing/Bearing.FCStd" stamp="2022-01-28T23:56:11Z" name="LCS_Origin"/>
-                            <XLink file="Horizontal Screw Y Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing001"/>
+                            <XLink file="Horizontal Screw X Axis Slide.FCStd" stamp="2022-01-28T23:52:49Z" name="Point_Bearing001"/>
                         </XLinks>
                         <Expression path="Placement" expression="Horizontal_Screw003.Placement * Horizontal_Screw_Y_Axis_Slide#Point_Bearing001.Placement * AttachmentOffset * Bearing#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>

@@ -23,7 +23,7 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Skeleton Y Axis Slide"/>
+            <String value="Skeleton X Axis Slide"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>

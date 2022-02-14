@@ -23,7 +23,7 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Angle Iron Bar Y Axis Slide"/>
+            <String value="Angle Iron Bar X Axis Slide"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>

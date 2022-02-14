@@ -23,7 +23,7 @@
             <String value=""/>
         </Property>
         <Property name="Label" type="App::PropertyString" status="1">
-            <String value="Housing Screw Y Axis"/>
+            <String value="Housing Screw X Axis"/>
         </Property>
         <Property name="LastModifiedBy" type="App::PropertyString">
             <String value=""/>
