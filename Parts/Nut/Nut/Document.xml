@@ -29,7 +29,7 @@
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2022-02-18T18:16:25Z"/>
+            <String value="2022-02-19T00:33:10Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -83,7 +83,7 @@
             <Dep Name="Body"/>
         </ObjectDeps>
         <ObjectDeps Name="Point_Origin" Count="1">
-            <Dep Name="X_Axis"/>
+            <Dep Name="BaseFeature"/>
         </ObjectDeps>
         <ObjectDeps Name="Page" Count="7">
             <Dep Name="Template"/>
@@ -229,7 +229,7 @@
                 </Extension>
             </Extensions>
             <Properties Count="10" TransientCount="1">
-                <_Property name="_GroupTouched" type="App::PropertyBool" status="100663424"/>
+                <_Property name="_GroupTouched" type="App::PropertyBool" status="100663425"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value="Nut"/>
                 </Property>
@@ -487,7 +487,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="MapMode" type="App::PropertyEnumeration">
-                    <Integer value="32"/>
+                    <Integer value="36"/>
                 </Property>
                 <Property name="MapPathParameter" type="App::PropertyFloat" status="8">
                     <Float value="0.0000000000000000"/>
@@ -496,17 +496,17 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.7071067811865475" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="1.0000000000000000" Oy="0.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape3.brp"/>
                 </Property>
                 <Property name="Support" type="App::PropertyLinkSubList">
                     <LinkSubList count="1">
-                        <Link obj="X_Axis" sub=""/>
+                        <Link obj="BaseFeature" sub="Edge13"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -548,7 +548,7 @@
                         <Link value="Dimension002"/>
                     </LinkList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -802,7 +802,7 @@
                     <XLinkSubList count="0">
                     </XLinkSubList>
                 </Property>
-                <Property name="Y" type="App::PropertyDistance" status="142606337">
+                <Property name="Y" type="App::PropertyDistance" status="142606336">
                     <Float value="130.0000000000000000"/>
                 </Property>
             </Properties>
@@ -1159,7 +1159,7 @@
                 <Property name="X" type="App::PropertyDistance" status="142606336">
                     <Float value="0.0000000000000000"/>
                 </Property>
-                <Property name="Y" type="App::PropertyDistance" status="142606337">
+                <Property name="Y" type="App::PropertyDistance" status="142606336">
                     <Float value="32.0000000000000000"/>
                 </Property>
             </Properties>
