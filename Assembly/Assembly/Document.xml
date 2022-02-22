@@ -860,7 +860,7 @@
                             <DocMap name="Assembly_X_Axis" label="Assembly X Axis" index="0"/>
                             <DocMap name="Assembly_X_Axis_Slide" label="Assembly X Axis Slide" index="1"/>
                             <XLink file="../X Axis/Assembly X Axis/Assembly X Axis.FCStd" stamp="2022-01-27T14:10:13Z" name="LCS_Origin"/>
-                            <XLink file="../X Axis Slide/Assembly X Axis Slide.FCStd" stamp="2022-01-28T23:57:38Z" name="LCS_Origin"/>
+                            <XLink file="../X Axis Slide/Assembly X Axis Slide/Assembly X Axis Slide.FCStd" stamp="2022-01-28T23:57:38Z" name="LCS_Origin"/>
                         </XLinks>
                         <Expression path="Placement" expression="Assembly_X_Axis.Placement * Assembly_X_Axis#LCS_Origin.Placement * AttachmentOffset * Assembly_X_Axis_Slide#LCS_Origin.Placement ^ -1"/>
                     </ExpressionEngine>
@@ -881,7 +881,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="257">
-                    <XLink file="../X Axis Slide/Assembly X Axis Slide.FCStd" stamp="2022-01-28T23:57:38Z" name="Model"/>
+                    <XLink file="../X Axis Slide/Assembly X Axis Slide/Assembly X Axis Slide.FCStd" stamp="2022-01-28T23:57:38Z" name="Model"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="257">
                     <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.7071067811865476" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
