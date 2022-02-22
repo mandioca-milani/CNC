@@ -54,28 +54,6 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="Origin" expanded="0">
-            <Properties Count="6" TransientCount="0">
-                <Property name="DisplayMode" type="App::PropertyEnumeration" status="1">
-                    <Integer value="0"/>
-                </Property>
-                <Property name="OnTopWhenSelected" type="App::PropertyEnumeration" status="1">
-                    <Integer value="0"/>
-                </Property>
-                <Property name="SelectionStyle" type="App::PropertyEnumeration" status="1">
-                    <Integer value="0"/>
-                </Property>
-                <Property name="ShowInTree" type="App::PropertyBool" status="1">
-                    <Bool value="true"/>
-                </Property>
-                <Property name="Size" type="App::PropertyVector" status="5">
-                    <PropertyVector valueX="59.0200069427490277" valueY="726.7000000000000455" valueZ="111.8000099182128935"/>
-                </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="1">
-                    <Bool value="false"/>
-                </Property>
-            </Properties>
-        </ViewProvider>
         <ViewProvider name="X_Axis" expanded="0">
             <Properties Count="11" TransientCount="0">
                 <Property name="BoundingBox" type="App::PropertyBool" status="9">
@@ -103,7 +81,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Size" type="App::PropertyFloat" status="16777217">
-                    <Float value="111.8000099182128935"/>
+                    <Float value="104.6110015869140710"/>
                 </Property>
                 <Property name="Transparency" type="App::PropertyPercent" status="1">
                     <Integer value="0"/>
@@ -133,6 +111,28 @@
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="1">
                     <Bool value="true"/>
+                </Property>
+            </Properties>
+        </ViewProvider>
+        <ViewProvider name="Origin" expanded="0">
+            <Properties Count="6" TransientCount="0">
+                <Property name="DisplayMode" type="App::PropertyEnumeration" status="1">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="OnTopWhenSelected" type="App::PropertyEnumeration" status="1">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="SelectionStyle" type="App::PropertyEnumeration" status="1">
+                    <Integer value="0"/>
+                </Property>
+                <Property name="ShowInTree" type="App::PropertyBool" status="1">
+                    <Bool value="true"/>
+                </Property>
+                <Property name="Size" type="App::PropertyVector" status="5">
+                    <PropertyVector valueX="59.0200019836425795" valueY="726.7000000000000455" valueZ="104.6110015869140710"/>
+                </Property>
+                <Property name="Visibility" type="App::PropertyBool" status="1">
+                    <Bool value="false"/>
                 </Property>
             </Properties>
         </ViewProvider>
@@ -200,7 +200,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Size" type="App::PropertyFloat" status="16777217">
-                    <Float value="111.8000099182128935"/>
+                    <Float value="104.6110015869140710"/>
                 </Property>
                 <Property name="Transparency" type="App::PropertyPercent" status="1">
                     <Integer value="0"/>
@@ -274,7 +274,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Size" type="App::PropertyFloat" status="16777217">
-                    <Float value="111.8000099182128935"/>
+                    <Float value="104.6110015869140710"/>
                 </Property>
                 <Property name="Transparency" type="App::PropertyPercent" status="1">
                     <Integer value="0"/>
@@ -372,7 +372,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="1">
-                    <Bool value="true"/>
+                    <Bool value="false"/>
                 </Property>
             </Properties>
         </ViewProvider>
@@ -1972,5 +1972,5 @@
             </Properties>
         </ViewProvider>
     </ViewProviderData>
-    <Camera settings="PerspectiveCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 1369.8151 -3.0517578e-005 -7.6293945e-006&#10;  orientation 0.57735026 0.57735026 0.57735026  2.0943952&#10;  nearDistance 1323.0906&#10;  farDistance 1416.6305&#10;  aspectRatio 1&#10;  focalDistance 1369.8151&#10;  heightAngle 0.78539819&#10;&#10;}&#10;"/>
+    <Camera settings="PerspectiveCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 1367.855 6.1035156e-005 0&#10;  orientation 0.57735026 0.57735026 0.57735026  2.0943952&#10;  nearDistance 1321.1327&#10;  farDistance 1414.6683&#10;  aspectRatio 1&#10;  focalDistance 1367.855&#10;  heightAngle 0.78539819&#10;&#10;}&#10;"/>
 </Document>

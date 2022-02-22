@@ -409,7 +409,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="LinkedObject" type="App::PropertyXLink" status="256">
-                    <XLink file="../Sketches/Square Iron Bar Sketch/Square Iron Bar Sketch.FCStd" stamp="2021-12-29T00:19:00Z" name="Binder"/>
+                    <XLink file="../../Sketches/Square Iron Bar Sketch/Square Iron Bar Sketch.FCStd" stamp="2021-12-29T00:19:00Z" name="Binder"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
                     <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
