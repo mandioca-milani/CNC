@@ -29,7 +29,7 @@
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2022-02-20T19:45:58Z"/>
+            <String value="2022-02-27T19:49:18Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -127,7 +127,7 @@
                 </Extension>
             </Extensions>
             <Properties Count="10" TransientCount="1">
-                <_Property name="_GroupTouched" type="App::PropertyBool" status="100663425"/>
+                <_Property name="_GroupTouched" type="App::PropertyBool" status="100663424"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value=""/>
                 </Property>
@@ -363,12 +363,13 @@
                         <Constrain Name="" Type="3" Value="0.0000000000000000" First="3" FirstPos="0" Second="-2000" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="14" Value="0.0000000000000000" First="0" FirstPos="1" Second="0" SecondPos="2" Third="-2" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="6" Value="40.0000000000000000" First="0" FirstPos="0" Second="-2000" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="12.1474580764770508" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
-                        <Constrain Name="" Type="6" Value="101.0000000000000000" First="3" FirstPos="0" Second="-2000" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="12.1474580764770508" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
+                        <Constrain Name="" Type="6" Value="121.0000000000000000" First="3" FirstPos="0" Second="-2000" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="12.1474580764770508" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="6" Value="28.2842712474619020" First="-1" FirstPos="1" Second="2" SecondPos="2" Third="-2000" ThirdPos="0" LabelDistance="12.1474580764770508" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                     </ConstraintList>
                 </Property>
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
-                    <ExpressionEngine count="1">
+                    <ExpressionEngine count="2">
+                        <Expression path="Constraints[9]" expression="40 + 40 - 1 + 42"/>
                         <Expression path="Constraints[10]" expression="(20 ^ 2 + 20 ^ 2) ^ (1 / 2)"/>
                     </ExpressionEngine>
                 </Property>
@@ -385,25 +386,25 @@
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <LineSegment StartX="-20.0000000000000000" StartY="80.9999999999988916" StartZ="0.0000000000000000" EndX="20.0000000000000000" EndY="80.9999999999988916" EndZ="0.0000000000000000"/>
+                            <LineSegment StartX="-20.0000000000000000" StartY="101.0000000000000000" StartZ="0.0000000000000000" EndX="20.0000000000000000" EndY="101.0000000000000000" EndZ="0.0000000000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomLineSegment">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <LineSegment StartX="20.0000000000000000" StartY="80.9999999999988916" StartZ="0.0000000000000000" EndX="20.0000000000000000" EndY="-20.0000000000011227" EndZ="0.0000000000000000"/>
+                            <LineSegment StartX="20.0000000000000000" StartY="101.0000000000000000" StartZ="0.0000000000000000" EndX="20.0000000000000000" EndY="-20.0000000000000000" EndZ="0.0000000000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomLineSegment">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <LineSegment StartX="20.0000000000000000" StartY="-20.0000000000011227" StartZ="0.0000000000000000" EndX="-20.0000000000000000" EndY="-20.0000000000011227" EndZ="0.0000000000000000"/>
+                            <LineSegment StartX="20.0000000000000000" StartY="-20.0000000000000000" StartZ="0.0000000000000000" EndX="-20.0000000000000000" EndY="-20.0000000000000000" EndZ="0.0000000000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomLineSegment">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <LineSegment StartX="-20.0000000000000000" StartY="-20.0000000000011227" StartZ="0.0000000000000000" EndX="-20.0000000000000000" EndY="80.9999999999988916" EndZ="0.0000000000000000"/>
+                            <LineSegment StartX="-20.0000000000000000" StartY="-20.0000000000000000" StartZ="0.0000000000000000" EndX="-20.0000000000000000" EndY="101.0000000000000000" EndZ="0.0000000000000000"/>
                         </Geometry>
                     </GeometryList>
                 </Property>
@@ -457,7 +458,7 @@
                     <ExpressionEngine count="1" xlink="1">
                         <XLinks count="1" docs="1">
                             <DocMap name="Profile_Z_Axis" label="Profile Z Axis" index="0"/>
-                            <XLink file="../Profile Z Axis/Profile Z Axis.FCStd" stamp="2022-02-20T15:28:44Z" name="Pad"/>
+                            <XLink file="../Profile Z Axis/Profile Z Axis.FCStd" stamp="2022-02-27T19:49:18Z" name="Pad"/>
                         </XLinks>
                         <Expression path="Length" expression="Profile_Z_Axis#Pad.Shape.BoundBox.YLength"/>
                     </ExpressionEngine>
@@ -506,7 +507,7 @@
                 <Property name="UseCustomVector" type="App::PropertyBool">
                     <Bool value="false"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="true"/>
                 </Property>
             </Properties>
@@ -637,7 +638,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-0.0000000000000284" Pz="59.9999999999988916" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-0.0000000000000284" Pz="80.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape6.brp"/>
@@ -649,7 +650,7 @@
                     </LinkSubList>
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="648">
-                    <Bool value="false"/>
+                    <Bool value="true"/>
                 </Property>
             </Properties>
         </Object>
@@ -685,7 +686,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-0.0000000000000009" Py="550.0000000000000000" Pz="-0.0000000000010019" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000009" Py="550.0000000000000000" Pz="0.0000000000001208" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape7.brp"/>
@@ -732,7 +733,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-0.0000000000000009" Py="-550.0000000000000000" Pz="-0.0000000000012434" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000009" Py="-550.0000000000000000" Pz="-0.0000000000001208" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape8.brp"/>
