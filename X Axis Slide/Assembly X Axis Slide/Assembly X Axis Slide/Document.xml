@@ -29,7 +29,7 @@
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2022-03-04T01:18:28Z"/>
+            <String value="2022-03-04T12:15:29Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -56,7 +56,7 @@
         </Property>
     </Properties>
     <Objects Count="53" Dependencies="1">
-        <ObjectDeps Name="Model" Count="17">
+        <ObjectDeps Name="Assembly" Count="17">
             <Dep Name="Origin"/>
             <Dep Name="LCS_Origin"/>
             <Dep Name="Skeleton"/>
@@ -296,7 +296,7 @@
             <Dep Name="Point_Screw003"/>
             <Dep Name="Skeleton"/>
         </ObjectDeps>
-        <Object type="App::Part" name="Model" id="2978" />
+        <Object type="App::Part" name="Assembly" id="2978" />
         <Object type="App::Origin" name="Origin" id="2979" />
         <Object type="App::Line" name="X_Axis" id="2980" />
         <Object type="App::Line" name="Y_Axis" id="2981" />
@@ -351,7 +351,7 @@
         <Object type="App::Link" name="Screw_183003" id="3069" />
     </Objects>
     <ObjectData Count="53">
-        <Object name="Model" Extensions="True">
+        <Object name="Assembly" Extensions="True">
             <Extensions Count="2">
                 <Extension type="App::OriginGroupExtension" name="OriginGroupExtension">
                 </Extension>
@@ -397,7 +397,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Model"/>
+                    <String value="Assembly"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -659,7 +659,7 @@
                         <Link obj="X_Axis" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -715,8 +715,8 @@
                 </Property>
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="2">
-                        <Expression path="Constraints[9]" expression="80 + 42 + 22 + 1 * 25.4"/>
                         <Expression path="Constraints[8]" expression="40 + 22 + 1 * 25.4"/>
+                        <Expression path="Constraints[9]" expression="80 + 42 + 22 + 1 * 25.4"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="ExternalGeometry" type="App::PropertyLinkSubList">
@@ -801,7 +801,12 @@
                     <PropertyVector valueX="1.0000000000000000" valueY="1.0000000000000000" valueZ="1.0000000000000000"/>
                 </Property>
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
-                    <ExpressionEngine count="0">
+                    <ExpressionEngine count="1" xlink="1">
+                        <XLinks count="1" docs="1">
+                            <DocMap name="Angle_Iron_Bar_122" label="Angle Iron Bar 122" index="0"/>
+                            <XLink file="../../Parts/Angle Iron Bar 122/Angle Iron Bar 122.FCStd" stamp="2022-03-03T16:48:34Z" name="Pad"/>
+                        </XLinks>
+                        <Expression path="Length" expression="Angle_Iron_Bar_122#Pad.Shape.BoundBox.YLength"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -811,7 +816,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="Length" type="App::PropertyLength">
-                    <Float value="120.0000000000000000"/>
+                    <Float value="122.0000000000000142"/>
                 </Property>
                 <Property name="Length2" type="App::PropertyLength">
                     <Float value="100.0000000000000000"/>
@@ -1043,7 +1048,7 @@
                         <Link obj="X_Axis001" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1065,8 +1070,8 @@
                         <Constrain Name="" Type="14" Value="0.0000000000000000" First="0" FirstPos="3" Second="1" SecondPos="3" Third="-2" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="14" Value="0.0000000000000000" First="0" FirstPos="3" Second="2" SecondPos="3" Third="-1" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="14" Value="0.0000000000000000" First="1" FirstPos="3" Second="3" SecondPos="3" Third="-1" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
-                        <Constrain Name="" Type="6" Value="61.9999999999999929" First="0" FirstPos="3" Second="1" SecondPos="3" Third="-2000" ThirdPos="0" LabelDistance="9.9454975128173828" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
-                        <Constrain Name="" Type="6" Value="94.6000000000001080" First="2" FirstPos="3" Second="0" SecondPos="3" Third="-2000" ThirdPos="0" LabelDistance="9.9454975128173828" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
+                        <Constrain Name="" Type="6" Value="62.0000000000000071" First="0" FirstPos="3" Second="1" SecondPos="3" Third="-2000" ThirdPos="0" LabelDistance="9.9454975128173828" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
+                        <Constrain Name="" Type="6" Value="96.6000000000000512" First="2" FirstPos="3" Second="0" SecondPos="3" Third="-2000" ThirdPos="0" LabelDistance="9.9454975128173828" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="18" Value="7.9375000000000000" First="0" FirstPos="0" Second="-2000" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="12.1474580764770508" LabelPosition="10.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="12" Value="0.0000000000000000" First="0" FirstPos="0" Second="1" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="12" Value="0.0000000000000000" First="1" FirstPos="0" Second="2" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
@@ -1075,8 +1080,8 @@
                 </Property>
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="2">
-                        <Expression path="Constraints[4]" expression="&lt;&lt;Pad&gt;&gt;.Shape.BoundBox.YLength - 1 * 25.4"/>
                         <Expression path="Constraints[3]" expression="&lt;&lt;Pad&gt;&gt;.Shape.BoundBox.XLength - 1 * 25.4"/>
+                        <Expression path="Constraints[4]" expression="&lt;&lt;Pad&gt;&gt;.Shape.BoundBox.YLength - 1 * 25.4"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="ExternalGeometry" type="App::PropertyLinkSubList">
@@ -1092,25 +1097,25 @@
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <Circle CenterX="-30.9999999999999964" CenterY="47.3000000000000540" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
+                            <Circle CenterX="-31.0000000000000036" CenterY="48.3000000000000256" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomCircle">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <Circle CenterX="30.9999999999999964" CenterY="47.3000000000000540" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
+                            <Circle CenterX="31.0000000000000036" CenterY="48.3000000000000256" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomCircle">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <Circle CenterX="-30.9999999999999964" CenterY="-47.3000000000000540" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
+                            <Circle CenterX="-31.0000000000000036" CenterY="-48.3000000000000256" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomCircle">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <Circle CenterX="30.9999999999999964" CenterY="-47.3000000000000540" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
+                            <Circle CenterX="31.0000000000000036" CenterY="-48.3000000000000256" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
                         </Geometry>
                     </GeometryList>
                 </Property>
@@ -1130,7 +1135,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000373" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.0000000000000002" Q2="1.0000000000000000" Q3="0.0000000000000000" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.0000000000000002" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="1.0000000000000000" Q3="0.0000000000000000" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape5.brp"/>
@@ -1203,7 +1208,7 @@
                     </LinkSub>
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="648">
-                    <Bool value="true"/>
+                    <Bool value="false"/>
                 </Property>
             </Properties>
         </Object>
@@ -1224,8 +1229,8 @@
                         <Constrain Name="" Type="14" Value="0.0000000000000000" First="0" FirstPos="3" Second="1" SecondPos="3" Third="-2" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="14" Value="0.0000000000000000" First="0" FirstPos="3" Second="2" SecondPos="3" Third="-1" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="14" Value="0.0000000000000000" First="1" FirstPos="3" Second="3" SecondPos="3" Third="-1" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
-                        <Constrain Name="" Type="6" Value="144.0000000000000853" First="0" FirstPos="3" Second="1" SecondPos="3" Third="-2000" ThirdPos="0" LabelDistance="18.1218776702880859" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
-                        <Constrain Name="" Type="6" Value="69.2000000000001165" First="0" FirstPos="3" Second="2" SecondPos="3" Third="-2000" ThirdPos="0" LabelDistance="18.1218776702880859" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
+                        <Constrain Name="" Type="6" Value="144.0000000000000568" First="0" FirstPos="3" Second="1" SecondPos="3" Third="-2000" ThirdPos="0" LabelDistance="18.1218776702880859" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
+                        <Constrain Name="" Type="6" Value="71.2000000000000597" First="0" FirstPos="3" Second="2" SecondPos="3" Third="-2000" ThirdPos="0" LabelDistance="18.1218776702880859" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="18" Value="7.9375000000000000" First="0" FirstPos="0" Second="-2000" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="18.1218776702880859" LabelPosition="10.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="12" Value="0.0000000000000000" First="0" FirstPos="0" Second="1" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
                         <Constrain Name="" Type="12" Value="0.0000000000000000" First="1" FirstPos="0" Second="2" SecondPos="0" Third="-2000" ThirdPos="0" LabelDistance="10.0000000000000000" LabelPosition="0.0000000000000000" IsDriving="1" IsInVirtualSpace="0" IsActive="1" />
@@ -1234,8 +1239,8 @@
                 </Property>
                 <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
                     <ExpressionEngine count="2">
-                        <Expression path="Constraints[4]" expression="&lt;&lt;Pad&gt;&gt;.Shape.BoundBox.YLength - 2 * 25.4"/>
                         <Expression path="Constraints[3]" expression="&lt;&lt;Pad&gt;&gt;.Shape.BoundBox.ZLength - 1 * 25.4"/>
+                        <Expression path="Constraints[4]" expression="&lt;&lt;Pad&gt;&gt;.Shape.BoundBox.YLength - 2 * 25.4"/>
                     </ExpressionEngine>
                 </Property>
                 <Property name="ExternalGeometry" type="App::PropertyLinkSubList">
@@ -1251,25 +1256,25 @@
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <Circle CenterX="-72.0000000000000426" CenterY="34.6000000000000583" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
+                            <Circle CenterX="-72.0000000000000284" CenterY="35.6000000000000298" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomCircle">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <Circle CenterX="72.0000000000000426" CenterY="34.6000000000000583" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
+                            <Circle CenterX="72.0000000000000284" CenterY="35.6000000000000298" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomCircle">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <Circle CenterX="-72.0000000000000426" CenterY="-34.6000000000000583" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
+                            <Circle CenterX="-72.0000000000000284" CenterY="-35.6000000000000298" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
                         </Geometry>
                         <Geometry  type="Part::GeomCircle">
                             <GeoExtensions count="1">
                                 <GeoExtension type="Sketcher::SketchGeometryExtension" internalGeometryType="0" geometryModeFlags="00000000000000000000000000000000"/>
                             </GeoExtensions>
-                            <Circle CenterX="72.0000000000000426" CenterY="-34.6000000000000583" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
+                            <Circle CenterX="72.0000000000000284" CenterY="-35.6000000000000298" CenterZ="0.0000000000000000" NormalX="0.0000000000000000" NormalY="0.0000000000000000" NormalZ="1.0000000000000000" AngleXU="-0.0000000000000000" Radius="3.9687500000000000"/>
                         </Geometry>
                     </GeometryList>
                 </Property>
@@ -1336,7 +1341,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000355" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000000" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape9.brp"/>
@@ -1346,7 +1351,7 @@
                         <Link obj="Pad" sub="Edge2"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1383,7 +1388,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000355" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000000" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape10.brp"/>
@@ -1393,7 +1398,7 @@
                         <Link obj="Pad" sub="Edge1"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1430,7 +1435,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="43.7000000000000028" Py="-0.0000000000000355" Pz="-84.7000000000000171" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000000" Pz="-84.7000000000000171" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape11.brp"/>
@@ -1440,7 +1445,7 @@
                         <Link obj="Pad" sub="Edge5"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1477,7 +1482,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-43.7000000000000028" Py="-0.0000000000000355" Pz="-84.7000000000000028" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000000" Pz="-84.7000000000000028" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape12.brp"/>
@@ -1487,7 +1492,7 @@
                         <Link obj="Pad" sub="Edge8"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1524,7 +1529,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-30.9999999999999964" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-31.0000000000000036" Py="48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape13.brp"/>
@@ -1534,7 +1539,7 @@
                         <Link obj="Pocket" sub="Face8"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1571,7 +1576,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="30.9999999999999964" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="31.0000000000000036" Py="48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape14.brp"/>
@@ -1581,7 +1586,7 @@
                         <Link obj="Pocket" sub="Face9"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1618,7 +1623,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-30.9999999999999964" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-31.0000000000000036" Py="-48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape15.brp"/>
@@ -1628,7 +1633,7 @@
                         <Link obj="Pocket" sub="Face6"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1665,7 +1670,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="30.9999999999999964" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="31.0000000000000036" Py="-48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape16.brp"/>
@@ -1675,7 +1680,7 @@
                         <Link obj="Pocket" sub="Face7"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1712,7 +1717,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape17.brp"/>
@@ -1723,7 +1728,7 @@
                         <Link obj="Point_Screw001" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1760,7 +1765,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape18.brp"/>
@@ -1771,7 +1776,7 @@
                         <Link obj="Point_Screw003" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1834,7 +1839,7 @@
                     </LinkSub>
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="648">
-                    <Bool value="false"/>
+                    <Bool value="true"/>
                 </Property>
             </Properties>
         </Object>
@@ -1870,7 +1875,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000078" Py="34.6000000000000725" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000074" Py="35.6000000000000298" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape21.brp"/>
@@ -1880,7 +1885,7 @@
                         <Link obj="Pocket001" sub="Face14"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1917,7 +1922,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-0.0000000000000047" Py="34.6000000000000441" Pz="-72.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000063" Py="35.6000000000000298" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape22.brp"/>
@@ -1927,7 +1932,7 @@
                         <Link obj="Pocket001" sub="Face13"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -1964,7 +1969,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000078" Py="-34.6000000000000441" Pz="72.0000000000000711" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000074" Py="-35.6000000000000298" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape23.brp"/>
@@ -1974,7 +1979,7 @@
                         <Link obj="Pocket001" sub="Face12"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -2011,7 +2016,7 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="-0.0000000000000047" Py="-34.6000000000000725" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000063" Py="-35.6000000000000298" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape24.brp"/>
@@ -2021,7 +2026,7 @@
                         <Link obj="Pocket001" sub="Face11"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
             </Properties>
@@ -2032,7 +2037,7 @@
                 </Extension>
             </Extensions>
             <Properties Count="10" TransientCount="1">
-                <_Property name="_GroupTouched" type="App::PropertyBool" status="100663425"/>
+                <_Property name="_GroupTouched" type="App::PropertyBool" status="100663424"/>
                 <Property name="BaseFeature" type="App::PropertyLink">
                     <Link value=""/>
                 </Property>
@@ -2161,7 +2166,7 @@
                 <Property name="SolverId" type="App::PropertyString" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
                     <String value="Placement::ExpressionEngine"/>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
+                <Property name="Visibility" type="App::PropertyBool" status="648">
                     <Bool value="false"/>
                 </Property>
                 <Property name="VisibilityList" type="App::PropertyBoolList" status="266">
@@ -2182,7 +2187,7 @@
                     <String value="Skeleton#Point_Angle_Bar"/>
                 </Property>
                 <Property name="AttachmentOffset" type="App::PropertyPlacement" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="-0.7071067811865475" Q1="0.0000000000000000" Q2="0.7071067811865476" Q3="-0.0000000000000000" A="3.1415926535897931" Ox="-0.7071067811865475" Oy="0.0000000000000000" Oz="0.7071067811865476"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="-0.7071067811865475" Q1="0.0000000000000000" Q2="0.7071067811865476" Q3="0.0000000000000001" A="3.1415926535897931" Ox="-0.7071067811865475" Oy="0.0000000000000000" Oz="0.7071067811865476"/>
                 </Property>
                 <Property name="ColoredElements" type="App::PropertyLinkSubHidden" status="67109120">
                     <LinkSub value="" count="0">
@@ -2214,7 +2219,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000355" Pz="84.7000000000000171" Q0="-0.7071067811865475" Q1="0.0000000000000000" Q2="0.7071067811865476" Q3="-0.0000000000000000" A="3.1415926535897931" Ox="-0.7071067811865475" Oy="0.0000000000000000" Oz="0.7071067811865476"/>
+                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000000" Pz="84.7000000000000171" Q0="-0.7071067811865475" Q1="0.0000000000000000" Q2="0.7071067811865476" Q3="0.0000000000000001" A="3.1415926535897931" Ox="-0.7071067811865475" Oy="0.0000000000000000" Oz="0.7071067811865476"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2223,7 +2228,7 @@
                     <XLink file="../../Assemblies/Angle Iron Bar 122 Assembly/Angle Iron Bar 122 Assembly.FCStd" stamp="2022-03-03T16:51:27Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000355" Pz="84.7000000000000171" Q0="-0.7071067811865475" Q1="0.0000000000000000" Q2="0.7071067811865476" Q3="-0.0000000000000000" A="3.1415926535897931" Ox="-0.7071067811865475" Oy="0.0000000000000000" Oz="0.7071067811865476"/>
+                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000000" Pz="84.7000000000000171" Q0="-0.7071067811865475" Q1="0.0000000000000000" Q2="0.7071067811865476" Q3="0.0000000000000001" A="3.1415926535897931" Ox="-0.7071067811865475" Oy="0.0000000000000000" Oz="0.7071067811865476"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList1"/>
@@ -2296,7 +2301,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000355" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000000" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2305,7 +2310,7 @@
                     <XLink file="../../Assemblies/Angle Iron Bar 122 Assembly/Angle Iron Bar 122 Assembly.FCStd" stamp="2022-03-03T16:51:27Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000355" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000000" Pz="84.7000000000000171" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList2"/>
@@ -2378,7 +2383,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="43.7000000000000028" Py="-0.0000000000000355" Pz="-84.7000000000000171" Q0="0.0000000000000000" Q1="0.7071067811865476" Q2="0.0000000000000000" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000000" Pz="-84.7000000000000171" Q0="0.0000000000000000" Q1="0.7071067811865476" Q2="0.0000000000000000" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2387,7 +2392,7 @@
                     <XLink file="../../Assemblies/Angle Iron Bar 122 Assembly/Angle Iron Bar 122 Assembly.FCStd" stamp="2022-03-03T16:51:27Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="43.7000000000000028" Py="-0.0000000000000355" Pz="-84.7000000000000171" Q0="0.0000000000000000" Q1="0.7071067811865476" Q2="0.0000000000000000" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="43.7000000000000028" Py="0.0000000000000000" Pz="-84.7000000000000171" Q0="0.0000000000000000" Q1="0.7071067811865476" Q2="0.0000000000000000" Q3="-0.7071067811865475" A="4.7123889803846897" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList3"/>
@@ -2428,7 +2433,7 @@
                     <String value="Skeleton#Point_Angle_Bar003"/>
                 </Property>
                 <Property name="AttachmentOffset" type="App::PropertyPlacement" group="Assembly" doc="" attr="0" ro="0" hide="0" status="2097152">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.0000000000000000" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.0000000000000000" Oz="0.7071067811865475"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.0000000000000000" Oz="0.7071067811865475"/>
                 </Property>
                 <Property name="ColoredElements" type="App::PropertyLinkSubHidden" status="67109120">
                     <LinkSub value="" count="0">
@@ -2460,7 +2465,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="-43.7000000000000028" Py="-0.0000000000000355" Pz="-84.7000000000000028" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.0000000000000000" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.0000000000000000" Oz="0.7071067811865475"/>
+                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000000" Pz="-84.7000000000000028" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.0000000000000000" Oz="0.7071067811865475"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2469,7 +2474,7 @@
                     <XLink file="../../Assemblies/Angle Iron Bar 122 Assembly/Angle Iron Bar 122 Assembly.FCStd" stamp="2022-03-03T16:51:27Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="-43.7000000000000028" Py="-0.0000000000000355" Pz="-84.7000000000000028" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.0000000000000000" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.0000000000000000" Oz="0.7071067811865475"/>
+                    <PropertyPlacement Px="-43.7000000000000028" Py="0.0000000000000000" Pz="-84.7000000000000028" Q0="0.7071067811865476" Q1="0.0000000000000000" Q2="0.7071067811865475" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.7071067811865476" Oy="0.0000000000000000" Oz="0.7071067811865475"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList4"/>
@@ -2542,7 +2547,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2551,7 +2556,7 @@
                     <XLink file="../../Assemblies/Flat Iron Bar 87 Assembly/Flat Iron Bar 87 Assembly.FCStd" stamp="2022-03-02T16:54:52Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList5"/>
@@ -2624,7 +2629,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="1.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="1.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2633,7 +2638,7 @@
                     <XLink file="../../Assemblies/Flat Iron Bar 87 Assembly/Flat Iron Bar 87 Assembly.FCStd" stamp="2022-03-02T16:54:52Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="1.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000000" Py="-48.3000000000000256" Pz="-0.0000000000000022" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="1.0000000000000000" Q3="0.0000000000000001" A="3.1415926535897931" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList6"/>
@@ -2706,7 +2711,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000078" Py="34.6000000000000725" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000074" Py="35.6000000000000298" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2715,7 +2720,7 @@
                     <XLink file="../../Assemblies/Screw 123 Assembly/Screw 123 Assembly.FCStd" stamp="2022-03-03T17:18:12Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000078" Py="34.6000000000000725" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000074" Py="35.6000000000000298" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList7"/>
@@ -2788,7 +2793,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="-0.0000000000000047" Py="34.6000000000000441" Pz="-72.0000000000000426" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000063" Py="35.6000000000000298" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2797,7 +2802,7 @@
                     <XLink file="../../Assemblies/Screw 123 Assembly/Screw 123 Assembly.FCStd" stamp="2022-03-03T17:18:12Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="-0.0000000000000047" Py="34.6000000000000441" Pz="-72.0000000000000426" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000063" Py="35.6000000000000298" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList8"/>
@@ -2870,7 +2875,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="0.0000000000000078" Py="-34.6000000000000441" Pz="72.0000000000000711" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000074" Py="-35.6000000000000298" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2879,7 +2884,7 @@
                     <XLink file="../../Assemblies/Screw 123 Assembly/Screw 123 Assembly.FCStd" stamp="2022-03-03T17:18:12Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="0.0000000000000078" Py="-34.6000000000000441" Pz="72.0000000000000711" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000074" Py="-35.6000000000000298" Pz="72.0000000000000426" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList9"/>
@@ -2952,7 +2957,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="-0.0000000000000047" Py="-34.6000000000000725" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000063" Py="-35.6000000000000298" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -2961,7 +2966,7 @@
                     <XLink file="../../Assemblies/Screw 123 Assembly/Screw 123 Assembly.FCStd" stamp="2022-03-03T17:18:12Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="-0.0000000000000047" Py="-34.6000000000000725" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000063" Py="-35.6000000000000298" Pz="-72.0000000000000142" Q0="0.0000000000000000" Q1="0.7071067811865475" Q2="0.0000000000000000" Q3="0.7071067811865476" A="1.5707963267948966" Ox="0.0000000000000000" Oy="1.0000000000000000" Oz="0.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList10"/>
@@ -3034,7 +3039,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="-30.9999999999999964" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-31.0000000000000036" Py="48.3000000000000256" Pz="0.0000000000000064" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -3043,7 +3048,7 @@
                     <XLink file="../../Assemblies/Screw 183 Assembly/Screw 183 Assembly.FCStd" stamp="2022-03-04T00:47:31Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="-30.9999999999999964" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-31.0000000000000036" Py="48.3000000000000256" Pz="0.0000000000000064" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList11"/>
@@ -3116,7 +3121,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="30.9999999999999964" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="31.0000000000000036" Py="48.3000000000000256" Pz="0.0000000000000064" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -3125,7 +3130,7 @@
                     <XLink file="../../Assemblies/Screw 183 Assembly/Screw 183 Assembly.FCStd" stamp="2022-03-04T00:47:31Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="30.9999999999999964" Py="47.3000000000000540" Pz="-0.0000000000000426" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="31.0000000000000036" Py="48.3000000000000256" Pz="0.0000000000000064" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList12"/>
@@ -3198,7 +3203,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="-30.9999999999999964" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-31.0000000000000036" Py="-48.3000000000000256" Pz="-0.0000000000000152" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -3207,7 +3212,7 @@
                     <XLink file="../../Assemblies/Screw 183 Assembly/Screw 183 Assembly.FCStd" stamp="2022-03-04T00:47:31Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="-30.9999999999999964" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-31.0000000000000036" Py="-48.3000000000000256" Pz="-0.0000000000000152" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList13"/>
@@ -3280,7 +3285,7 @@
                     <String value=""/>
                 </Property>
                 <Property name="LinkPlacement" type="App::PropertyPlacement" status="264">
-                    <PropertyPlacement Px="30.9999999999999964" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="31.0000000000000036" Py="-48.3000000000000256" Pz="-0.0000000000000152" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="LinkTransform" type="App::PropertyBool" status="256">
                     <Bool value="false"/>
@@ -3289,7 +3294,7 @@
                     <XLink file="../../Assemblies/Screw 183 Assembly/Screw 183 Assembly.FCStd" stamp="2022-03-04T00:47:31Z" name="Assembly"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="256">
-                    <PropertyPlacement Px="30.9999999999999964" Py="-47.3000000000000540" Pz="0.0000000000000427" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="31.0000000000000036" Py="-48.3000000000000256" Pz="-0.0000000000000152" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="PlacementList" type="App::PropertyPlacementList" status="256">
                     <PlacementList file="PlacementList14"/>
