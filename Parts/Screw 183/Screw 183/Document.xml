@@ -29,7 +29,7 @@
             <String value=""/>
         </Property>
         <Property name="LastModifiedDate" type="App::PropertyString" status="16777217">
-            <String value="2022-02-19T23:21:29Z"/>
+            <String value="2022-03-04T00:24:47Z"/>
         </Property>
         <Property name="License" type="App::PropertyString" status="1">
             <String value="All rights reserved"/>
@@ -62,9 +62,9 @@
             <Dep Name="ThreadedRod"/>
             <Dep Name="Origin"/>
             <Dep Name="BaseFeature"/>
-            <Dep Name="Point_Origin"/>
-            <Dep Name="Point_Bearing"/>
-            <Dep Name="Point_Bearing001"/>
+            <Dep Name="LCS_Origin"/>
+            <Dep Name="Point_Nut"/>
+            <Dep Name="Point_Nut001"/>
         </ObjectDeps>
         <ObjectDeps Name="Origin" Count="6">
             <Dep Name="X_Axis"/>
@@ -84,14 +84,14 @@
             <Dep Name="ThreadedRod"/>
             <Dep Name="Body"/>
         </ObjectDeps>
-        <ObjectDeps Name="Point_Origin" Count="1">
+        <ObjectDeps Name="Point_Nut" Count="1">
+            <Dep Name="LCS_Origin"/>
+        </ObjectDeps>
+        <ObjectDeps Name="Point_Nut001" Count="1">
+            <Dep Name="LCS_Origin"/>
+        </ObjectDeps>
+        <ObjectDeps Name="LCS_Origin" Count="1">
             <Dep Name="BaseFeature"/>
-        </ObjectDeps>
-        <ObjectDeps Name="Point_Bearing" Count="1">
-            <Dep Name="Point_Origin"/>
-        </ObjectDeps>
-        <ObjectDeps Name="Point_Bearing001" Count="1">
-            <Dep Name="Point_Origin"/>
         </ObjectDeps>
         <Object type="Part::FeaturePython" name="ThreadedRod" id="3862" />
         <Object type="PartDesign::Body" name="Body" id="3863" />
@@ -103,9 +103,9 @@
         <Object type="App::Plane" name="XZ_Plane" id="3869" />
         <Object type="App::Plane" name="YZ_Plane" id="3870" />
         <Object type="PartDesign::FeatureBase" name="BaseFeature" id="3871" />
-        <Object type="PartDesign::Point" name="Point_Origin" id="3872" />
-        <Object type="PartDesign::Point" name="Point_Bearing" id="3873" />
-        <Object type="PartDesign::Point" name="Point_Bearing001" id="3874" />
+        <Object type="PartDesign::Point" name="Point_Nut" id="3875" />
+        <Object type="PartDesign::Point" name="Point_Nut001" id="3877" />
+        <Object type="PartDesign::CoordinateSystem" name="LCS_Origin" id="3878" />
     </Objects>
     <ObjectData Count="13">
         <Object name="ThreadedRod">
@@ -214,9 +214,9 @@
                 <Property name="Group" type="App::PropertyLinkList">
                     <LinkList count="4">
                         <Link value="BaseFeature"/>
-                        <Link value="Point_Origin"/>
-                        <Link value="Point_Bearing"/>
-                        <Link value="Point_Bearing001"/>
+                        <Link value="LCS_Origin"/>
+                        <Link value="Point_Nut"/>
+                        <Link value="Point_Nut001"/>
                     </LinkList>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
@@ -440,54 +440,7 @@
                 </Property>
             </Properties>
         </Object>
-        <Object name="Point_Origin" Extensions="True">
-            <Extensions Count="1">
-                <Extension type="Part::AttachExtension" name="AttachExtension">
-                </Extension>
-            </Extensions>
-            <Properties Count="12" TransientCount="0">
-                <Property name="AttacherType" type="App::PropertyString" status="8">
-                    <String value="Attacher::AttachEnginePoint"/>
-                </Property>
-                <Property name="AttachmentOffset" type="App::PropertyPlacement">
-                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
-                </Property>
-                <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
-                    <ExpressionEngine count="0">
-                    </ExpressionEngine>
-                </Property>
-                <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Point_Origin"/>
-                </Property>
-                <Property name="Label2" type="App::PropertyString" status="67108992">
-                    <String value=""/>
-                </Property>
-                <Property name="MapMode" type="App::PropertyEnumeration">
-                    <Integer value="37"/>
-                </Property>
-                <Property name="MapPathParameter" type="App::PropertyFloat" status="8">
-                    <Float value="0.0000000000000000"/>
-                </Property>
-                <Property name="MapReversed" type="App::PropertyBool">
-                    <Bool value="false"/>
-                </Property>
-                <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-0.0000000000000000" Pz="-91.4399999999999977" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
-                </Property>
-                <Property name="Shape" type="Part::PropertyPartShape">
-                    <Part file="PartShape3.brp"/>
-                </Property>
-                <Property name="Support" type="App::PropertyLinkSubList">
-                    <LinkSubList count="1">
-                        <Link obj="BaseFeature" sub="Face3"/>
-                    </LinkSubList>
-                </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="649">
-                    <Bool value="false"/>
-                </Property>
-            </Properties>
-        </Object>
-        <Object name="Point_Bearing" Extensions="True">
+        <Object name="Point_Nut" Extensions="True">
             <Extensions Count="1">
                 <Extension type="Part::AttachExtension" name="AttachExtension">
                 </Extension>
@@ -504,7 +457,7 @@
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Point_Bearing"/>
+                    <String value="Point_Nut"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -519,22 +472,22 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-0.0000000000000000" Pz="-50.4399999999999977" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="0.0000000000000004" Py="-0.0000000000000000" Pz="-50.4399999999999977" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
-                    <Part file="PartShape4.brp"/>
+                    <Part file="PartShape3.brp"/>
                 </Property>
                 <Property name="Support" type="App::PropertyLinkSubList">
                     <LinkSubList count="1">
-                        <Link obj="Point_Origin" sub=""/>
+                        <Link obj="LCS_Origin" sub=""/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
         </Object>
-        <Object name="Point_Bearing001" Extensions="True">
+        <Object name="Point_Nut001" Extensions="True">
             <Extensions Count="1">
                 <Extension type="Part::AttachExtension" name="AttachExtension">
                 </Extension>
@@ -551,7 +504,7 @@
                     </ExpressionEngine>
                 </Property>
                 <Property name="Label" type="App::PropertyString" status="134217728">
-                    <String value="Point_Bearing001"/>
+                    <String value="Point_Nut001"/>
                 </Property>
                 <Property name="Label2" type="App::PropertyString" status="67108992">
                     <String value=""/>
@@ -566,17 +519,64 @@
                     <Bool value="false"/>
                 </Property>
                 <Property name="Placement" type="App::PropertyPlacement" status="8388612">
-                    <PropertyPlacement Px="0.0000000000000000" Py="-0.0000000000000000" Pz="-132.4399999999999977" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                    <PropertyPlacement Px="-0.0000000000000004" Py="0.0000000000000000" Pz="-132.4399999999999977" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="Shape" type="Part::PropertyPartShape">
+                    <Part file="PartShape4.brp"/>
+                </Property>
+                <Property name="Support" type="App::PropertyLinkSubList">
+                    <LinkSubList count="1">
+                        <Link obj="LCS_Origin" sub=""/>
+                    </LinkSubList>
+                </Property>
+                <Property name="Visibility" type="App::PropertyBool" status="649">
+                    <Bool value="false"/>
+                </Property>
+            </Properties>
+        </Object>
+        <Object name="LCS_Origin" Extensions="True">
+            <Extensions Count="1">
+                <Extension type="Part::AttachExtension" name="AttachExtension">
+                </Extension>
+            </Extensions>
+            <Properties Count="12" TransientCount="0">
+                <Property name="AttacherType" type="App::PropertyString" status="8">
+                    <String value="Attacher::AttachEngine3D"/>
+                </Property>
+                <Property name="AttachmentOffset" type="App::PropertyPlacement">
+                    <PropertyPlacement Px="0.0000000000000000" Py="0.0000000000000000" Pz="0.0000000000000000" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
+                </Property>
+                <Property name="ExpressionEngine" type="App::PropertyExpressionEngine" status="67108864">
+                    <ExpressionEngine count="0">
+                    </ExpressionEngine>
+                </Property>
+                <Property name="Label" type="App::PropertyString" status="134217728">
+                    <String value="LCS_Origin"/>
+                </Property>
+                <Property name="Label2" type="App::PropertyString" status="67108992">
+                    <String value=""/>
+                </Property>
+                <Property name="MapMode" type="App::PropertyEnumeration">
+                    <Integer value="45"/>
+                </Property>
+                <Property name="MapPathParameter" type="App::PropertyFloat" status="8">
+                    <Float value="0.0000000000000000"/>
+                </Property>
+                <Property name="MapReversed" type="App::PropertyBool">
+                    <Bool value="false"/>
+                </Property>
+                <Property name="Placement" type="App::PropertyPlacement" status="8388612">
+                    <PropertyPlacement Px="0.0000000000000000" Py="-0.0000000000000000" Pz="-91.4399999999999977" Q0="0.0000000000000000" Q1="0.0000000000000000" Q2="0.0000000000000000" Q3="1.0000000000000000" A="0.0000000000000000" Ox="0.0000000000000000" Oy="0.0000000000000000" Oz="1.0000000000000000"/>
                 </Property>
                 <Property name="Shape" type="Part::PropertyPartShape">
                     <Part file="PartShape5.brp"/>
                 </Property>
                 <Property name="Support" type="App::PropertyLinkSubList">
                     <LinkSubList count="1">
-                        <Link obj="Point_Origin" sub=""/>
+                        <Link obj="BaseFeature" sub="Face3"/>
                     </LinkSubList>
                 </Property>
-                <Property name="Visibility" type="App::PropertyBool" status="648">
+                <Property name="Visibility" type="App::PropertyBool" status="649">
                     <Bool value="false"/>
                 </Property>
             </Properties>
