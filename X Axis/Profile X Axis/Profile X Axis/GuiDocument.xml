@@ -3,13 +3,9 @@
  FreeCAD Document, see http://www.freecadweb.org for more information...
 -->
 <Document SchemaVersion="1" HasExpansion="1">
-    <Expand  count="1">
-        <Expand name="Body" count="1">
-            <Expand name="Pocket"/>
-        </Expand>
-    </Expand>
+    <Expand />
     <ViewProviderData Count="20">
-        <ViewProvider name="Body" expanded="1" Extensions="True">
+        <ViewProvider name="Body" expanded="0" Extensions="True">
             <Extensions Count="2">
                 <Extension type="Gui::ViewProviderOriginGroupExtension" name="ViewProviderOriginGroupExtension">
                 </Extension>
@@ -110,7 +106,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Size" type="App::PropertyVector" status="5">
-                    <PropertyVector valueX="26.0000000000000000" valueY="726.7000000000000455" valueZ="26.0000000000000000"/>
+                    <PropertyVector valueX="26.0000000000000000" valueY="734.5000000000000000" valueZ="26.0000000000000000"/>
                 </Property>
                 <Property name="Visibility" type="App::PropertyBool" status="1">
                     <Bool value="false"/>
@@ -189,7 +185,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Size" type="App::PropertyFloat" status="16777217">
-                    <Float value="726.7000000000000455"/>
+                    <Float value="734.5000000000000000"/>
                 </Property>
                 <Property name="Transparency" type="App::PropertyPercent" status="1">
                     <Integer value="0"/>
@@ -240,7 +236,7 @@
                 </Property>
             </Properties>
         </ViewProvider>
-        <ViewProvider name="Pocket" expanded="1" Extensions="True">
+        <ViewProvider name="Pocket" expanded="0" Extensions="True">
             <Extensions Count="2">
                 <Extension type="Gui::ViewProviderLinkObserver" name="ViewProviderLinkObserver">
                 </Extension>
@@ -725,7 +721,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Size" type="App::PropertyFloat" status="16777217">
-                    <Float value="726.7000000000000455"/>
+                    <Float value="734.5000000000000000"/>
                 </Property>
                 <Property name="Transparency" type="App::PropertyPercent" status="1">
                     <Integer value="0"/>
@@ -807,7 +803,7 @@
                     <Bool value="true"/>
                 </Property>
                 <Property name="Size" type="App::PropertyFloat" status="16777217">
-                    <Float value="726.7000000000000455"/>
+                    <Float value="734.5000000000000000"/>
                 </Property>
                 <Property name="Transparency" type="App::PropertyPercent" status="1">
                     <Integer value="0"/>
@@ -1196,5 +1192,5 @@
             </Properties>
         </ViewProvider>
     </ViewProviderData>
-    <Camera settings="OrthographicCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 229.24536 -397.0657 321.03952&#10;  orientation 0.86492187 0.23175442 0.44519675  1.0835806&#10;  nearDistance 143.35013&#10;  farDistance 976.91248&#10;  aspectRatio 1&#10;  focalDistance 559.71509&#10;  height 1119.4302&#10;&#10;}&#10;"/>
+    <Camera settings="OrthographicCamera {&#10;  viewportMapping ADJUST_CAMERA&#10;  position 231.69972 -401.3168 324.47665&#10;  orientation 0.86492187 0.23175442 0.44519675  1.0835806&#10;  nearDistance 145.08444&#10;  farDistance 987.17169&#10;  aspectRatio 1&#10;  focalDistance 565.70752&#10;  height 1131.415&#10;&#10;}&#10;"/>
 </Document>
