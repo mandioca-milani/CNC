@@ -16,7 +16,7 @@ else:
     App.newDocument('AxisEngine')
     App.ActiveDocument.saveAs(os.getcwd() + '/Axis/AxisEngine.FCStd')
 
-Gui.activateWorkbench("PartDesignWorkbench")
+Gui.activateWorkbench('PartDesignWorkbench')
 
 
 # Body001Nema17
@@ -133,7 +133,7 @@ if App.ActiveDocument.getObject('Chamfer001Body001Nema17'):
 
 App.ActiveDocument.getObject('Body001Nema17').newObject('PartDesign::Chamfer', 'Chamfer001Body001Nema17')
 App.ActiveDocument.getObject('Chamfer001Body001Nema17').Base = (
-    App.ActiveDocument.getObject('Pad001Body001Nema17'), ["Edge1", "Edge2", "Edge5", "Edge8", ])
+    App.ActiveDocument.getObject('Pad001Body001Nema17'), ['Edge1', 'Edge2', 'Edge5', 'Edge8', ])
 App.ActiveDocument.getObject('Chamfer001Body001Nema17').Size = 5
 App.ActiveDocument.recompute()
 
@@ -242,7 +242,7 @@ if App.ActiveDocument.getObject('Chamfer001Body002Nema17'):
 
 App.ActiveDocument.getObject('Body002Nema17').newObject('PartDesign::Chamfer', 'Chamfer001Body002Nema17')
 App.ActiveDocument.getObject('Chamfer001Body002Nema17').Base = (
-    App.ActiveDocument.getObject('Pad002Body002Nema17'), ["Edge1", "Edge2", "Edge5", "Edge8", ])
+    App.ActiveDocument.getObject('Pad002Body002Nema17'), ['Edge1', 'Edge2', 'Edge5', 'Edge8', ])
 App.ActiveDocument.getObject('Chamfer001Body002Nema17').Size = 3
 App.ActiveDocument.recompute()
 
@@ -296,7 +296,7 @@ if App.ActiveDocument.getObject('Chamfer001Body003Nema17'):
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Chamfer', 'Chamfer001Body003Nema17')
 App.ActiveDocument.getObject('Chamfer001Body003Nema17').Base = (
-    App.ActiveDocument.getObject('Pad001Body003Nema17'), ["Edge1", "Edge2", "Edge5", "Edge8", ])
+    App.ActiveDocument.getObject('Pad001Body003Nema17'), ['Edge1', 'Edge2', 'Edge5', 'Edge8', ])
 App.ActiveDocument.getObject('Chamfer001Body003Nema17').Size = 3
 App.ActiveDocument.recompute()
 
@@ -456,12 +456,12 @@ if App.ActiveDocument.getObject('Group001Nema17'):
     App.ActiveDocument.removeObject('Group001Nema17')
     App.ActiveDocument.recompute()
 
-App.activeDocument().addObject('App::DocumentObjectGroup', 'Group001Nema17')
-App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body001Nema17"))
-App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body002Nema17"))
-App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body003Nema17"))
-App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body004Nema17"))
-App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Part001Nema17"))
+App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Nema17')
+App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Body001Nema17'))
+App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Body002Nema17'))
+App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Body003Nema17'))
+App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Body004Nema17'))
+App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Part001Nema17'))
 
 App.ActiveDocument.recompute()
 
@@ -622,11 +622,288 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Sketch003Body001Coupling').Visibility = False
 
 
+# Part001Coupling
+
+if App.ActiveDocument.getObject('Part001Coupling'):
+    App.ActiveDocument.getObject('Part001Coupling').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Part001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::Part', 'Part001Coupling')
+Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObject('Part001Coupling'))
+App.ActiveDocument.recompute()
+
+# Link00xBody00xBearing
+
+App.ActiveDocument.getObject('Part001Coupling').newObject('App::Link', 'Link001Body001Coupling')
+App.ActiveDocument.getObject('Link001Body001Coupling').LinkedObject = App.ActiveDocument.getObject('Body001Coupling')
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
+
+
 # Placement
 
-App.ActiveDocument.getObject('Body001Coupling').Placement.Base.x = (
+App.ActiveDocument.getObject('Part001Coupling').Placement.Base.x = (
     App.ActiveDocument.getObject('Part001Nema17').Shape.BoundBox.XLength +
-    App.ActiveDocument.getObject('Body001Coupling').Shape.BoundBox.XLength)*75/100
+    App.ActiveDocument.getObject('Part001Coupling').Shape.BoundBox.XLength) * 75/100
+App.ActiveDocument.recompute()
+
+
+# Group001Coupling
+
+if App.ActiveDocument.getObject('Group001Coupling'):
+    App.ActiveDocument.removeObject('Group001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Coupling')
+App.ActiveDocument.getObject('Group001Coupling').addObject(App.ActiveDocument.getObject('Body001Coupling'))
+App.ActiveDocument.getObject('Group001Coupling').addObject(App.ActiveDocument.getObject('Part001Coupling'))
+
+App.ActiveDocument.recompute()
+
+
+# Body001Bearing
+
+if App.ActiveDocument.getObject('Body001Bearing'):
+    App.ActiveDocument.getObject('Body001Bearing').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body001Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body001Bearing')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body001Bearing'))
+
+
+# Sketch001Body001Bearing
+
+if App.ActiveDocument.getObject('Sketch001Body001Bearing'):
+    App.ActiveDocument.removeObject('Sketch001Body001Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Bearing').newObject('Sketcher::SketchObject', 'Sketch001Body001Bearing')
+App.ActiveDocument.getObject('Sketch001Body001Bearing').Support = (App.ActiveDocument.getObject(
+    'XY_Plane' + App.ActiveDocument.getObject('Body001Bearing').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch001Body001Bearing').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 2))  # 0
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 1))  # 1
+App.ActiveDocument.getObject('Sketch001Body001Bearing').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 3, -1, 1))  # 0
+conList.append(Sketcher.Constraint('Coincident', 1, 3, -1, 1))  # 1
+conList.append(Sketcher.Constraint('Diameter', 0, 22))  # 3
+conList.append(Sketcher.Constraint('Diameter', 1, 18))  # 3
+App.ActiveDocument.getObject('Sketch001Body001Bearing').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pad001Body001Bearing
+
+if App.ActiveDocument.getObject('Pad001Body001Bearing'):
+    App.ActiveDocument.removeObject('Pad001Body001Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Bearing').newObject('PartDesign::Pad', 'Pad001Body001Bearing')
+App.ActiveDocument.getObject('Pad001Body001Bearing').Profile = App.ActiveDocument.getObject('Sketch001Body001Bearing')
+App.ActiveDocument.getObject('Pad001Body001Bearing').Length = 7
+App.ActiveDocument.getObject('Pad001Body001Bearing').Midplane = True
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body001Bearing').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# Body002Bearing
+
+if App.ActiveDocument.getObject('Body002Bearing'):
+    App.ActiveDocument.getObject('Body002Bearing').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body002Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body002Bearing')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body002Bearing'))
+
+
+# Sketch001Body002Bearing
+
+if App.ActiveDocument.getObject('Sketch001Body002Bearing'):
+    App.ActiveDocument.removeObject('Sketch001Body002Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body002Bearing').newObject('Sketcher::SketchObject', 'Sketch001Body002Bearing')
+App.ActiveDocument.getObject('Sketch001Body002Bearing').Support = (App.ActiveDocument.getObject(
+    'XY_Plane' + App.ActiveDocument.getObject('Body002Bearing').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch001Body002Bearing').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 2))  # 0
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 1))  # 1
+App.ActiveDocument.getObject('Sketch001Body002Bearing').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 3, -1, 1))  # 0
+conList.append(Sketcher.Constraint('Coincident', 1, 3, -1, 1))  # 1
+conList.append(Sketcher.Constraint('Diameter', 0, 18))  # 3
+conList.append(Sketcher.Constraint('Diameter', 1, 12))  # 3
+App.ActiveDocument.getObject('Sketch001Body002Bearing').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pad001Body002Bearing
+
+if App.ActiveDocument.getObject('Pad001Body002Bearing'):
+    App.ActiveDocument.removeObject('Pad001Body002Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body002Bearing').newObject('PartDesign::Pad', 'Pad001Body002Bearing')
+App.ActiveDocument.getObject('Pad001Body002Bearing').Profile = App.ActiveDocument.getObject('Sketch001Body002Bearing')
+App.ActiveDocument.getObject('Pad001Body002Bearing').Length = 7
+App.ActiveDocument.getObject('Pad001Body002Bearing').Midplane = True
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body002Bearing').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# ShapeColor
+
+App.ActiveDocument.getObject('Body002Bearing').ViewObject.ShapeColor = (0.2, 0.2, 0.2, 0.0)
+
+
+# Body003Bearing
+
+if App.ActiveDocument.getObject('Body003Bearing'):
+    App.ActiveDocument.getObject('Body003Bearing').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body003Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body003Bearing')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body003Bearing'))
+
+
+# Sketch001Body003Bearing
+
+if App.ActiveDocument.getObject('Sketch001Body003Bearing'):
+    App.ActiveDocument.removeObject('Sketch001Body003Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Bearing').newObject('Sketcher::SketchObject', 'Sketch001Body003Bearing')
+App.ActiveDocument.getObject('Sketch001Body003Bearing').Support = (App.ActiveDocument.getObject(
+    'XY_Plane' + App.ActiveDocument.getObject('Body003Bearing').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch001Body003Bearing').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 2))  # 0
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 1))  # 1
+App.ActiveDocument.getObject('Sketch001Body003Bearing').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 3, -1, 1))  # 0
+conList.append(Sketcher.Constraint('Coincident', 1, 3, -1, 1))  # 1
+conList.append(Sketcher.Constraint('Diameter', 0, 12))  # 3
+conList.append(Sketcher.Constraint('Diameter', 1, 8))  # 3
+App.ActiveDocument.getObject('Sketch001Body003Bearing').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pad00xBody003Bearing
+
+if App.ActiveDocument.getObject('Pad001Body003Bearing'):
+    App.ActiveDocument.removeObject('Pad001Body003Bearing')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('Pad002Body003Bearing'):
+    App.ActiveDocument.removeObject('Pad002Body003Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Bearing').newObject('PartDesign::Pad', 'Pad001Body003Bearing')
+App.ActiveDocument.getObject('Pad001Body003Bearing').Profile = App.ActiveDocument.getObject('Sketch001Body003Bearing')
+App.ActiveDocument.getObject('Pad001Body003Bearing').Length = 7
+App.ActiveDocument.getObject('Pad001Body003Bearing').Midplane = True
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Bearing').newObject('PartDesign::Pad', 'Pad002Body003Bearing')
+App.ActiveDocument.getObject('Pad002Body003Bearing').Profile = (App.ActiveDocument.getObject('Pad001Body003Bearing'), ['Face4', ])
+App.ActiveDocument.getObject('Pad002Body003Bearing').Length = 4
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body003Bearing').Visibility = False
+App.ActiveDocument.getObject('Pad001Body003Bearing').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# Part001Bearing
+
+if App.ActiveDocument.getObject('Part001Bearing'):
+    App.ActiveDocument.getObject('Part001Bearing').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Part001Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::Part', 'Part001Bearing')
+Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObject('Part001Bearing'))
+App.ActiveDocument.recompute()
+
+# Link00xBody00xBearing
+
+App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link001Body001Bearing')
+App.ActiveDocument.getObject('Link001Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Body001Bearing')
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link002Body001Bearing')
+App.ActiveDocument.getObject('Link002Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Body002Bearing')
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link003Body001Bearing')
+App.ActiveDocument.getObject('Link003Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Body003Bearing')
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Bearing').Visibility = False
+App.ActiveDocument.getObject('Body002Bearing').Visibility = False
+App.ActiveDocument.getObject('Body003Bearing').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
+
+
+# Placement
+
+App.ActiveDocument.getObject('Part001Bearing').Placement.Base.x = \
+    App.ActiveDocument.getObject('Part001Coupling').Placement.Base.x + (
+    App.ActiveDocument.getObject('Part001Coupling').Shape.BoundBox.XLength +
+    App.ActiveDocument.getObject('Part001Bearing').Shape.BoundBox.XLength) * 75/100
+App.ActiveDocument.recompute()
+
+
+# Group001Bearing
+
+if App.ActiveDocument.getObject('Group001Bearing'):
+    App.ActiveDocument.removeObject('Group001Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Bearing')
+App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Body001Bearing'))
+App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Body002Bearing'))
+App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Body003Bearing'))
+App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Part001Bearing'))
+
 App.ActiveDocument.recompute()
 
 
@@ -743,16 +1020,16 @@ if App.ActiveDocument.getObject('Group001Spacer'):
     App.ActiveDocument.removeObject('Group001Spacer')
     App.ActiveDocument.recompute()
 
-App.activeDocument().addObject('App::DocumentObjectGroup', 'Group001Spacer')
-App.ActiveDocument.getObject("Group001Spacer").addObject(App.ActiveDocument.getObject("LinkSquareProfileSketch"))
-App.ActiveDocument.getObject("Group001Spacer").addObject(App.ActiveDocument.getObject("Body001Spacer"))
-App.ActiveDocument.getObject("Group001Spacer").addObject(App.ActiveDocument.getObject("Body002Spacer"))
+App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Spacer')
+App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('LinkSquareProfileSketch'))
+App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body001Spacer'))
+App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body002Spacer'))
 App.ActiveDocument.recompute()
 
 
 # Placement
 
-for obj in App.ActiveDocument.getObject("Group001Spacer").Group:
+for obj in App.ActiveDocument.getObject('Group001Spacer').Group:
     obj.Placement.Base.y = -(
         App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.YLength +
         App.ActiveDocument.getObject('Group001Spacer').Shape.BoundBox.YLength)*75/100
@@ -868,7 +1145,7 @@ if App.ActiveDocument.getObject('Chamfer001Body001Support'):
 
 App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Chamfer', 'Chamfer001Body001Support')
 App.ActiveDocument.getObject('Chamfer001Body001Support').Base = (
-    App.ActiveDocument.getObject('Hole001Body001Support'), ["Edge1", "Edge2", "Edge5", "Edge8", ])
+    App.ActiveDocument.getObject('Hole001Body001Support'), ['Edge1', 'Edge2', 'Edge5', 'Edge8', ])
 App.ActiveDocument.getObject('Chamfer001Body001Support').Size = 3
 App.ActiveDocument.recompute()
 
@@ -929,7 +1206,7 @@ if App.ActiveDocument.getObject('Chamfer001Body002Support'):
 
 App.ActiveDocument.getObject('Body002Support').newObject('PartDesign::Chamfer', 'Chamfer001Body002Support')
 App.ActiveDocument.getObject('Chamfer001Body002Support').Base = (
-    App.ActiveDocument.getObject('Pad001Body002Support'), ["Edge1", "Edge2", "Edge5", "Edge8", ])
+    App.ActiveDocument.getObject('Pad001Body002Support'), ['Edge1', 'Edge2', 'Edge5', 'Edge8', ])
 App.ActiveDocument.getObject('Chamfer001Body002Support').Size = 3
 App.ActiveDocument.recompute()
 
@@ -958,16 +1235,16 @@ if App.ActiveDocument.getObject('Group001Support'):
     App.ActiveDocument.removeObject('Group001Support')
     App.ActiveDocument.recompute()
 
-App.activeDocument().addObject('App::DocumentObjectGroup', 'Group001Support')
-App.ActiveDocument.getObject("Group001Support").addObject(App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support'))
-App.ActiveDocument.getObject("Group001Support").addObject(App.ActiveDocument.getObject("Body001Support"))
-App.ActiveDocument.getObject("Group001Support").addObject(App.ActiveDocument.getObject("Body002Support"))
+App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Support')
+App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support'))
+App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Body001Support'))
+App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Body002Support'))
 App.ActiveDocument.recompute()
 
 
 # Placement
 
-for obj in App.ActiveDocument.getObject("Group001Support").Group:
+for obj in App.ActiveDocument.getObject('Group001Support').Group:
     obj.Placement.Base.y = App.ActiveDocument.getObject('Group001Spacer').Shape.BoundBox.Center.y - (
         App.ActiveDocument.getObject('Group001Spacer').Shape.BoundBox.YLength +
         App.ActiveDocument.getObject('Group001Support').Shape.BoundBox.YLength)*75/100
@@ -978,8 +1255,8 @@ App.ActiveDocument.recompute()
 # Save
 
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
-Gui.activeDocument().activeView().viewDefaultOrientation()
-Gui.SendMsgToActiveView("ViewFit")
+Gui.ActiveDocument.activeView().viewDefaultOrientation()
+Gui.SendMsgToActiveView('ViewFit')
 
 App.ActiveDocument.save()
 
