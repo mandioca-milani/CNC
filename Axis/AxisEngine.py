@@ -466,6 +466,170 @@ App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getO
 App.ActiveDocument.recompute()
 
 
+# Body001Coupling
+
+if App.ActiveDocument.getObject('Body001Coupling'):
+    App.ActiveDocument.getObject('Body001Coupling').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body001Coupling')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body001Coupling'))
+
+
+# Sketch001Body001Coupling
+
+if App.ActiveDocument.getObject('Sketch001Body001Coupling'):
+    App.ActiveDocument.removeObject('Sketch001Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').newObject('Sketcher::SketchObject', 'Sketch001Body001Coupling')
+App.ActiveDocument.getObject('Sketch001Body001Coupling').Support = (App.ActiveDocument.getObject(
+    'XY_Plane' + App.ActiveDocument.getObject('Body001Coupling').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch001Body001Coupling').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 2))  # 0
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 1))  # 1
+App.ActiveDocument.getObject('Sketch001Body001Coupling').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 3, -1, 1))  # 0
+conList.append(Sketcher.Constraint('Coincident', 1, 3, -1, 1))  # 1
+conList.append(Sketcher.Constraint('Diameter', 0, 19))  # 3
+conList.append(Sketcher.Constraint('Diameter', 1, 5))  # 3
+App.ActiveDocument.getObject('Sketch001Body001Coupling').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pad001Body001Coupling
+
+if App.ActiveDocument.getObject('Pad001Body001Coupling'):
+    App.ActiveDocument.removeObject('Pad001Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').newObject('PartDesign::Pad', 'Pad001Body001Coupling')
+App.ActiveDocument.getObject('Pad001Body001Coupling').Profile = App.ActiveDocument.getObject('Sketch001Body001Coupling')
+App.ActiveDocument.getObject('Pad001Body001Coupling').Length = 24
+App.ActiveDocument.getObject('Pad001Body001Coupling').Midplane = True
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body001Coupling').Visibility = False
+
+
+# Hole001Body001Coupling
+
+if App.ActiveDocument.getObject('Hole001Body001Coupling'):
+    App.ActiveDocument.removeObject('Hole001Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').newObject('PartDesign::Hole', 'Hole001Body001Coupling')
+App.ActiveDocument.getObject('Hole001Body001Coupling').Profile = (
+    App.ActiveDocument.getObject('Pad001Body001Coupling'), ['Edge6', ])
+App.ActiveDocument.getObject('Hole001Body001Coupling').Diameter = 8
+App.ActiveDocument.getObject('Hole001Body001Coupling').Depth = 18
+App.ActiveDocument.getObject('Hole001Body001Coupling').Reversed = False
+App.ActiveDocument.getObject('Hole001Body001Coupling').DrillPoint = 'Flat'
+App.ActiveDocument.recompute()
+
+
+# Sketch002Body001Coupling
+
+if App.ActiveDocument.getObject('Sketch002Body001Coupling'):
+    App.ActiveDocument.removeObject('Sketch002Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').newObject('Sketcher::SketchObject', 'Sketch002Body001Coupling')
+App.ActiveDocument.getObject('Sketch002Body001Coupling').Support = (App.ActiveDocument.getObject(
+    'YZ_Plane' + App.ActiveDocument.getObject('Body001Coupling').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch002Body001Coupling').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 1, 0), App.Vector(0, 0, 1), 1))  # 0
+geoList.append(Part.Circle(App.Vector(0, -1, 0), App.Vector(0, 0, 1), 1))  # 1
+App.ActiveDocument.getObject('Sketch002Body001Coupling').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('PointOnObject', 1, 3, -2))  # 0
+conList.append(Sketcher.Constraint('Distance', 1, 3, 0, 3, 16))  # 3
+conList.append(Sketcher.Constraint('Symmetric', 0, 3, 1, 3, -1))  # 1
+conList.append(Sketcher.Constraint('Diameter', 0, 4))  # 4
+conList.append(Sketcher.Constraint('Diameter', 1, 4))  # 5
+App.ActiveDocument.getObject('Sketch002Body001Coupling').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pocket001Body001Coupling
+
+if App.ActiveDocument.getObject('Pocket001Body001Coupling'):
+    App.ActiveDocument.removeObject('Pocket001Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').newObject('PartDesign::Pocket', 'Pocket001Body001Coupling')
+App.ActiveDocument.getObject('Pocket001Body001Coupling').Profile = App.ActiveDocument.getObject('Sketch002Body001Coupling')
+App.ActiveDocument.getObject('Pocket001Body001Coupling').Reversed = True
+App.ActiveDocument.getObject('Pocket001Body001Coupling').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch002Body001Coupling').Visibility = False
+
+
+# Sketch003Body001Coupling
+
+if App.ActiveDocument.getObject('Sketch003Body001Coupling'):
+    App.ActiveDocument.removeObject('Sketch003Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').newObject('Sketcher::SketchObject', 'Sketch003Body001Coupling')
+App.ActiveDocument.getObject('Sketch003Body001Coupling').Support = (App.ActiveDocument.getObject(
+    'XZ_Plane' + App.ActiveDocument.getObject('Body001Coupling').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch003Body001Coupling').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 1, 0), App.Vector(0, 0, 1), 1))  # 0
+geoList.append(Part.Circle(App.Vector(0, -1, 0), App.Vector(0, 0, 1), 1))  # 1
+App.ActiveDocument.getObject('Sketch003Body001Coupling').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('PointOnObject', 1, 3, -2))  # 0
+conList.append(Sketcher.Constraint('Distance', 1, 3, 0, 3, 16))  # 3
+conList.append(Sketcher.Constraint('Symmetric', 0, 3, 1, 3, -1))  # 1
+conList.append(Sketcher.Constraint('Diameter', 0, 4))  # 4
+conList.append(Sketcher.Constraint('Diameter', 1, 4))  # 5
+App.ActiveDocument.getObject('Sketch003Body001Coupling').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pocket002Body001Coupling
+
+if App.ActiveDocument.getObject('Pocket002Body001Coupling'):
+    App.ActiveDocument.removeObject('Pocket002Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').newObject('PartDesign::Pocket', 'Pocket002Body001Coupling')
+App.ActiveDocument.getObject('Pocket002Body001Coupling').Profile = App.ActiveDocument.getObject('Sketch003Body001Coupling')
+App.ActiveDocument.getObject('Pocket002Body001Coupling').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch003Body001Coupling').Visibility = False
+
+
+# Placement
+
+App.ActiveDocument.getObject('Body001Coupling').Placement.Base.x = (
+    App.ActiveDocument.getObject('Part001Nema17').Shape.BoundBox.XLength +
+    App.ActiveDocument.getObject('Body001Coupling').Shape.BoundBox.XLength)*75/100
+App.ActiveDocument.recompute()
+
+
 # LinkSquareProfileSketch
 
 if App.ActiveDocument.getObject('LinkSquareProfileSketch'):
