@@ -3,6 +3,13 @@
 for doc in App.listDocuments():
     App.closeDocument(doc)
 
+docs = [
+    '/Parts/Sketches.FCStd',
+]
+
+for doc in docs:
+    App.openDocument(os.getcwd() + doc, hidden=True)
+
 if os.path.isfile(os.getcwd() + '/Axis/AxisEngine.FCStd'):
     App.openDocument(os.getcwd() + '/Axis/AxisEngine.FCStd')
 else:
@@ -455,6 +462,136 @@ App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getO
 App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body003Nema17"))
 App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body004Nema17"))
 App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Part001Nema17"))
+
+App.ActiveDocument.recompute()
+
+
+# LinkSquareProfileSketch
+
+if App.ActiveDocument.getObject('LinkSquareProfileSketch'):
+    App.ActiveDocument.removeObject('LinkSquareProfileSketch')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::Link', 'LinkSquareProfileSketch')
+App.ActiveDocument.getObject('LinkSquareProfileSketch').LinkedObject = App.getDocument('Sketches').getObject('SquareProfileSketch')
+App.ActiveDocument.recompute()
+
+
+# Body001Spacer
+
+if App.ActiveDocument.getObject('Body001Spacer'):
+    App.ActiveDocument.getObject('Body001Spacer').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body001Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body001Spacer')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body001Spacer'))
+
+
+# Binder001Body001Spacer
+
+if App.ActiveDocument.getObject('Binder001Body001Spacer'):
+    App.ActiveDocument.removeObject('Binder001Body001Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Spacer').newObject('PartDesign::SubShapeBinder', 'Binder001Body001Spacer')
+App.ActiveDocument.getObject('Binder001Body001Spacer').Support = App.ActiveDocument.getObject('LinkSquareProfileSketch')
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('LinkSquareProfileSketch').Visibility = False
+
+
+# Pad001Body001Spacer
+
+if App.ActiveDocument.getObject('Pad001Body001Spacer'):
+    App.ActiveDocument.removeObject('Pad001Body001Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Spacer').newObject('PartDesign::Pad', 'Pad001Body001Spacer')
+App.ActiveDocument.getObject('Pad001Body001Spacer').Profile = App.ActiveDocument.getObject('Binder001Body001Spacer')
+App.ActiveDocument.getObject('Pad001Body001Spacer').Length = 45
+App.ActiveDocument.getObject('Pad001Body001Spacer').Midplane = True
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body001Spacer').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# Body002Spacer
+
+if App.ActiveDocument.getObject('Body002Spacer'):
+    App.ActiveDocument.getObject('Body002Spacer').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body002Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body002Spacer')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body002Spacer'))
+
+
+# Binder001Body002Spacer
+
+if App.ActiveDocument.getObject('Binder001Body002Spacer'):
+    App.ActiveDocument.removeObject('Binder001Body002Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body002Spacer').newObject('PartDesign::SubShapeBinder', 'Binder001Body002Spacer')
+App.ActiveDocument.getObject('Binder001Body002Spacer').Support = App.ActiveDocument.getObject('LinkSquareProfileSketch')
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('LinkSquareProfileSketch').Visibility = False
+
+
+# Pad001Body002Spacer
+
+if App.ActiveDocument.getObject('Pad001Body002Spacer'):
+    App.ActiveDocument.removeObject('Pad001Body002Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body002Spacer').newObject('PartDesign::Pad', 'Pad001Body002Spacer')
+App.ActiveDocument.getObject('Pad001Body002Spacer').Profile = App.ActiveDocument.getObject('Binder001Body002Spacer')
+App.ActiveDocument.getObject('Pad001Body002Spacer').Length = 35
+App.ActiveDocument.getObject('Pad001Body002Spacer').Midplane = True
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body002Spacer').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# Placement
+
+App.ActiveDocument.getObject('Body002Spacer').Placement.Base.x = (
+    App.ActiveDocument.getObject('Body001Spacer').Shape.BoundBox.XLength +
+    App.ActiveDocument.getObject('Body002Spacer').Shape.BoundBox.XLength)*75/100
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body002Spacer').Placement.Base.x = App.ActiveDocument.getObject('Body002Spacer').Placement.Base.x
+
+
+# Group001Spacer
+
+if App.ActiveDocument.getObject('Group001Spacer'):
+    App.ActiveDocument.removeObject('Group001Spacer')
+    App.ActiveDocument.recompute()
+
+App.activeDocument().addObject('App::DocumentObjectGroup', 'Group001Spacer')
+App.ActiveDocument.getObject("Group001Spacer").addObject(App.ActiveDocument.getObject("LinkSquareProfileSketch"))
+App.ActiveDocument.getObject("Group001Spacer").addObject(App.ActiveDocument.getObject("Body001Spacer"))
+App.ActiveDocument.getObject("Group001Spacer").addObject(App.ActiveDocument.getObject("Body002Spacer"))
+App.ActiveDocument.recompute()
+
+
+# Placement
+
+for obj in App.ActiveDocument.getObject("Group001Spacer").Group:
+    obj.Placement.Base.y = -(
+        App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.YLength +
+        App.ActiveDocument.getObject('Group001Spacer').Shape.BoundBox.YLength)*75/100
 
 App.ActiveDocument.recompute()
 
