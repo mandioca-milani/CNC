@@ -596,6 +596,221 @@ for obj in App.ActiveDocument.getObject("Group001Spacer").Group:
 App.ActiveDocument.recompute()
 
 
+# Link001Sketch001Body001Nema17Body001Support
+
+if App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support'):
+    App.ActiveDocument.removeObject('Link001Sketch001Body001Nema17Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::Link', 'Link001Sketch001Body001Nema17Body001Support')
+App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support').LinkedObject = App.ActiveDocument.getObject('Sketch001Body001Nema17')
+App.ActiveDocument.recompute()
+
+
+# Body001Support
+
+if App.ActiveDocument.getObject('Body001Support'):
+    App.ActiveDocument.getObject('Body001Support').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body001Support')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body001Support'))
+
+
+# Binder001Body001Support
+
+if App.ActiveDocument.getObject('Binder001Body001Support'):
+    App.ActiveDocument.removeObject('Binder001Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::SubShapeBinder', 'Binder001Body001Support')
+App.ActiveDocument.getObject('Binder001Body001Support').Support = App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support')
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support').Visibility = False
+
+
+# Pad001Body001Support
+
+if App.ActiveDocument.getObject('Pad001Body001Support'):
+    App.ActiveDocument.removeObject('Pad001Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Pad', 'Pad001Body001Support')
+App.ActiveDocument.getObject('Pad001Body001Support').Profile = App.ActiveDocument.getObject('Binder001Body001Support')
+App.ActiveDocument.getObject('Pad001Body001Support').Midplane = True
+App.ActiveDocument.getObject('Pad001Body001Support').Length = 15
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body001Support').Visibility = False
+
+
+# Sketch001Body001Support
+
+if App.ActiveDocument.getObject('Sketch001Body001Support'):
+    App.ActiveDocument.removeObject('Sketch001Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('Sketcher::SketchObject', 'Sketch001Body001Support')
+App.ActiveDocument.getObject('Sketch001Body001Support').Support = (App.ActiveDocument.getObject('Pad001Body001Support'), ['Face10'])
+App.ActiveDocument.getObject('Sketch001Body001Support').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body001Support').addGeometry(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 2), False)  # 0
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 3, -1, 1))  # 0
+conList.append(Sketcher.Constraint('Diameter', 0, 22))  # 1
+App.ActiveDocument.getObject('Sketch001Body001Support').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pocket001Body001Support
+
+if App.ActiveDocument.getObject('Pocket001Body001Support'):
+    App.ActiveDocument.removeObject('Pocket001Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Pocket', 'Pocket001Body001Support')
+App.ActiveDocument.getObject('Pocket001Body001Support').Profile = App.ActiveDocument.getObject('Sketch001Body001Support')
+App.ActiveDocument.getObject('Pocket001Body001Support').Length = 7
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body001Support').Visibility = False
+
+
+# Hole001Body001Support
+
+if App.ActiveDocument.getObject('Hole001Body001Support'):
+    App.ActiveDocument.removeObject('Hole001Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Hole', 'Hole001Body001Support')
+App.ActiveDocument.getObject('Hole001Body001Support').Profile = (App.ActiveDocument.getObject('Pocket001Body001Support'), ['Face12', ])
+App.ActiveDocument.getObject('Hole001Body001Support').DepthType = 'ThroughAll'
+App.ActiveDocument.getObject('Hole001Body001Support').Diameter = 10
+App.ActiveDocument.recompute()
+
+
+# Chamfer001Body001Support
+
+if App.ActiveDocument.getObject('Chamfer001Body001Support'):
+    App.ActiveDocument.removeObject('Chamfer001Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Chamfer', 'Chamfer001Body001Support')
+App.ActiveDocument.getObject('Chamfer001Body001Support').Base = (
+    App.ActiveDocument.getObject('Hole001Body001Support'), ["Edge1", "Edge2", "Edge5", "Edge8", ])
+App.ActiveDocument.getObject('Chamfer001Body001Support').Size = 3
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# ShapeColor
+
+App.ActiveDocument.getObject('Body001Support').ViewObject.ShapeColor = (0.0, 0.6, 1.0, 0.0)
+
+
+# Body002Support
+
+if App.ActiveDocument.getObject('Body002Support'):
+    App.ActiveDocument.getObject('Body002Support').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body002Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body002Support')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body002Support'))
+
+
+# Binder001Body002Support
+
+if App.ActiveDocument.getObject('Binder001Body002Support'):
+    App.ActiveDocument.removeObject('Binder001Body002Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body002Support').newObject('PartDesign::SubShapeBinder', 'Binder001Body002Support')
+App.ActiveDocument.getObject('Binder001Body002Support').Support = App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support')
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support').Visibility = False
+
+
+# Pad001Body002Support
+
+if App.ActiveDocument.getObject('Pad001Body002Support'):
+    App.ActiveDocument.removeObject('Pad001Body002Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body002Support').newObject('PartDesign::Pad', 'Pad001Body002Support')
+App.ActiveDocument.getObject('Pad001Body002Support').Profile = App.ActiveDocument.getObject('Binder001Body002Support')
+App.ActiveDocument.getObject('Pad001Body002Support').Midplane = True
+App.ActiveDocument.getObject('Pad001Body002Support').Length = 10
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body002Support').Visibility = False
+
+
+# Chamfer001Body002Support
+
+if App.ActiveDocument.getObject('Chamfer001Body002Support'):
+    App.ActiveDocument.removeObject('Chamfer001Body002Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body002Support').newObject('PartDesign::Chamfer', 'Chamfer001Body002Support')
+App.ActiveDocument.getObject('Chamfer001Body002Support').Base = (
+    App.ActiveDocument.getObject('Pad001Body002Support'), ["Edge1", "Edge2", "Edge5", "Edge8", ])
+App.ActiveDocument.getObject('Chamfer001Body002Support').Size = 3
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# ShapeColor
+
+App.ActiveDocument.getObject('Body002Support').ViewObject.ShapeColor = App.ActiveDocument.getObject('Body001Support').ViewObject.ShapeColor
+
+
+# Placement
+
+App.ActiveDocument.getObject('Body002Support').Placement.Base.x = (
+    App.ActiveDocument.getObject('Body001Support').Shape.BoundBox.XLength +
+    App.ActiveDocument.getObject('Body002Support').Shape.BoundBox.XLength)*75/100
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body002Support').Placement.Base.x = App.ActiveDocument.getObject('Body002Support').Placement.Base.x
+App.ActiveDocument.recompute()
+
+
+# Group001Support
+
+if App.ActiveDocument.getObject('Group001Support'):
+    App.ActiveDocument.removeObject('Group001Support')
+    App.ActiveDocument.recompute()
+
+App.activeDocument().addObject('App::DocumentObjectGroup', 'Group001Support')
+App.ActiveDocument.getObject("Group001Support").addObject(App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support'))
+App.ActiveDocument.getObject("Group001Support").addObject(App.ActiveDocument.getObject("Body001Support"))
+App.ActiveDocument.getObject("Group001Support").addObject(App.ActiveDocument.getObject("Body002Support"))
+App.ActiveDocument.recompute()
+
+
+# Placement
+
+for obj in App.ActiveDocument.getObject("Group001Support").Group:
+    obj.Placement.Base.y = App.ActiveDocument.getObject('Group001Spacer').Shape.BoundBox.Center.y - (
+        App.ActiveDocument.getObject('Group001Spacer').Shape.BoundBox.YLength +
+        App.ActiveDocument.getObject('Group001Support').Shape.BoundBox.YLength)*75/100
+
+App.ActiveDocument.recompute()
+
+
 # Save
 
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
