@@ -134,19 +134,6 @@ App.ActiveDocument.getObject('Body001Nema17').ViewObject.ShapeColor = (0.2, 0.2,
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
 
 
-# # LinkSketch001Body001Nema17
-
-# if App.ActiveDocument.getObject('LinkSketch001Body001Nema17'):
-#     App.ActiveDocument.removeObject('LinkSketch001Body001Nema17')
-#     App.ActiveDocument.recompute()
-
-# App.ActiveDocument.addObject('App::Link', 'LinkSketch001Body001Nema17')
-# App.ActiveDocument.getObject('LinkSketch001Body001Nema17').LinkedObject = App.ActiveDocument.getObject('Sketch001Body001Nema17')
-# App.ActiveDocument.recompute()
-
-# App.ActiveDocument.getObject('LinkSketch001Body001Nema17').Visibility = False
-
-
 # Body002Nema17
 
 if App.ActiveDocument.getObject('Body002Nema17'):
@@ -448,7 +435,28 @@ App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link004Bod
 App.ActiveDocument.getObject('Link004Body001Nema17').LinkedObject = App.ActiveDocument.getObject('Body004Nema17')
 App.ActiveDocument.recompute()
 
+App.ActiveDocument.getObject('Body001Nema17').Visibility = False
+App.ActiveDocument.getObject('Body002Nema17').Visibility = False
+App.ActiveDocument.getObject('Body003Nema17').Visibility = False
+App.ActiveDocument.getObject('Body004Nema17').Visibility = False
+
 Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
+
+
+# Group001Nema17
+
+if App.ActiveDocument.getObject('Group001Nema17'):
+    App.ActiveDocument.removeObject('Group001Nema17')
+    App.ActiveDocument.recompute()
+
+App.activeDocument().addObject('App::DocumentObjectGroup', 'Group001Nema17')
+App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body001Nema17"))
+App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body002Nema17"))
+App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body003Nema17"))
+App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Body004Nema17"))
+App.ActiveDocument.getObject("Group001Nema17").addObject(App.ActiveDocument.getObject("Part001Nema17"))
+
+App.ActiveDocument.recompute()
 
 
 # Save
