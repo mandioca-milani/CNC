@@ -161,7 +161,7 @@ if App.ActiveDocument.getObject('Binder001Body002Nema17'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body002Nema17').newObject('PartDesign::SubShapeBinder', 'Binder001Body002Nema17')
-App.ActiveDocument.getObject('Binder001Body002Nema17').Support = FreeCAD.ActiveDocument.getObject('Sketch001Body001Nema17')
+App.ActiveDocument.getObject('Binder001Body002Nema17').Support = App.ActiveDocument.getObject('Sketch001Body001Nema17')
 App.ActiveDocument.getObject('Binder001Body002Nema17').Placement *= App.ActiveDocument.getObject('Local001Body001Nema17').Placement
 App.ActiveDocument.recompute()
 
@@ -269,7 +269,7 @@ if App.ActiveDocument.getObject('Binder001Body003Nema17'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::SubShapeBinder', 'Binder001Body003Nema17')
-App.ActiveDocument.getObject('Binder001Body003Nema17').Support = FreeCAD.ActiveDocument.getObject('Sketch001Body001Nema17')
+App.ActiveDocument.getObject('Binder001Body003Nema17').Support = App.ActiveDocument.getObject('Sketch001Body001Nema17')
 App.ActiveDocument.getObject('Binder001Body003Nema17').Placement *= App.ActiveDocument.getObject('Local002Body001Nema17').Placement
 App.ActiveDocument.recompute()
 
@@ -288,6 +288,55 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Binder001Body003Nema17').Visibility = False
 
 
+# Sketch001Body003Nema17
+
+if App.ActiveDocument.getObject('Sketch001Body003Nema17'):
+    App.ActiveDocument.removeObject('Sketch001Body003Nema17')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Nema17').newObject('Sketcher::SketchObject', 'Sketch001Body003Nema17')
+App.ActiveDocument.getObject('Sketch001Body003Nema17').Support = (App.ActiveDocument.getObject('Pad001Body003Nema17'), ['Face2'])
+App.ActiveDocument.getObject('Sketch001Body003Nema17').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.LineSegment(App.Vector(-1, 1, 0), App.Vector(1, 1, 0)))  # 0
+geoList.append(Part.LineSegment(App.Vector(1, 1, 0), App.Vector(1, 0, 0)))  # 1
+geoList.append(Part.LineSegment(App.Vector(1, 0, 0), App.Vector(-1, 0, 0)))  # 2
+geoList.append(Part.LineSegment(App.Vector(-1, 0, 0), App.Vector(-1, 1, 0)))  # 3
+App.ActiveDocument.getObject('Sketch001Body003Nema17').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 2, 1, 1))  # 0
+conList.append(Sketcher.Constraint('Coincident', 1, 2, 2, 1))  # 1
+conList.append(Sketcher.Constraint('Coincident', 2, 2, 3, 1))  # 2
+conList.append(Sketcher.Constraint('Coincident', 3, 2, 0, 1))  # 3
+conList.append(Sketcher.Constraint('Horizontal', 0))  # 4
+conList.append(Sketcher.Constraint('Vertical', 1))  # 5
+conList.append(Sketcher.Constraint('Vertical', 3))  # 6
+conList.append(Sketcher.Constraint('Symmetric', 2, 1, 2, 2, -2))  # 6
+conList.append(Sketcher.Constraint('PointOnObject', 1, 2, -1))  # 6
+conList.append(Sketcher.Constraint('Distance', 0, 16))  # 8
+conList.append(Sketcher.Constraint('Distance', 3, 10))  # 9
+App.ActiveDocument.getObject('Sketch001Body003Nema17').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pad002Body003Nema17
+
+if App.ActiveDocument.getObject('Pad002Body003Nema17'):
+    App.ActiveDocument.removeObject('Pad002Body003Nema17')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Pad', 'Pad002Body003Nema17')
+App.ActiveDocument.getObject('Pad002Body003Nema17').Profile = App.ActiveDocument.getObject('Sketch001Body003Nema17')
+App.ActiveDocument.getObject('Pad002Body003Nema17').Length = 5
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body003Nema17').Visibility = False
+
+
 # Chamfer001Body003Nema17
 
 if App.ActiveDocument.getObject('Chamfer001Body003Nema17'):
@@ -296,7 +345,7 @@ if App.ActiveDocument.getObject('Chamfer001Body003Nema17'):
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Chamfer', 'Chamfer001Body003Nema17')
 App.ActiveDocument.getObject('Chamfer001Body003Nema17').Base = (
-    App.ActiveDocument.getObject('Pad001Body003Nema17'), ['Edge1', 'Edge2', 'Edge5', 'Edge8', ])
+    App.ActiveDocument.getObject('Pad002Body003Nema17'), ['Edge1', 'Edge2', 'Edge5', 'Edge25', ])
 App.ActiveDocument.getObject('Chamfer001Body003Nema17').Size = 3
 App.ActiveDocument.recompute()
 
@@ -309,7 +358,7 @@ if App.ActiveDocument.getObject('Hole001Body003Nema17'):
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Hole', 'Hole001Body003Nema17')
 App.ActiveDocument.getObject('Hole001Body003Nema17').Profile = (
-    App.ActiveDocument.getObject('Chamfer001Body003Nema17'), ['Edge25', 'Edge26', 'Edge28', 'Edge27', ])
+    App.ActiveDocument.getObject('Chamfer001Body003Nema17'), ['Edge30', 'Edge29', 'Edge32', 'Edge31', ])
 App.ActiveDocument.getObject('Hole001Body003Nema17').Diameter = 6
 App.ActiveDocument.getObject('Hole001Body003Nema17').Depth = 6
 App.ActiveDocument.getObject('Hole001Body003Nema17').Reversed = True
@@ -338,7 +387,7 @@ if App.ActiveDocument.getObject('Point004Body003Nema17'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Point', 'Point001Body003Nema17')
-App.ActiveDocument.getObject('Point001Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge41')]
+App.ActiveDocument.getObject('Point001Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge45')]
 App.ActiveDocument.getObject('Point001Body003Nema17').MapMode = 'CenterOfCurvature'
 App.ActiveDocument.recompute()
 
@@ -348,7 +397,7 @@ App.ActiveDocument.getObject('Point002Body003Nema17').MapMode = 'CenterOfCurvatu
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Point', 'Point003Body003Nema17')
-App.ActiveDocument.getObject('Point003Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge45')]
+App.ActiveDocument.getObject('Point003Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge49')]
 App.ActiveDocument.getObject('Point003Body003Nema17').MapMode = 'CenterOfCurvature'
 App.ActiveDocument.recompute()
 
