@@ -1202,6 +1202,50 @@ App.ActiveDocument.getObject('PointScrew003Body001Support').Visibility = False
 App.ActiveDocument.getObject('PointScrew004Body001Support').Visibility = False
 
 
+# PointSpacer00xBody001Support
+
+if App.ActiveDocument.getObject('PointSpacer001Body001Support'):
+    App.ActiveDocument.removeObject('PointSpacer001Body001Support')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('PointSpacer002Body001Support'):
+    App.ActiveDocument.removeObject('PointSpacer002Body001Support')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('PointSpacer003Body001Support'):
+    App.ActiveDocument.removeObject('PointSpacer003Body001Support')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('PointSpacer004Body001Support'):
+    App.ActiveDocument.removeObject('PointSpacer004Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'PointSpacer001Body001Support')
+App.ActiveDocument.getObject('PointSpacer001Body001Support').Support = [(App.ActiveDocument.getObject('Pad001Body001Support'), 'Edge23')]
+App.ActiveDocument.getObject('PointSpacer001Body001Support').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'PointSpacer002Body001Support')
+App.ActiveDocument.getObject('PointSpacer002Body001Support').Support = [(App.ActiveDocument.getObject('Pad001Body001Support'), 'Edge20')]
+App.ActiveDocument.getObject('PointSpacer002Body001Support').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'PointSpacer003Body001Support')
+App.ActiveDocument.getObject('PointSpacer003Body001Support').Support = [(App.ActiveDocument.getObject('Pad001Body001Support'), 'Edge17')]
+App.ActiveDocument.getObject('PointSpacer003Body001Support').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'PointSpacer004Body001Support')
+App.ActiveDocument.getObject('PointSpacer004Body001Support').Support = [(App.ActiveDocument.getObject('Pad001Body001Support'), 'Edge14')]
+App.ActiveDocument.getObject('PointSpacer004Body001Support').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('PointSpacer001Body001Support').Visibility = False
+App.ActiveDocument.getObject('PointSpacer002Body001Support').Visibility = False
+App.ActiveDocument.getObject('PointSpacer003Body001Support').Visibility = False
+App.ActiveDocument.getObject('PointSpacer004Body001Support').Visibility = False
+
+
 # Sketch001Body001Support
 
 if App.ActiveDocument.getObject('Sketch001Body001Support'):
@@ -1426,6 +1470,34 @@ App.ActiveDocument.getObject('Link004M3x25_Screw').LinkedObject = App.getDocumen
 App.ActiveDocument.getObject('Link004M3x25_Screw').Placement *= App.ActiveDocument.getObject('PointScrew004Body001Support').Placement
 App.ActiveDocument.getObject('Link004M3x25_Screw').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, -90))
 App.ActiveDocument.recompute()
+
+
+# Link00xM3x5_5xCustom_Spacer
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link001M3x5_5xCustom_Spacer')
+App.ActiveDocument.getObject('Link001M3x5_5xCustom_Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x5.5xCustom-Spacer')[0]
+App.ActiveDocument.getObject('Link001M3x5_5xCustom_Spacer').Placement *= App.ActiveDocument.getObject('PointSpacer001Body001Support').Placement
+App.ActiveDocument.getObject('Link001M3x5_5xCustom_Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 90))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link002M3x5_5xCustom_Spacer')
+App.ActiveDocument.getObject('Link002M3x5_5xCustom_Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x5.5xCustom-Spacer')[0]
+App.ActiveDocument.getObject('Link002M3x5_5xCustom_Spacer').Placement *= App.ActiveDocument.getObject('PointSpacer002Body001Support').Placement
+App.ActiveDocument.getObject('Link002M3x5_5xCustom_Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 90))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link003M3x5_5xCustom_Spacer')
+App.ActiveDocument.getObject('Link003M3x5_5xCustom_Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x5.5xCustom-Spacer')[0]
+App.ActiveDocument.getObject('Link003M3x5_5xCustom_Spacer').Placement *= App.ActiveDocument.getObject('PointSpacer003Body001Support').Placement
+App.ActiveDocument.getObject('Link003M3x5_5xCustom_Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 90))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link004M3x5_5xCustom_Spacer')
+App.ActiveDocument.getObject('Link004M3x5_5xCustom_Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x5.5xCustom-Spacer')[0]
+App.ActiveDocument.getObject('Link004M3x5_5xCustom_Spacer').Placement *= App.ActiveDocument.getObject('PointSpacer004Body001Support').Placement
+App.ActiveDocument.getObject('Link004M3x5_5xCustom_Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 90))
+App.ActiveDocument.recompute()
+
 
 Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
 
