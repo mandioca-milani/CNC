@@ -783,6 +783,20 @@ App.ActiveDocument.getObject('Sketch001Body001Bearing').Visibility = False
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
 
 
+# Local001Pad001Body001Bearing
+
+if App.ActiveDocument.getObject('Local001Pad001Body001Bearing'):
+    App.ActiveDocument.removeObject('Local001Pad001Body001Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Bearing').newObject('PartDesign::CoordinateSystem', 'Local001Pad001Body001Bearing')
+App.ActiveDocument.getObject('Local001Pad001Body001Bearing').Support = [(App.ActiveDocument.getObject('Pad001Body001Bearing'), '')]
+App.ActiveDocument.getObject('Local001Pad001Body001Bearing').MapMode = 'ObjectXY'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Local001Pad001Body001Bearing').Visibility = False
+
+
 # Body002Bearing
 
 if App.ActiveDocument.getObject('Body002Bearing'):
@@ -937,20 +951,16 @@ App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link003Bo
 App.ActiveDocument.getObject('Link003Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Body003Bearing')
 App.ActiveDocument.recompute()
 
+App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link001Local001Pad001Body001Bearing')
+App.ActiveDocument.getObject('Link001Local001Pad001Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Local001Pad001Body001Bearing')
+App.ActiveDocument.getObject('Link001Local001Pad001Body001Bearing').Visibility = False
+App.ActiveDocument.recompute()
+
 App.ActiveDocument.getObject('Body001Bearing').Visibility = False
 App.ActiveDocument.getObject('Body002Bearing').Visibility = False
 App.ActiveDocument.getObject('Body003Bearing').Visibility = False
 
 Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
-
-
-# Placement
-
-App.ActiveDocument.getObject('Part001Bearing').Placement.Base.x = \
-    App.ActiveDocument.getObject('Part001Coupling').Placement.Base.x + (
-    App.ActiveDocument.getObject('Part001Coupling').Shape.BoundBox.XLength +
-    App.ActiveDocument.getObject('Part001Bearing').Shape.BoundBox.XLength) * 75/100
-App.ActiveDocument.recompute()
 
 
 # Group001Bearing
@@ -964,6 +974,16 @@ App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.get
 App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Body002Bearing'))
 App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Body003Bearing'))
 App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Part001Bearing'))
+
+App.ActiveDocument.recompute()
+
+
+# Placement
+
+for obj in App.ActiveDocument.getObject('Group001Bearing').Group:
+    obj.Placement.Base.x = App.ActiveDocument.getObject('Group001Coupling').Shape.BoundBox.Center.x + (
+        App.ActiveDocument.getObject('Group001Coupling').Shape.BoundBox.XLength +
+        App.ActiveDocument.getObject('Group001Bearing').Shape.BoundBox.XLength) * 75/100
 
 App.ActiveDocument.recompute()
 
@@ -1172,6 +1192,20 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Sketch001Body001Support').Visibility = False
 
 
+# Point001Body001Support
+
+if App.ActiveDocument.getObject('Point001Body001Support'):
+    App.ActiveDocument.removeObject('Point001Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'Point001Body001Support')
+App.ActiveDocument.getObject('Point001Body001Support').Support = [(App.ActiveDocument.getObject('Pocket001Body001Support'), 'Face11')]
+App.ActiveDocument.getObject('Point001Body001Support').MapMode = 'CenterOfMass'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Point001Body001Support').Visibility = False
+
+
 # Hole001Body001Support
 
 if App.ActiveDocument.getObject('Hole001Body001Support'):
@@ -1294,6 +1328,57 @@ for obj in App.ActiveDocument.getObject('Group001Support').Group:
 App.ActiveDocument.recompute()
 
 
+# Part001Support
+
+if App.ActiveDocument.getObject('Part001Support'):
+    App.ActiveDocument.getObject('Part001Support').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Part001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::Part', 'Part001Support')
+Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObject('Part001Support'))
+App.ActiveDocument.recompute()
+
+
+# Link001Body001Support
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link001Body001Support')
+App.ActiveDocument.getObject('Link001Body001Support').LinkedObject = App.ActiveDocument.getObject('Body001Support')
+App.ActiveDocument.recompute()
+
+
+# Link001Part001Bearing
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link001Part001Bearing')
+App.ActiveDocument.getObject('Link001Part001Bearing').LinkedObject = App.ActiveDocument.getObject('Part001Bearing')
+App.ActiveDocument.getObject('Link001Part001Bearing').Placement *= App.ActiveDocument.getObject('Local001Pad001Body001Bearing').Placement
+App.ActiveDocument.getObject('Link001Part001Bearing').Placement *= App.ActiveDocument.getObject('Point001Body001Support').Placement
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
+
+
+# Group001Part001Support
+
+if App.ActiveDocument.getObject('Group001Part001Support'):
+    App.ActiveDocument.removeObject('Group001Part001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Part001Support')
+App.ActiveDocument.getObject('Group001Part001Support').addObject(App.ActiveDocument.getObject('Part001Support'))
+App.ActiveDocument.recompute()
+
+
+# Placement
+
+for obj in App.ActiveDocument.getObject('Group001Part001Support').Group:
+    obj.Placement.Base.y = App.ActiveDocument.getObject('Group001Support').Shape.BoundBox.Center.y - (
+        App.ActiveDocument.getObject('Group001Support').Shape.BoundBox.YLength +
+        App.ActiveDocument.getObject('Group001Part001Support').Shape.BoundBox.YLength) * 75/100
+
+App.ActiveDocument.recompute()
+
+
 # Save
 
 import pydot
@@ -1305,6 +1390,5 @@ Gui.SendMsgToActiveView('ViewFit')
 App.ActiveDocument.save()
 
 graph = pydot.graph_from_dot_data(App.ActiveDocument.exportGraphviz())[0]
-graph.write_svg(os.getcwd() + '/Axis/graph.svg')
-graph.write_dot(os.getcwd() + '/Axis/graph.dot')
+graph.write_svg(os.getcwd() + '/Axis/AxisEngine.svg')
 
