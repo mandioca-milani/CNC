@@ -425,6 +425,18 @@ App.ActiveDocument.recompute()
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body004Nema17'))
 
 
+# Binder001Body004Nema17
+
+if App.ActiveDocument.getObject('Binder001Body004Nema17'):
+    App.ActiveDocument.removeObject('Binder001Body004Nema17')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Nema17').newObject('PartDesign::ShapeBinder', 'Binder001Body004Nema17')
+App.ActiveDocument.getObject('Binder001Body004Nema17').Support = App.ActiveDocument.getObject('Local001Body002Nema17')
+App.ActiveDocument.getObject('Binder001Body004Nema17').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement
+App.ActiveDocument.recompute()
+
+
 # Sketch001Body004Nema17
 
 if App.ActiveDocument.getObject('Sketch001Body004Nema17'):
@@ -432,7 +444,7 @@ if App.ActiveDocument.getObject('Sketch001Body004Nema17'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body004Nema17').newObject('Sketcher::SketchObject', 'Sketch001Body004Nema17')
-App.ActiveDocument.getObject('Sketch001Body004Nema17').Support = (App.ActiveDocument.getObject('Local001Body002Nema17'), [''])
+App.ActiveDocument.getObject('Sketch001Body004Nema17').Support = (App.ActiveDocument.getObject('Binder001Body004Nema17'), [''])
 App.ActiveDocument.getObject('Sketch001Body004Nema17').MapMode = 'FlatFace'
 App.ActiveDocument.recompute()
 
@@ -479,16 +491,16 @@ App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Bod
 App.ActiveDocument.getObject('Link001Body001Nema17').LinkedObject = App.ActiveDocument.getObject('Body001Nema17')
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link002Body001Nema17')
-App.ActiveDocument.getObject('Link002Body001Nema17').LinkedObject = App.ActiveDocument.getObject('Body002Nema17')
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Body002Nema17')
+App.ActiveDocument.getObject('Link001Body002Nema17').LinkedObject = App.ActiveDocument.getObject('Body002Nema17')
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link003Body001Nema17')
-App.ActiveDocument.getObject('Link003Body001Nema17').LinkedObject = App.ActiveDocument.getObject('Body003Nema17')
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Body003Nema17')
+App.ActiveDocument.getObject('Link001Body003Nema17').LinkedObject = App.ActiveDocument.getObject('Body003Nema17')
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link004Body001Nema17')
-App.ActiveDocument.getObject('Link004Body001Nema17').LinkedObject = App.ActiveDocument.getObject('Body004Nema17')
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Body004Nema17')
+App.ActiveDocument.getObject('Link001Body004Nema17').LinkedObject = App.ActiveDocument.getObject('Body004Nema17')
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body001Nema17').Visibility = False
@@ -1086,17 +1098,6 @@ for obj in App.ActiveDocument.getObject('Group001Spacer').Group:
 App.ActiveDocument.recompute()
 
 
-# Link001Sketch001Body001Nema17Body001Support
-
-if App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support'):
-    App.ActiveDocument.removeObject('Link001Sketch001Body001Nema17Body001Support')
-    App.ActiveDocument.recompute()
-
-App.ActiveDocument.addObject('App::Link', 'Link001Sketch001Body001Nema17Body001Support')
-App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support').LinkedObject = App.ActiveDocument.getObject('Sketch001Body001Nema17')
-App.ActiveDocument.recompute()
-
-
 # Body001Support
 
 if App.ActiveDocument.getObject('Body001Support'):
@@ -1116,11 +1117,9 @@ if App.ActiveDocument.getObject('Binder001Body001Support'):
     App.ActiveDocument.removeObject('Binder001Body001Support')
     App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::SubShapeBinder', 'Binder001Body001Support')
-App.ActiveDocument.getObject('Binder001Body001Support').Support = App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support')
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::ShapeBinder', 'Binder001Body001Support')
+App.ActiveDocument.getObject('Binder001Body001Support').Support = App.ActiveDocument.getObject('Sketch001Body001Nema17')
 App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support').Visibility = False
 
 
 # Pad001Body001Support
@@ -1225,11 +1224,9 @@ if App.ActiveDocument.getObject('Binder001Body002Support'):
     App.ActiveDocument.removeObject('Binder001Body002Support')
     App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Body002Support').newObject('PartDesign::SubShapeBinder', 'Binder001Body002Support')
-App.ActiveDocument.getObject('Binder001Body002Support').Support = App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support')
+App.ActiveDocument.getObject('Body002Support').newObject('PartDesign::ShapeBinder', 'Binder001Body002Support')
+App.ActiveDocument.getObject('Binder001Body002Support').Support = App.ActiveDocument.getObject('Sketch001Body001Nema17')
 App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support').Visibility = False
 
 
 # Pad001Body002Support
@@ -1274,9 +1271,6 @@ App.ActiveDocument.getObject('Body002Support').Placement.Base.x = (
     App.ActiveDocument.getObject('Body002Support').Shape.BoundBox.XLength)*75/100
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Binder001Body002Support').Placement.Base.x = App.ActiveDocument.getObject('Body002Support').Placement.Base.x
-App.ActiveDocument.recompute()
-
 
 # Group001Support
 
@@ -1285,7 +1279,6 @@ if App.ActiveDocument.getObject('Group001Support'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Support')
-App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Link001Sketch001Body001Nema17Body001Support'))
 App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Body001Support'))
 App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Body002Support'))
 App.ActiveDocument.recompute()
@@ -1303,9 +1296,15 @@ App.ActiveDocument.recompute()
 
 # Save
 
+import pydot
+
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
 Gui.ActiveDocument.activeView().viewDefaultOrientation()
 Gui.SendMsgToActiveView('ViewFit')
 
 App.ActiveDocument.save()
+
+graph = pydot.graph_from_dot_data(App.ActiveDocument.exportGraphviz())[0]
+graph.write_svg(os.getcwd() + '/Axis/graph.svg')
+graph.write_dot(os.getcwd() + '/Axis/graph.dot')
 
