@@ -5,6 +5,7 @@ for doc in App.listDocuments():
 
 docs = [
     '/Parts/Sketches.FCStd',
+    '/Parts/Fasteners.FCStd',
 ]
 
 for doc in docs:
@@ -1157,6 +1158,50 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Binder001Body001Support').Visibility = False
 
 
+# PointScrew00xBody001Support
+
+if App.ActiveDocument.getObject('PointScrew001Body001Support'):
+    App.ActiveDocument.removeObject('PointScrew001Body001Support')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('PointScrew002Body001Support'):
+    App.ActiveDocument.removeObject('PointScrew002Body001Support')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('PointScrew003Body001Support'):
+    App.ActiveDocument.removeObject('PointScrew003Body001Support')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('PointScrew004Body001Support'):
+    App.ActiveDocument.removeObject('PointScrew004Body001Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'PointScrew001Body001Support')
+App.ActiveDocument.getObject('PointScrew001Body001Support').Support = [(App.ActiveDocument.getObject('Pad001Body001Support'), 'Edge24')]
+App.ActiveDocument.getObject('PointScrew001Body001Support').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'PointScrew002Body001Support')
+App.ActiveDocument.getObject('PointScrew002Body001Support').Support = [(App.ActiveDocument.getObject('Pad001Body001Support'), 'Edge21')]
+App.ActiveDocument.getObject('PointScrew002Body001Support').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'PointScrew003Body001Support')
+App.ActiveDocument.getObject('PointScrew003Body001Support').Support = [(App.ActiveDocument.getObject('Pad001Body001Support'), 'Edge18')]
+App.ActiveDocument.getObject('PointScrew003Body001Support').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Support').newObject('PartDesign::Point', 'PointScrew004Body001Support')
+App.ActiveDocument.getObject('PointScrew004Body001Support').Support = [(App.ActiveDocument.getObject('Pad001Body001Support'), 'Edge15')]
+App.ActiveDocument.getObject('PointScrew004Body001Support').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('PointScrew001Body001Support').Visibility = False
+App.ActiveDocument.getObject('PointScrew002Body001Support').Visibility = False
+App.ActiveDocument.getObject('PointScrew003Body001Support').Visibility = False
+App.ActiveDocument.getObject('PointScrew004Body001Support').Visibility = False
+
+
 # Sketch001Body001Support
 
 if App.ActiveDocument.getObject('Sketch001Body001Support'):
@@ -1353,6 +1398,33 @@ App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link001Pa
 App.ActiveDocument.getObject('Link001Part001Bearing').LinkedObject = App.ActiveDocument.getObject('Part001Bearing')
 App.ActiveDocument.getObject('Link001Part001Bearing').Placement *= App.ActiveDocument.getObject('Local001Pad001Body001Bearing').Placement
 App.ActiveDocument.getObject('Link001Part001Bearing').Placement *= App.ActiveDocument.getObject('Point001Body001Support').Placement
+App.ActiveDocument.recompute()
+
+
+# Link00xM3x25_Screw
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link001M3x25_Screw')
+App.ActiveDocument.getObject('Link001M3x25_Screw').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x25-Screw')[0]
+App.ActiveDocument.getObject('Link001M3x25_Screw').Placement *= App.ActiveDocument.getObject('PointScrew001Body001Support').Placement
+App.ActiveDocument.getObject('Link001M3x25_Screw').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, -90))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link002M3x25_Screw')
+App.ActiveDocument.getObject('Link002M3x25_Screw').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x25-Screw')[0]
+App.ActiveDocument.getObject('Link002M3x25_Screw').Placement *= App.ActiveDocument.getObject('PointScrew002Body001Support').Placement
+App.ActiveDocument.getObject('Link002M3x25_Screw').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, -90))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link003M3x25_Screw')
+App.ActiveDocument.getObject('Link003M3x25_Screw').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x25-Screw')[0]
+App.ActiveDocument.getObject('Link003M3x25_Screw').Placement *= App.ActiveDocument.getObject('PointScrew003Body001Support').Placement
+App.ActiveDocument.getObject('Link003M3x25_Screw').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, -90))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part001Support').newObject('App::Link', 'Link004M3x25_Screw')
+App.ActiveDocument.getObject('Link004M3x25_Screw').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x25-Screw')[0]
+App.ActiveDocument.getObject('Link004M3x25_Screw').Placement *= App.ActiveDocument.getObject('PointScrew004Body001Support').Placement
+App.ActiveDocument.getObject('Link004M3x25_Screw').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, -90))
 App.ActiveDocument.recompute()
 
 Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
