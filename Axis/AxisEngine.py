@@ -1069,7 +1069,8 @@ if App.ActiveDocument.getObject('LinkSquareProfileSketch'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.addObject('App::Link', 'LinkSquareProfileSketch')
-App.ActiveDocument.getObject('LinkSquareProfileSketch').LinkedObject = App.getDocument('Sketches').getObject('SquareProfileSketch')
+# App.ActiveDocument.getObject('LinkSquareProfileSketch').LinkedObject = App.getDocument('Sketches').getObject('SquareProfileSketch')
+App.ActiveDocument.getObject('LinkSquareProfileSketch').LinkedObject = App.getDocument('Sketches').getObject('ShapeBinder')
 App.ActiveDocument.recompute()
 
 
@@ -1169,6 +1170,246 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Binder001Body002Spacer').Placement.Base.x = App.ActiveDocument.getObject('Body002Spacer').Placement.Base.x
 
 
+# Body003Spacer
+
+if App.ActiveDocument.getObject('Body003Spacer'):
+    App.ActiveDocument.getObject('Body003Spacer').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body003Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body003Spacer')
+App.ActiveDocument.getObject('Body003Spacer').BaseFeature = App.ActiveDocument.getObject('Body001Spacer')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body003Spacer'))
+
+
+# Sketch001Body003Spacer
+
+if App.ActiveDocument.getObject('Sketch001Body003Spacer'):
+    App.ActiveDocument.removeObject('Sketch001Body003Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Spacer').newObject('Sketcher::SketchObject', 'Sketch001Body003Spacer')
+App.ActiveDocument.getObject('Sketch001Body003Spacer').Support = (App.ActiveDocument.getObject(
+    'YZ_Plane' + App.ActiveDocument.getObject('Body003Spacer').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch001Body003Spacer').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 1))  # 0
+App.ActiveDocument.getObject('Sketch001Body003Spacer').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 3, -1, 1))  # 0
+conList.append(Sketcher.Constraint('Diameter', 0, 5/16*25.4))  # 1
+App.ActiveDocument.getObject('Sketch001Body003Spacer').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pocket001Body003Spacer
+
+if App.ActiveDocument.getObject('Pocket001Body003Spacer'):
+    App.ActiveDocument.removeObject('Pocket001Body003Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Spacer').newObject('PartDesign::Pocket', 'Pocket001Body003Spacer')
+App.ActiveDocument.getObject('Pocket001Body003Spacer').Profile = App.ActiveDocument.getObject('Sketch001Body003Spacer')
+App.ActiveDocument.getObject('Pocket001Body003Spacer').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body003Spacer').Visibility = False
+
+
+# Sketch002Body003Spacer
+
+if App.ActiveDocument.getObject('Sketch002Body003Spacer'):
+    App.ActiveDocument.removeObject('Sketch002Body003Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Spacer').newObject('Sketcher::SketchObject', 'Sketch002Body003Spacer')
+App.ActiveDocument.getObject('Sketch002Body003Spacer').Support = (App.ActiveDocument.getObject(
+    'XY_Plane' + App.ActiveDocument.getObject('Body003Spacer').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch002Body003Spacer').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 1, 0), App.Vector(0, 0, 1), 1))  # 0
+geoList.append(Part.Circle(App.Vector(0, -1, 0), App.Vector(0, 0, 1), 1))  # 1
+App.ActiveDocument.getObject('Sketch002Body003Spacer').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('PointOnObject', 1, 3, -2))  # 0
+conList.append(Sketcher.Constraint('Distance', 1, 3, 0, 3, 16))  # 3
+conList.append(Sketcher.Constraint('Symmetric', 0, 3, 1, 3, -1))  # 1
+conList.append(Sketcher.Constraint('Diameter', 0, 1/4*25.4))  # 4
+conList.append(Sketcher.Constraint('Equal', 1, 0))  # 5
+App.ActiveDocument.getObject('Sketch002Body003Spacer').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pocket002Body003Spacer
+
+if App.ActiveDocument.getObject('Pocket002Body003Spacer'):
+    App.ActiveDocument.removeObject('Pocket002Body003Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Spacer').newObject('PartDesign::Pocket', 'Pocket002Body003Spacer')
+App.ActiveDocument.getObject('Pocket002Body003Spacer').Profile = App.ActiveDocument.getObject('Sketch002Body003Spacer')
+App.ActiveDocument.getObject('Pocket002Body003Spacer').Reversed = True
+App.ActiveDocument.getObject('Pocket002Body003Spacer').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch002Body003Spacer').Visibility = False
+
+
+# Body004Spacer
+
+if App.ActiveDocument.getObject('Body004Spacer'):
+    App.ActiveDocument.getObject('Body004Spacer').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body004Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body004Spacer')
+App.ActiveDocument.getObject('Body004Spacer').BaseFeature = App.ActiveDocument.getObject('Body002Spacer')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body004Spacer'))
+
+
+# Binder001Body004Spacer
+
+if App.ActiveDocument.getObject('Binder001Body004Spacer'):
+    App.ActiveDocument.removeObject('Binder001Body004Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Spacer').newObject('PartDesign::ShapeBinder', 'Binder001Body004Spacer')
+App.ActiveDocument.getObject('Binder001Body004Spacer').Support = App.ActiveDocument.getObject('Sketch001Body003Spacer')
+App.ActiveDocument.recompute()
+
+
+# Pocket001Body004Spacer
+
+if App.ActiveDocument.getObject('Pocket001Body004Spacer'):
+    App.ActiveDocument.removeObject('Pocket001Body004Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Spacer').newObject('PartDesign::Pocket', 'Pocket001Body004Spacer')
+App.ActiveDocument.getObject('Pocket001Body004Spacer').Profile = App.ActiveDocument.getObject('Binder001Body004Spacer')
+App.ActiveDocument.getObject('Pocket001Body004Spacer').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body004Spacer').Visibility = False
+
+
+# Body005Spacer
+
+if App.ActiveDocument.getObject('Body005Spacer'):
+    App.ActiveDocument.getObject('Body005Spacer').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body005Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body005Spacer')
+App.ActiveDocument.getObject('Body005Spacer').BaseFeature = App.ActiveDocument.getObject('Body001Spacer')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body005Spacer'))
+
+
+# Binder001Body005Spacer
+
+if App.ActiveDocument.getObject('Binder001Body005Spacer'):
+    App.ActiveDocument.removeObject('Binder001Body005Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body005Spacer').newObject('PartDesign::ShapeBinder', 'Binder001Body005Spacer')
+App.ActiveDocument.getObject('Binder001Body005Spacer').Support = App.ActiveDocument.getObject('Sketch001Body003Spacer')
+App.ActiveDocument.recompute()
+
+
+# Pocket001Body005Spacer
+
+if App.ActiveDocument.getObject('Pocket001Body005Spacer'):
+    App.ActiveDocument.removeObject('Pocket001Body005Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body005Spacer').newObject('PartDesign::Pocket', 'Pocket001Body005Spacer')
+App.ActiveDocument.getObject('Pocket001Body005Spacer').Profile = App.ActiveDocument.getObject('Binder001Body005Spacer')
+App.ActiveDocument.getObject('Pocket001Body005Spacer').Midplane = True
+App.ActiveDocument.getObject('Pocket001Body005Spacer').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body005Spacer').Visibility = False
+
+
+# Binder002Body005Spacer
+
+if App.ActiveDocument.getObject('Binder002Body005Spacer'):
+    App.ActiveDocument.removeObject('Binder002Body005Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body005Spacer').newObject('PartDesign::ShapeBinder', 'Binder002Body005Spacer')
+App.ActiveDocument.getObject('Binder002Body005Spacer').Support = App.ActiveDocument.getObject('Sketch002Body003Spacer')
+App.ActiveDocument.recompute()
+
+
+# Pocket002Body005Spacer
+
+if App.ActiveDocument.getObject('Pocket002Body005Spacer'):
+    App.ActiveDocument.removeObject('Pocket002Body005Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body005Spacer').newObject('PartDesign::Pocket', 'Pocket002Body005Spacer')
+App.ActiveDocument.getObject('Pocket002Body005Spacer').Profile = App.ActiveDocument.getObject('Binder002Body005Spacer')
+App.ActiveDocument.getObject('Pocket002Body005Spacer').Reversed = True
+App.ActiveDocument.getObject('Pocket002Body005Spacer').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder002Body005Spacer').Visibility = False
+
+
+# Body006Spacer
+
+if App.ActiveDocument.getObject('Body006Spacer'):
+    App.ActiveDocument.getObject('Body006Spacer').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body006Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body006Spacer')
+App.ActiveDocument.getObject('Body006Spacer').BaseFeature = App.ActiveDocument.getObject('Body002Spacer')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body006Spacer'))
+
+
+# Binder001Body006Spacer
+
+if App.ActiveDocument.getObject('Binder001Body006Spacer'):
+    App.ActiveDocument.removeObject('Binder001Body006Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body006Spacer').newObject('PartDesign::ShapeBinder', 'Binder001Body006Spacer')
+App.ActiveDocument.getObject('Binder001Body006Spacer').Support = App.ActiveDocument.getObject('Sketch001Body003Spacer')
+App.ActiveDocument.recompute()
+
+
+# Pocket001Body006Spacer
+
+if App.ActiveDocument.getObject('Pocket001Body006Spacer'):
+    App.ActiveDocument.removeObject('Pocket001Body006Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body006Spacer').newObject('PartDesign::Pocket', 'Pocket001Body006Spacer')
+App.ActiveDocument.getObject('Pocket001Body006Spacer').Profile = App.ActiveDocument.getObject('Binder001Body006Spacer')
+App.ActiveDocument.getObject('Pocket001Body006Spacer').Midplane = True
+App.ActiveDocument.getObject('Pocket001Body006Spacer').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Binder001Body006Spacer').Visibility = False
+
+
 # Group001Spacer
 
 if App.ActiveDocument.getObject('Group001Spacer'):
@@ -1179,15 +1420,35 @@ App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Spacer')
 App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('LinkSquareProfileSketch'))
 App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body001Spacer'))
 App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body002Spacer'))
+App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body003Spacer'))
+App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body004Spacer'))
+App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body005Spacer'))
+App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body006Spacer'))
 App.ActiveDocument.recompute()
 
 
 # Placement
 
 for obj in App.ActiveDocument.getObject('Group001Spacer').Group:
-    obj.Placement.Base.y = -(
+    obj.Placement = App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 0))
+
+
+# YAxis
+
+for obj in App.ActiveDocument.getObject('Group001Spacer').Group:
+    obj.Placement.Base.y = App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.Center.y - (
         App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.YLength +
         App.ActiveDocument.getObject('Group001Spacer').Shape.BoundBox.YLength)*75/100
+
+
+# XAxis
+
+for i in range(2, len(App.ActiveDocument.getObject('Group001Spacer').Group)):
+    App.ActiveDocument.getObject('Group001Spacer').Group[i].Placement.Base.x = \
+        App.ActiveDocument.getObject('Group001Spacer').Group[i-1].Placement.Base.x + (
+            App.ActiveDocument.getObject('Group001Spacer').Group[i-1].Shape.BoundBox.XLength +
+            App.ActiveDocument.getObject('Group001Spacer').Group[i].Shape.BoundBox.XLength)*75/100
+
 
 App.ActiveDocument.recompute()
 
@@ -1676,19 +1937,11 @@ for obj in App.ActiveDocument.getObject('Group001Support').Group:
 
 # XAxis
 
-App.ActiveDocument.getObject('Body002Support').Placement.Base.x = (
-    App.ActiveDocument.getObject('Body001Support').Shape.BoundBox.XLength +
-    App.ActiveDocument.getObject('Body002Support').Shape.BoundBox.XLength)*75/100
-
-App.ActiveDocument.getObject('Part001Support').Placement.Base.x = \
-    App.ActiveDocument.getObject('Body002Support').Placement.Base.x + (
-    App.ActiveDocument.getObject('Body002Support').Shape.BoundBox.XLength +
-    App.ActiveDocument.getObject('Part001Support').Shape.BoundBox.XLength)*75/100
-
-App.ActiveDocument.getObject('Part002Support').Placement.Base.x = \
-    App.ActiveDocument.getObject('Part001Support').Placement.Base.x + (
-    App.ActiveDocument.getObject('Part001Support').Shape.BoundBox.XLength +
-    App.ActiveDocument.getObject('Part002Support').Shape.BoundBox.XLength)*75/100
+for i in range(1, len(App.ActiveDocument.getObject('Group001Support').Group)):
+    App.ActiveDocument.getObject('Group001Support').Group[i].Placement.Base.x = \
+        App.ActiveDocument.getObject('Group001Support').Group[i-1].Placement.Base.x + (
+            App.ActiveDocument.getObject('Group001Support').Group[i-1].Shape.BoundBox.XLength +
+            App.ActiveDocument.getObject('Group001Support').Group[i].Shape.BoundBox.XLength)*75/100
 
 App.ActiveDocument.recompute()
 
