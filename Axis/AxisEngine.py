@@ -1062,16 +1062,19 @@ for obj in App.ActiveDocument.getObject('Group001Bearing').Group:
 App.ActiveDocument.recompute()
 
 
-# LinkSquareProfileSketch
+# SquareProfileSketch001Spacer
 
-if App.ActiveDocument.getObject('LinkSquareProfileSketch'):
-    App.ActiveDocument.removeObject('LinkSquareProfileSketch')
+if App.ActiveDocument.getObject('SquareProfileSketch001Spacer'):
+    App.ActiveDocument.removeObject('SquareProfileSketch001Spacer')
     App.ActiveDocument.recompute()
 
-App.ActiveDocument.addObject('App::Link', 'LinkSquareProfileSketch')
-# App.ActiveDocument.getObject('LinkSquareProfileSketch').LinkedObject = App.getDocument('Sketches').getObject('SquareProfileSketch')
-App.ActiveDocument.getObject('LinkSquareProfileSketch').LinkedObject = App.getDocument('Sketches').getObject('ShapeBinder')
+App.ActiveDocument.addObject("Part::Feature", "SquareProfileSketch001Spacer")
+App.ActiveDocument.getObject('SquareProfileSketch001Spacer').Shape = \
+    Part.Compound(App.getDocument('Sketches').getObject('BodySquareProfileSketch').Shape.slice(App.Vector(0, 1, 0), 0))
 App.ActiveDocument.recompute()
+
+
+App.ActiveDocument.getObject('SquareProfileSketch001Spacer').Visibility = False
 
 
 # Body001Spacer
@@ -1093,11 +1096,9 @@ if App.ActiveDocument.getObject('Binder001Body001Spacer'):
     App.ActiveDocument.removeObject('Binder001Body001Spacer')
     App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Body001Spacer').newObject('PartDesign::SubShapeBinder', 'Binder001Body001Spacer')
-App.ActiveDocument.getObject('Binder001Body001Spacer').Support = App.ActiveDocument.getObject('LinkSquareProfileSketch')
+App.ActiveDocument.getObject('Body001Spacer').newObject('PartDesign::ShapeBinder', 'Binder001Body001Spacer')
+App.ActiveDocument.getObject('Binder001Body001Spacer').Support = App.ActiveDocument.getObject('SquareProfileSketch001Spacer')
 App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('LinkSquareProfileSketch').Visibility = False
 
 
 # Pad001Body001Spacer
@@ -1136,11 +1137,9 @@ if App.ActiveDocument.getObject('Binder001Body002Spacer'):
     App.ActiveDocument.removeObject('Binder001Body002Spacer')
     App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Body002Spacer').newObject('PartDesign::SubShapeBinder', 'Binder001Body002Spacer')
-App.ActiveDocument.getObject('Binder001Body002Spacer').Support = App.ActiveDocument.getObject('LinkSquareProfileSketch')
+App.ActiveDocument.getObject('Body002Spacer').newObject('PartDesign::ShapeBinder', 'Binder001Body002Spacer')
+App.ActiveDocument.getObject('Binder001Body002Spacer').Support = App.ActiveDocument.getObject('SquareProfileSketch001Spacer')
 App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('LinkSquareProfileSketch').Visibility = False
 
 
 # Pad001Body002Spacer
@@ -1158,16 +1157,6 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Binder001Body002Spacer').Visibility = False
 
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
-
-
-# Placement
-
-App.ActiveDocument.getObject('Body002Spacer').Placement.Base.x = (
-    App.ActiveDocument.getObject('Body001Spacer').Shape.BoundBox.XLength +
-    App.ActiveDocument.getObject('Body002Spacer').Shape.BoundBox.XLength)*75/100
-App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('Binder001Body002Spacer').Placement.Base.x = App.ActiveDocument.getObject('Body002Spacer').Placement.Base.x
 
 
 # Body003Spacer
@@ -1417,7 +1406,7 @@ if App.ActiveDocument.getObject('Group001Spacer'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Spacer')
-App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('LinkSquareProfileSketch'))
+App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('SquareProfileSketch001Spacer'))
 App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body001Spacer'))
 App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body002Spacer'))
 App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getObject('Body003Spacer'))
@@ -1435,8 +1424,9 @@ for obj in App.ActiveDocument.getObject('Group001Spacer').Group:
 
 # YAxis
 
-for obj in App.ActiveDocument.getObject('Group001Spacer').Group:
-    obj.Placement.Base.y = App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.Center.y - (
+for i in range(1, len(App.ActiveDocument.getObject('Group001Spacer').Group)):
+    App.ActiveDocument.getObject('Group001Spacer').Group[i].Placement.Base.y = \
+        App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.Center.y - (
         App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.YLength +
         App.ActiveDocument.getObject('Group001Spacer').Shape.BoundBox.YLength)*75/100
 
@@ -1446,8 +1436,8 @@ for obj in App.ActiveDocument.getObject('Group001Spacer').Group:
 for i in range(2, len(App.ActiveDocument.getObject('Group001Spacer').Group)):
     App.ActiveDocument.getObject('Group001Spacer').Group[i].Placement.Base.x = \
         App.ActiveDocument.getObject('Group001Spacer').Group[i-1].Placement.Base.x + (
-            App.ActiveDocument.getObject('Group001Spacer').Group[i-1].Shape.BoundBox.XLength +
-            App.ActiveDocument.getObject('Group001Spacer').Group[i].Shape.BoundBox.XLength)*75/100
+        App.ActiveDocument.getObject('Group001Spacer').Group[i-1].Shape.BoundBox.XLength +
+        App.ActiveDocument.getObject('Group001Spacer').Group[i].Shape.BoundBox.XLength)*75/100
 
 
 App.ActiveDocument.recompute()
