@@ -555,6 +555,15 @@ App.ActiveDocument.getObject('Body003Nema17').Visibility = False
 App.ActiveDocument.getObject('Body004Nema17').Visibility = False
 
 
+# Link001Local001Body002Nema17
+
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Local001Body002Nema17')
+App.ActiveDocument.getObject('Link001Local001Body002Nema17').LinkedObject = App.ActiveDocument.getObject('Local001Body002Nema17')
+App.ActiveDocument.getObject('Link001Local001Body002Nema17').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement
+App.ActiveDocument.getObject('Link001Local001Body002Nema17').Visibility = False
+App.ActiveDocument.recompute()
+
+
 # Link00xM3x5xCustomSpacerPart001Nema17
 
 App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001M3x5xCustomSpacerPart001Nema17')
@@ -1116,6 +1125,19 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Binder001Body001Spacer').Visibility = False
 
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# Point001Body001Spacer
+
+if App.ActiveDocument.getObject('Point001Body001Spacer'):
+    App.ActiveDocument.removeObject('Point001Body001Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Spacer').newObject('PartDesign::Point', 'Point001Body001Spacer')
+App.ActiveDocument.getObject('Point001Body001Spacer').Support = [(App.ActiveDocument.getObject('Pad001Body001Spacer'), 'Face18')]
+App.ActiveDocument.getObject('Point001Body001Spacer').MapMode = 'CenterOfMass'
+App.ActiveDocument.getObject('Point001Body001Spacer').Visibility = False
+App.ActiveDocument.recompute()
 
 
 # Body002Spacer
@@ -1933,6 +1955,64 @@ for i in range(1, len(App.ActiveDocument.getObject('Group001Support').Group)):
             App.ActiveDocument.getObject('Group001Support').Group[i-1].Shape.BoundBox.XLength +
             App.ActiveDocument.getObject('Group001Support').Group[i].Shape.BoundBox.XLength)*75/100
 
+App.ActiveDocument.recompute()
+
+
+# Part001Engine
+
+if App.ActiveDocument.getObject('Part001Engine'):
+    App.ActiveDocument.getObject('Part001Engine').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Part001Engine')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::Part', 'Part001Engine')
+Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObject('Part001Engine'))
+App.ActiveDocument.recompute()
+
+
+# Link001Part001Nema17
+
+App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Link001Part001Nema17')
+App.ActiveDocument.getObject('Link001Part001Nema17').LinkedObject = App.ActiveDocument.getObject('Part001Nema17')
+App.ActiveDocument.recompute()
+
+# Link001Body003Spacer
+
+App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Link001Body003Spacer')
+App.ActiveDocument.getObject('Link001Body003Spacer').LinkedObject = App.ActiveDocument.getObject('Body003Spacer')
+App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Link001Local001Body002Nema17').Placement
+App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), 90)
+App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Point001Body001Spacer').Placement
+App.ActiveDocument.recompute()
+
+
+# Group001Engine
+
+if App.ActiveDocument.getObject('Group001Engine'):
+    App.ActiveDocument.removeObject('Group001Engine')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Engine')
+App.ActiveDocument.getObject('Group001Engine').addObject(App.ActiveDocument.getObject('Part001Engine'))
+App.ActiveDocument.recompute()
+
+
+# Placement
+
+for obj in App.ActiveDocument.getObject('Group001Engine').Group:
+    obj.Placement = App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 0))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Group001Support').Visibility = True
+App.ActiveDocument.getObject('Group001Engine').Visibility = True
+
+
+# YAxis
+
+for obj in App.ActiveDocument.getObject('Group001Engine').Group:
+    obj.Placement.Base.y = App.ActiveDocument.getObject('Group001Support').Shape.BoundBox.Center.y - (
+        App.ActiveDocument.getObject('Group001Support').Shape.BoundBox.YLength +
+        App.ActiveDocument.getObject('Group001Engine').Shape.BoundBox.YLength)*75/100
 App.ActiveDocument.recompute()
 
 
