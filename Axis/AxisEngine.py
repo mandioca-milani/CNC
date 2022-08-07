@@ -516,6 +516,20 @@ App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Sketch001Body004Nema17').Visibility = False
 
+
+# Local001Body004Nema17
+
+if App.ActiveDocument.getObject('Local001Body004Nema17'):
+    App.ActiveDocument.removeObject('Local001Body004Nema17')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Nema17').newObject('PartDesign::CoordinateSystem', 'Local001Body004Nema17')
+App.ActiveDocument.getObject('Local001Body004Nema17').Support = [(App.ActiveDocument.getObject('Pad001Body004Nema17'), 'Face3')]
+App.ActiveDocument.getObject('Local001Body004Nema17').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Local001Body004Nema17').Visibility = False
+
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
 
 
@@ -721,6 +735,20 @@ App.ActiveDocument.getObject('Hole001Body001Coupling').Depth = 18
 App.ActiveDocument.getObject('Hole001Body001Coupling').Reversed = False
 App.ActiveDocument.getObject('Hole001Body001Coupling').DrillPoint = 'Flat'
 App.ActiveDocument.recompute()
+
+
+# Local001Body001Coupling
+
+if App.ActiveDocument.getObject('Local001Body001Coupling'):
+    App.ActiveDocument.removeObject('Local001Body001Coupling')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Coupling').newObject('PartDesign::CoordinateSystem', 'Local001Body001Coupling')
+App.ActiveDocument.getObject('Local001Body001Coupling').Support = [(App.ActiveDocument.getObject('Hole001Body001Coupling'), 'Edge7')]
+App.ActiveDocument.getObject('Local001Body001Coupling').MapMode = 'InertialCS'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Local001Body001Coupling').Visibility = False
 
 
 # Sketch002Body001Coupling
@@ -1970,8 +1998,6 @@ App.ActiveDocument.getObject('Chamfer001Body002Support').Base = (
 App.ActiveDocument.getObject('Chamfer001Body002Support').Size = 3
 App.ActiveDocument.recompute()
 
-Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
-
 
 # ShapeColor
 
@@ -2188,6 +2214,15 @@ App.ActiveDocument.getObject('Link001Part001Nema17').Placement *= App.ActiveDocu
 App.ActiveDocument.getObject('Link001Part001Nema17').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement.inverse()
 App.ActiveDocument.recompute()
 
+# Part001CouplingPart001Engine
+
+App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Part001CouplingPart001Engine')
+App.ActiveDocument.getObject('Part001CouplingPart001Engine').LinkedObject = App.ActiveDocument.getObject('Part001Coupling')
+App.ActiveDocument.getObject('Part001CouplingPart001Engine').Placement *= App.ActiveDocument.getObject('Link001Part001Nema17').Placement
+App.ActiveDocument.getObject('Part001CouplingPart001Engine').Placement *= App.ActiveDocument.getObject('Local001Body004Nema17').Placement
+App.ActiveDocument.getObject('Part001CouplingPart001Engine').Placement *= App.ActiveDocument.getObject('Local001Body001Coupling').Placement.inverse()
+App.ActiveDocument.recompute()
+
 
 # Link001Part001Support
 
@@ -2263,6 +2298,16 @@ App.ActiveDocument.getObject('Part001Nema17Part003Engine').LinkedObject = App.Ac
 App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Body005SpacerPart003Engine').Placement
 App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Local002Body001Spacer').Placement
 App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement.inverse()
+App.ActiveDocument.recompute()
+
+
+# Part001CouplingPart003Engine
+
+App.ActiveDocument.getObject('Part003Engine').newObject('App::Link', 'Part001CouplingPart003Engine')
+App.ActiveDocument.getObject('Part001CouplingPart003Engine').LinkedObject = App.ActiveDocument.getObject('Part001Coupling')
+App.ActiveDocument.getObject('Part001CouplingPart003Engine').Placement *= App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement
+App.ActiveDocument.getObject('Part001CouplingPart003Engine').Placement *= App.ActiveDocument.getObject('Local001Body004Nema17').Placement
+App.ActiveDocument.getObject('Part001CouplingPart003Engine').Placement *= App.ActiveDocument.getObject('Local001Body001Coupling').Placement.inverse()
 App.ActiveDocument.recompute()
 
 
