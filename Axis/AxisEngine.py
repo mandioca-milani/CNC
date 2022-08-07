@@ -1099,6 +1099,20 @@ App.ActiveDocument.getObject('Pad001Body003Bearing').Visibility = False
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
 
 
+# Compound001Bearing
+
+if App.ActiveDocument.getObject('Compound001Bearing'):
+    App.ActiveDocument.removeObject('Compound001Bearing')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject("Part::Compound", "Compound001Bearing")
+App.ActiveDocument.getObject('Compound001Bearing').Links = [
+    App.ActiveDocument.getObject('Body001Bearing'),
+    App.ActiveDocument.getObject('Body002Bearing'),
+    App.ActiveDocument.getObject('Body003Bearing'), ]
+App.ActiveDocument.recompute()
+
+
 # Part001Bearing
 
 if App.ActiveDocument.getObject('Part001Bearing'):
@@ -1110,28 +1124,11 @@ App.ActiveDocument.addObject('App::Part', 'Part001Bearing')
 Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObject('Part001Bearing'))
 App.ActiveDocument.recompute()
 
-# Link00xBody00xBearing
+# Compound001BearingPart001Bearing
 
-App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link001Body001Bearing')
-App.ActiveDocument.getObject('Link001Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Body001Bearing')
+App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Compound001BearingPart001Bearing')
+App.ActiveDocument.getObject('Compound001BearingPart001Bearing').LinkedObject = App.ActiveDocument.getObject('Compound001Bearing')
 App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link002Body001Bearing')
-App.ActiveDocument.getObject('Link002Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Body002Bearing')
-App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link003Body001Bearing')
-App.ActiveDocument.getObject('Link003Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Body003Bearing')
-App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('Part001Bearing').newObject('App::Link', 'Link001Local001Pad001Body001Bearing')
-App.ActiveDocument.getObject('Link001Local001Pad001Body001Bearing').LinkedObject = App.ActiveDocument.getObject('Local001Pad001Body001Bearing')
-App.ActiveDocument.getObject('Link001Local001Pad001Body001Bearing').Visibility = False
-App.ActiveDocument.recompute()
-
-App.ActiveDocument.getObject('Body001Bearing').Visibility = False
-App.ActiveDocument.getObject('Body002Bearing').Visibility = False
-App.ActiveDocument.getObject('Body003Bearing').Visibility = False
 
 Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
 
@@ -1146,6 +1143,7 @@ App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Bearing')
 App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Body001Bearing'))
 App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Body002Bearing'))
 App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Body003Bearing'))
+App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Compound001Bearing'))
 App.ActiveDocument.getObject('Group001Bearing').addObject(App.ActiveDocument.getObject('Part001Bearing'))
 
 App.ActiveDocument.recompute()
@@ -1160,6 +1158,7 @@ App.ActiveDocument.getObject('Group001Coupling').Visibility = True
 App.ActiveDocument.getObject('Group001Bearing').Visibility = True
 
 objs = [
+    App.ActiveDocument.getObject('Compound001Bearing'),
     App.ActiveDocument.getObject('Part001Bearing'),
 ]
 
