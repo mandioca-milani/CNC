@@ -1127,7 +1127,7 @@ App.ActiveDocument.getObject('Binder001Body001Spacer').Visibility = False
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
 
 
-# Point00xBody001Spacer
+# Local00xBody001Spacer
 
 if App.ActiveDocument.getObject('Local001Body001Spacer'):
     App.ActiveDocument.removeObject('Local001Body001Spacer')
@@ -1137,18 +1137,29 @@ if App.ActiveDocument.getObject('Local002Body001Spacer'):
     App.ActiveDocument.removeObject('Local002Body001Spacer')
     App.ActiveDocument.recompute()
 
+if App.ActiveDocument.getObject('Local003Body001Spacer'):
+    App.ActiveDocument.removeObject('Local003Body001Spacer')
+    App.ActiveDocument.recompute()
+
 App.ActiveDocument.getObject('Body001Spacer').newObject('PartDesign::CoordinateSystem', 'Local001Body001Spacer')
-App.ActiveDocument.getObject('Local001Body001Spacer').Support = [(App.ActiveDocument.getObject('Pad001Body001Spacer'), 'Face18')]
-App.ActiveDocument.getObject('Local001Body001Spacer').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), 180)
-App.ActiveDocument.getObject('Local001Body001Spacer').MapMode = 'FlatFace'
+App.ActiveDocument.getObject('Local001Body001Spacer').Support = [(App.ActiveDocument.getObject('Pad001Body001Spacer'), '')]
+App.ActiveDocument.getObject('Local001Body001Spacer').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 180)
+App.ActiveDocument.getObject('Local001Body001Spacer').MapMode = 'ObjectXZ'
 App.ActiveDocument.getObject('Local001Body001Spacer').Visibility = False
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body001Spacer').newObject('PartDesign::CoordinateSystem', 'Local002Body001Spacer')
-App.ActiveDocument.getObject('Local002Body001Spacer').Support = [(App.ActiveDocument.getObject('Pad001Body001Spacer'), 'Face17')]
-App.ActiveDocument.getObject('Local002Body001Spacer').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 180)
+App.ActiveDocument.getObject('Local002Body001Spacer').Support = [(App.ActiveDocument.getObject('Pad001Body001Spacer'), 'Face18')]
+App.ActiveDocument.getObject('Local002Body001Spacer').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), 180)
 App.ActiveDocument.getObject('Local002Body001Spacer').MapMode = 'FlatFace'
 App.ActiveDocument.getObject('Local002Body001Spacer').Visibility = False
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body001Spacer').newObject('PartDesign::CoordinateSystem', 'Local003Body001Spacer')
+App.ActiveDocument.getObject('Local003Body001Spacer').Support = [(App.ActiveDocument.getObject('Pad001Body001Spacer'), 'Face17')]
+App.ActiveDocument.getObject('Local003Body001Spacer').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 180)
+App.ActiveDocument.getObject('Local003Body001Spacer').MapMode = 'FlatFace'
+App.ActiveDocument.getObject('Local003Body001Spacer').Visibility = False
 App.ActiveDocument.recompute()
 
 
@@ -2058,7 +2069,7 @@ App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Link001Bod
 App.ActiveDocument.getObject('Link001Body003Spacer').LinkedObject = App.ActiveDocument.getObject('Body003Spacer')
 App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Link001Part001Nema17').Placement
 App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Link001Local001Body002Nema17').Placement
-App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Local001Body001Spacer').Placement.inverse()
+App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Local002Body001Spacer').Placement.inverse()
 App.ActiveDocument.recompute()
 
 
@@ -2067,7 +2078,7 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Link001Part001Support')
 App.ActiveDocument.getObject('Link001Part001Support').LinkedObject = App.ActiveDocument.getObject('Part001Support')
 App.ActiveDocument.getObject('Link001Part001Support').Placement *= App.ActiveDocument.getObject('Link001Body003Spacer').Placement
-App.ActiveDocument.getObject('Link001Part001Support').Placement *= App.ActiveDocument.getObject('Local002Body001Spacer').Placement
+App.ActiveDocument.getObject('Link001Part001Support').Placement *= App.ActiveDocument.getObject('Local003Body001Spacer').Placement
 App.ActiveDocument.getObject('Link001Part001Support').Placement *= App.ActiveDocument.getObject('Local001Body001Support').Placement.inverse()
 App.ActiveDocument.recompute()
 
@@ -2109,6 +2120,46 @@ App.ActiveDocument.getObject('Part001SupportPart002Engine').Placement *= App.Act
 App.ActiveDocument.recompute()
 
 
+# Part003Engine
+
+if App.ActiveDocument.getObject('Part003Engine'):
+    App.ActiveDocument.getObject('Part003Engine').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Part003Engine')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::Part', 'Part003Engine')
+Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObject('Part003Engine'))
+App.ActiveDocument.recompute()
+
+
+# Body005SpacerPart003Engine
+
+App.ActiveDocument.getObject('Part003Engine').newObject('App::Link', 'Body005SpacerPart003Engine')
+App.ActiveDocument.getObject('Body005SpacerPart003Engine').LinkedObject = App.ActiveDocument.getObject('Body005Spacer')
+App.ActiveDocument.getObject('Body005SpacerPart003Engine').Placement *= App.ActiveDocument.getObject('Local001Body001Spacer').Placement
+App.ActiveDocument.recompute()
+
+
+# Part001Nema17Part003Engine
+
+App.ActiveDocument.getObject('Part003Engine').newObject('App::Link', 'Part001Nema17Part003Engine')
+App.ActiveDocument.getObject('Part001Nema17Part003Engine').LinkedObject = App.ActiveDocument.getObject('Part001Nema17')
+App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Body005SpacerPart003Engine').Placement
+App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Local002Body001Spacer').Placement
+App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Link001Local001Body002Nema17').Placement.inverse()
+App.ActiveDocument.recompute()
+
+
+# Part001SupportPart003Engine
+
+App.ActiveDocument.getObject('Part003Engine').newObject('App::Link', 'Part001SupportPart003Engine')
+App.ActiveDocument.getObject('Part001SupportPart003Engine').LinkedObject = App.ActiveDocument.getObject('Part001Support')
+App.ActiveDocument.getObject('Part001SupportPart003Engine').Placement *= App.ActiveDocument.getObject('Body005SpacerPart003Engine').Placement
+App.ActiveDocument.getObject('Part001SupportPart003Engine').Placement *= App.ActiveDocument.getObject('Local003Body001Spacer').Placement
+App.ActiveDocument.getObject('Part001SupportPart003Engine').Placement *= App.ActiveDocument.getObject('Local001Body001Support').Placement.inverse()
+App.ActiveDocument.recompute()
+
+
 # Group001Engine
 
 if App.ActiveDocument.getObject('Group001Engine'):
@@ -2118,6 +2169,7 @@ if App.ActiveDocument.getObject('Group001Engine'):
 App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Engine')
 App.ActiveDocument.getObject('Group001Engine').addObject(App.ActiveDocument.getObject('Part001Engine'))
 App.ActiveDocument.getObject('Group001Engine').addObject(App.ActiveDocument.getObject('Part002Engine'))
+App.ActiveDocument.getObject('Group001Engine').addObject(App.ActiveDocument.getObject('Part003Engine'))
 App.ActiveDocument.recompute()
 
 
