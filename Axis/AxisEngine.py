@@ -2160,6 +2160,43 @@ App.ActiveDocument.getObject('Part001SupportPart003Engine').Placement *= App.Act
 App.ActiveDocument.recompute()
 
 
+# Part004Engine
+
+if App.ActiveDocument.getObject('Part004Engine'):
+    App.ActiveDocument.getObject('Part004Engine').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Part004Engine')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('App::Part', 'Part004Engine')
+Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObject('Part004Engine'))
+App.ActiveDocument.recompute()
+
+
+# Body006SpacerPart004Engine
+
+App.ActiveDocument.getObject('Part004Engine').newObject('App::Link', 'Body006SpacerPart004Engine')
+App.ActiveDocument.getObject('Body006SpacerPart004Engine').LinkedObject = App.ActiveDocument.getObject('Body006Spacer')
+App.ActiveDocument.getObject('Body006SpacerPart004Engine').Placement *= App.ActiveDocument.getObject('Local001Body002Spacer').Placement
+App.ActiveDocument.recompute()
+
+
+# Part00xSupportPart004Engine
+
+App.ActiveDocument.getObject('Part004Engine').newObject('App::Link', 'Part002SupportPart004Engine')
+App.ActiveDocument.getObject('Part002SupportPart004Engine').LinkedObject = App.ActiveDocument.getObject('Part002Support')
+App.ActiveDocument.getObject('Part002SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Body006SpacerPart004Engine').Placement
+App.ActiveDocument.getObject('Part002SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Local002Body002Spacer').Placement
+App.ActiveDocument.getObject('Part002SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Local001Body002Support').Placement
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part004Engine').newObject('App::Link', 'Part001SupportPart004Engine')
+App.ActiveDocument.getObject('Part001SupportPart004Engine').LinkedObject = App.ActiveDocument.getObject('Part001Support')
+App.ActiveDocument.getObject('Part001SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Body006SpacerPart004Engine').Placement
+App.ActiveDocument.getObject('Part001SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Local003Body002Spacer').Placement
+App.ActiveDocument.getObject('Part001SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Local001Body001Support').Placement.inverse()
+App.ActiveDocument.recompute()
+
+
 # Group001Engine
 
 if App.ActiveDocument.getObject('Group001Engine'):
@@ -2170,6 +2207,7 @@ App.ActiveDocument.addObject('App::DocumentObjectGroup', 'Group001Engine')
 App.ActiveDocument.getObject('Group001Engine').addObject(App.ActiveDocument.getObject('Part001Engine'))
 App.ActiveDocument.getObject('Group001Engine').addObject(App.ActiveDocument.getObject('Part002Engine'))
 App.ActiveDocument.getObject('Group001Engine').addObject(App.ActiveDocument.getObject('Part003Engine'))
+App.ActiveDocument.getObject('Group001Engine').addObject(App.ActiveDocument.getObject('Part004Engine'))
 App.ActiveDocument.recompute()
 
 
