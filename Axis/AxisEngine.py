@@ -1401,6 +1401,20 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Sketch001Body003Spacer').Visibility = False
 
 
+# PointNut001Body003Spacer
+
+if App.ActiveDocument.getObject('PointNut001Body003Spacer'):
+    App.ActiveDocument.removeObject('PointNut001Body003Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Spacer').newObject('PartDesign::Point', 'PointNut001Body003Spacer')
+App.ActiveDocument.getObject('PointNut001Body003Spacer').Support = [(App.ActiveDocument.getObject('Pocket001Body003Spacer'), 'Edge45')]
+App.ActiveDocument.getObject('PointNut001Body003Spacer').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('PointNut001Body003Spacer').Visibility = False
+
+
 # Sketch002Body003Spacer
 
 if App.ActiveDocument.getObject('Sketch002Body003Spacer'):
@@ -1483,6 +1497,20 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Binder001Body004Spacer').Visibility = False
 
 
+# PointNut001Body004Spacer
+
+if App.ActiveDocument.getObject('PointNut001Body004Spacer'):
+    App.ActiveDocument.removeObject('PointNut001Body004Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Spacer').newObject('PartDesign::Point', 'PointNut001Body004Spacer')
+App.ActiveDocument.getObject('PointNut001Body004Spacer').Support = [(App.ActiveDocument.getObject('Pocket001Body004Spacer'), 'Edge45')]
+App.ActiveDocument.getObject('PointNut001Body004Spacer').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('PointNut001Body004Spacer').Visibility = False
+
+
 # Body005Spacer
 
 if App.ActiveDocument.getObject('Body005Spacer'):
@@ -1521,6 +1549,31 @@ App.ActiveDocument.getObject('Pocket001Body005Spacer').Type = 'ThroughAll'
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Binder001Body005Spacer').Visibility = False
+
+
+# PointNut00xBody005Spacer
+
+if App.ActiveDocument.getObject('PointNut001Body005Spacer'):
+    App.ActiveDocument.removeObject('PointNut001Body005Spacer')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('PointNut002Body005Spacer'):
+    App.ActiveDocument.removeObject('PointNut002Body005Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body005Spacer').newObject('PartDesign::Point', 'PointNut001Body005Spacer')
+App.ActiveDocument.getObject('PointNut001Body005Spacer').Support = [(App.ActiveDocument.getObject('Pocket001Body005Spacer'), 'Edge46')]
+App.ActiveDocument.getObject('PointNut001Body005Spacer').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body005Spacer').newObject('PartDesign::Point', 'PointNut002Body005Spacer')
+App.ActiveDocument.getObject('PointNut002Body005Spacer').Support = [(App.ActiveDocument.getObject('Pocket001Body005Spacer'), 'Edge51')]
+App.ActiveDocument.getObject('PointNut002Body005Spacer').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+
+App.ActiveDocument.getObject('PointNut001Body005Spacer').Visibility = False
+App.ActiveDocument.getObject('PointNut002Body005Spacer').Visibility = False
 
 
 # Binder002Body005Spacer
@@ -1587,6 +1640,31 @@ App.ActiveDocument.getObject('Pocket001Body006Spacer').Type = 'ThroughAll'
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Binder001Body006Spacer').Visibility = False
+
+
+# PointNut00xBody006Spacer
+
+if App.ActiveDocument.getObject('PointNut001Body006Spacer'):
+    App.ActiveDocument.removeObject('PointNut001Body006Spacer')
+    App.ActiveDocument.recompute()
+
+if App.ActiveDocument.getObject('PointNut002Body006Spacer'):
+    App.ActiveDocument.removeObject('PointNut002Body006Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body006Spacer').newObject('PartDesign::Point', 'PointNut001Body006Spacer')
+App.ActiveDocument.getObject('PointNut001Body006Spacer').Support = [(App.ActiveDocument.getObject('Pocket001Body006Spacer'), 'Edge46')]
+App.ActiveDocument.getObject('PointNut001Body006Spacer').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body006Spacer').newObject('PartDesign::Point', 'PointNut002Body006Spacer')
+App.ActiveDocument.getObject('PointNut002Body006Spacer').Support = [(App.ActiveDocument.getObject('Pocket001Body006Spacer'), 'Edge51')]
+App.ActiveDocument.getObject('PointNut002Body006Spacer').MapMode = 'CenterOfCurvature'
+App.ActiveDocument.recompute()
+
+
+App.ActiveDocument.getObject('PointNut001Body006Spacer').Visibility = False
+App.ActiveDocument.getObject('PointNut002Body006Spacer').Visibility = False
 
 
 # Group001Spacer
@@ -2234,6 +2312,16 @@ App.ActiveDocument.getObject('Link001Part001Support').Placement *= App.ActiveDoc
 App.ActiveDocument.recompute()
 
 
+# LinkNut001Body003Spacer
+
+App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'LinkNut001Body003Spacer')
+App.ActiveDocument.getObject('LinkNut001Body003Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('5/16in-Nut')[0]
+App.ActiveDocument.getObject('LinkNut001Body003Spacer').Placement *= App.ActiveDocument.getObject('Link001Body003Spacer').Placement
+App.ActiveDocument.getObject('LinkNut001Body003Spacer').Placement *= App.ActiveDocument.getObject('PointNut001Body003Spacer').Placement
+App.ActiveDocument.getObject('LinkNut001Body003Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), -90)
+App.ActiveDocument.recompute()
+
+
 # Part002Engine
 
 if App.ActiveDocument.getObject('Part002Engine'):
@@ -2268,6 +2356,16 @@ App.ActiveDocument.getObject('Part001SupportPart002Engine').LinkedObject = App.A
 App.ActiveDocument.getObject('Part001SupportPart002Engine').Placement *= App.ActiveDocument.getObject('Body004SpacerPart002Engine').Placement
 App.ActiveDocument.getObject('Part001SupportPart002Engine').Placement *= App.ActiveDocument.getObject('Local003Body002Spacer').Placement
 App.ActiveDocument.getObject('Part001SupportPart002Engine').Placement *= App.ActiveDocument.getObject('Local001Body001Support').Placement.inverse()
+App.ActiveDocument.recompute()
+
+
+# LinkNut001Body004Spacer
+
+App.ActiveDocument.getObject('Part002Engine').newObject('App::Link', 'LinkNut001Body004Spacer')
+App.ActiveDocument.getObject('LinkNut001Body004Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('5/16in-Nut')[0]
+App.ActiveDocument.getObject('LinkNut001Body004Spacer').Placement *= App.ActiveDocument.getObject('Body004SpacerPart002Engine').Placement
+App.ActiveDocument.getObject('LinkNut001Body004Spacer').Placement *= App.ActiveDocument.getObject('PointNut001Body004Spacer').Placement
+App.ActiveDocument.getObject('LinkNut001Body004Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), -90)
 App.ActiveDocument.recompute()
 
 
@@ -2321,6 +2419,23 @@ App.ActiveDocument.getObject('Part001SupportPart003Engine').Placement *= App.Act
 App.ActiveDocument.recompute()
 
 
+# LinkNut00xBody005Spacer
+
+App.ActiveDocument.getObject('Part003Engine').newObject('App::Link', 'LinkNut001Body005Spacer')
+App.ActiveDocument.getObject('LinkNut001Body005Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('5/16in-Nut')[0]
+App.ActiveDocument.getObject('LinkNut001Body005Spacer').Placement *= App.ActiveDocument.getObject('Body005SpacerPart003Engine').Placement
+App.ActiveDocument.getObject('LinkNut001Body005Spacer').Placement *= App.ActiveDocument.getObject('PointNut001Body005Spacer').Placement
+App.ActiveDocument.getObject('LinkNut001Body005Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), -90)
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part003Engine').newObject('App::Link', 'LinkNut002Body005Spacer')
+App.ActiveDocument.getObject('LinkNut002Body005Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('5/16in-Nut')[0]
+App.ActiveDocument.getObject('LinkNut002Body005Spacer').Placement *= App.ActiveDocument.getObject('Body005SpacerPart003Engine').Placement
+App.ActiveDocument.getObject('LinkNut002Body005Spacer').Placement *= App.ActiveDocument.getObject('PointNut002Body005Spacer').Placement
+App.ActiveDocument.getObject('LinkNut002Body005Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), 90)
+App.ActiveDocument.recompute()
+
+
 # Part004Engine
 
 if App.ActiveDocument.getObject('Part004Engine'):
@@ -2355,6 +2470,23 @@ App.ActiveDocument.getObject('Part001SupportPart004Engine').LinkedObject = App.A
 App.ActiveDocument.getObject('Part001SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Body006SpacerPart004Engine').Placement
 App.ActiveDocument.getObject('Part001SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Local003Body002Spacer').Placement
 App.ActiveDocument.getObject('Part001SupportPart004Engine').Placement *= App.ActiveDocument.getObject('Local001Body001Support').Placement.inverse()
+App.ActiveDocument.recompute()
+
+
+# LinkNut00xBody006Spacer
+
+App.ActiveDocument.getObject('Part004Engine').newObject('App::Link', 'LinkNut001Body006Spacer')
+App.ActiveDocument.getObject('LinkNut001Body006Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('5/16in-Nut')[0]
+App.ActiveDocument.getObject('LinkNut001Body006Spacer').Placement *= App.ActiveDocument.getObject('Body006SpacerPart004Engine').Placement
+App.ActiveDocument.getObject('LinkNut001Body006Spacer').Placement *= App.ActiveDocument.getObject('PointNut001Body006Spacer').Placement
+App.ActiveDocument.getObject('LinkNut001Body006Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), -90)
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Part004Engine').newObject('App::Link', 'LinkNut002Body006Spacer')
+App.ActiveDocument.getObject('LinkNut002Body006Spacer').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('5/16in-Nut')[0]
+App.ActiveDocument.getObject('LinkNut002Body006Spacer').Placement *= App.ActiveDocument.getObject('Body006SpacerPart004Engine').Placement
+App.ActiveDocument.getObject('LinkNut002Body006Spacer').Placement *= App.ActiveDocument.getObject('PointNut002Body006Spacer').Placement
+App.ActiveDocument.getObject('LinkNut002Body006Spacer').Placement *= App.Placement(App.Vector(0, 0, 0), App.Vector(1, 0, 0), 90)
 App.ActiveDocument.recompute()
 
 
