@@ -2171,20 +2171,21 @@ Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObje
 App.ActiveDocument.recompute()
 
 
-# Link001Part001Nema17
-
-App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Link001Part001Nema17')
-App.ActiveDocument.getObject('Link001Part001Nema17').LinkedObject = App.ActiveDocument.getObject('Part001Nema17')
-App.ActiveDocument.recompute()
-
-
 # Link001Body003Spacer
 
 App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Link001Body003Spacer')
 App.ActiveDocument.getObject('Link001Body003Spacer').LinkedObject = App.ActiveDocument.getObject('Body003Spacer')
-App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Link001Part001Nema17').Placement
-App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement
-App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Local002Body001Spacer').Placement.inverse()
+App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Local001Body001Spacer').Placement
+App.ActiveDocument.recompute()
+
+
+# Link001Part001Nema17
+
+App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Link001Part001Nema17')
+App.ActiveDocument.getObject('Link001Part001Nema17').LinkedObject = App.ActiveDocument.getObject('Part001Nema17')
+App.ActiveDocument.getObject('Link001Part001Nema17').Placement *= App.ActiveDocument.getObject('Link001Body003Spacer').Placement
+App.ActiveDocument.getObject('Link001Part001Nema17').Placement *= App.ActiveDocument.getObject('Local002Body001Spacer').Placement
+App.ActiveDocument.getObject('Link001Part001Nema17').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement.inverse()
 App.ActiveDocument.recompute()
 
 
