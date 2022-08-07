@@ -519,6 +519,21 @@ App.ActiveDocument.getObject('Sketch001Body004Nema17').Visibility = False
 Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
 
 
+# Compound001Nema17
+
+if App.ActiveDocument.getObject('Compound001Nema17'):
+    App.ActiveDocument.removeObject('Compound001Nema17')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject("Part::Compound", "Compound001Nema17")
+App.ActiveDocument.getObject('Compound001Nema17').Links = [
+    App.ActiveDocument.getObject('Body001Nema17'),
+    App.ActiveDocument.getObject('Body002Nema17'),
+    App.ActiveDocument.getObject('Body003Nema17'),
+    App.ActiveDocument.getObject('Body004Nema17'), ]
+App.ActiveDocument.recompute()
+
+
 # Part001Nema17
 
 if App.ActiveDocument.getObject('Part001Nema17'):
@@ -531,36 +546,39 @@ Gui.ActiveDocument.ActiveView.setActiveObject('part', App.ActiveDocument.getObje
 App.ActiveDocument.recompute()
 
 
-# Link00xBody00xNema17
+# Compound001Nema17Part001Nema17
 
-App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Body001Nema17')
-App.ActiveDocument.getObject('Link001Body001Nema17').LinkedObject = App.ActiveDocument.getObject('Body001Nema17')
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Compound001Nema17Part001Nema17')
+App.ActiveDocument.getObject('Compound001Nema17Part001Nema17').LinkedObject = App.ActiveDocument.getObject('Compound001Nema17')
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Body002Nema17')
-App.ActiveDocument.getObject('Link001Body002Nema17').LinkedObject = App.ActiveDocument.getObject('Body002Nema17')
+# App.ActiveDocument.getObject('Compound001Nema17').Visibility = False
+
+
+# Link00xM3x50xScrewPart001Nema17
+
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001M3x50xScrewPart001Nema17')
+App.ActiveDocument.getObject('Link001M3x50xScrewPart001Nema17').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x45-Screw')[0]
+App.ActiveDocument.getObject('Link001M3x50xScrewPart001Nema17').Placement *= App.ActiveDocument.getObject('Point001Body003Nema17').Placement
+App.ActiveDocument.getObject('Link001M3x50xScrewPart001Nema17').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 90))
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Body003Nema17')
-App.ActiveDocument.getObject('Link001Body003Nema17').LinkedObject = App.ActiveDocument.getObject('Body003Nema17')
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link002M3x50xScrewPart001Nema17')
+App.ActiveDocument.getObject('Link002M3x50xScrewPart001Nema17').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x45-Screw')[0]
+App.ActiveDocument.getObject('Link002M3x50xScrewPart001Nema17').Placement *= App.ActiveDocument.getObject('Point002Body003Nema17').Placement
+App.ActiveDocument.getObject('Link002M3x50xScrewPart001Nema17').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 90))
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Body004Nema17')
-App.ActiveDocument.getObject('Link001Body004Nema17').LinkedObject = App.ActiveDocument.getObject('Body004Nema17')
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link003M3x50xScrewPart001Nema17')
+App.ActiveDocument.getObject('Link003M3x50xScrewPart001Nema17').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x45-Screw')[0]
+App.ActiveDocument.getObject('Link003M3x50xScrewPart001Nema17').Placement *= App.ActiveDocument.getObject('Point003Body003Nema17').Placement
+App.ActiveDocument.getObject('Link003M3x50xScrewPart001Nema17').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 90))
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Body001Nema17').Visibility = False
-App.ActiveDocument.getObject('Body002Nema17').Visibility = False
-App.ActiveDocument.getObject('Body003Nema17').Visibility = False
-App.ActiveDocument.getObject('Body004Nema17').Visibility = False
-
-
-# Link001Local001Body002Nema17
-
-App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link001Local001Body002Nema17')
-App.ActiveDocument.getObject('Link001Local001Body002Nema17').LinkedObject = App.ActiveDocument.getObject('Local001Body002Nema17')
-App.ActiveDocument.getObject('Link001Local001Body002Nema17').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement
-App.ActiveDocument.getObject('Link001Local001Body002Nema17').Visibility = False
+App.ActiveDocument.getObject('Part001Nema17').newObject('App::Link', 'Link004M3x50xScrewPart001Nema17')
+App.ActiveDocument.getObject('Link004M3x50xScrewPart001Nema17').LinkedObject = App.getDocument('Fasteners').getObjectsByLabel('M3x45-Screw')[0]
+App.ActiveDocument.getObject('Link004M3x50xScrewPart001Nema17').Placement *= App.ActiveDocument.getObject('Point004Body003Nema17').Placement
+App.ActiveDocument.getObject('Link004M3x50xScrewPart001Nema17').Placement *= App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 90))
 App.ActiveDocument.recompute()
 
 
@@ -605,7 +623,31 @@ App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getO
 App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Body002Nema17'))
 App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Body003Nema17'))
 App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Body004Nema17'))
+App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Compound001Nema17'))
 App.ActiveDocument.getObject('Group001Nema17').addObject(App.ActiveDocument.getObject('Part001Nema17'))
+
+App.ActiveDocument.recompute()
+
+
+# Placement
+
+for obj in App.ActiveDocument.getObject('Group001Nema17').Group:
+    obj.Placement = App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 0))
+
+App.ActiveDocument.getObject('Group001Nema17').Visibility = True
+
+objs = [
+    App.ActiveDocument.getObject('Compound001Nema17'),
+    App.ActiveDocument.getObject('Part001Nema17'),
+]
+
+# XAxis
+
+for i in range(1, len(objs)):
+    objs[i].Placement.Base.x = \
+        objs[i-1].Placement.Base.x + (
+            objs[i-1].Shape.BoundBox.XLength +
+            objs[i].Shape.BoundBox.XLength)*75/100
 
 App.ActiveDocument.recompute()
 
@@ -783,17 +825,7 @@ App.ActiveDocument.getObject('Part001Coupling').newObject('App::Link', 'Link001B
 App.ActiveDocument.getObject('Link001Body001Coupling').LinkedObject = App.ActiveDocument.getObject('Body001Coupling')
 App.ActiveDocument.recompute()
 
-App.ActiveDocument.getObject('Body001Coupling').Visibility = False
-
 Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
-
-
-# Placement
-
-App.ActiveDocument.getObject('Part001Coupling').Placement.Base.x = (
-    App.ActiveDocument.getObject('Part001Nema17').Shape.BoundBox.XLength +
-    App.ActiveDocument.getObject('Part001Coupling').Shape.BoundBox.XLength) * 75/100
-App.ActiveDocument.recompute()
 
 
 # Group001Coupling
@@ -807,6 +839,36 @@ App.ActiveDocument.getObject('Group001Coupling').addObject(App.ActiveDocument.ge
 App.ActiveDocument.getObject('Group001Coupling').addObject(App.ActiveDocument.getObject('Part001Coupling'))
 
 App.ActiveDocument.recompute()
+
+
+# Placement
+
+for obj in App.ActiveDocument.getObject('Group001Coupling').Group:
+    obj.Placement = App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 0))
+
+App.ActiveDocument.getObject('Group001Nema17').Visibility = True
+App.ActiveDocument.getObject('Group001Coupling').Visibility = True
+
+objs = [
+    App.ActiveDocument.getObject('Body001Coupling'),
+    App.ActiveDocument.getObject('Part001Coupling'),
+]
+
+
+# XAxis
+
+objs[0].Placement.Base.x = App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.Center.x + \
+    (App.ActiveDocument.getObject('Group001Nema17').Shape.BoundBox.XLength + objs[0].Shape.BoundBox.XLength)*75/100
+
+for i in range(1, len(objs)):
+    objs[i].Placement.Base.x = \
+        objs[i-1].Placement.Base.x + (
+            objs[i-1].Shape.BoundBox.XLength +
+            objs[i].Shape.BoundBox.XLength)*75/100
+
+App.ActiveDocument.recompute()
+
+del objs
 
 
 # Body001Bearing
@@ -1064,11 +1126,30 @@ App.ActiveDocument.recompute()
 # Placement
 
 for obj in App.ActiveDocument.getObject('Group001Bearing').Group:
-    obj.Placement.Base.x = App.ActiveDocument.getObject('Group001Coupling').Shape.BoundBox.Center.x + (
-        App.ActiveDocument.getObject('Group001Coupling').Shape.BoundBox.XLength +
-        App.ActiveDocument.getObject('Group001Bearing').Shape.BoundBox.XLength) * 75/100
+    obj.Placement = App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 0))
+
+App.ActiveDocument.getObject('Group001Coupling').Visibility = True
+App.ActiveDocument.getObject('Group001Bearing').Visibility = True
+
+objs = [
+    App.ActiveDocument.getObject('Part001Bearing'),
+]
+
+
+# XAxis
+
+objs[0].Placement.Base.x = App.ActiveDocument.getObject('Group001Coupling').Shape.BoundBox.Center.x + \
+    (App.ActiveDocument.getObject('Group001Coupling').Shape.BoundBox.XLength + objs[0].Shape.BoundBox.XLength)*75/100
+
+for i in range(1, len(objs)):
+    objs[i].Placement.Base.x = \
+        objs[i-1].Placement.Base.x + (
+            objs[i-1].Shape.BoundBox.XLength +
+            objs[i].Shape.BoundBox.XLength)*75/100
 
 App.ActiveDocument.recompute()
+
+del objs
 
 
 # SquareProfileSketch001Spacer
@@ -2068,7 +2149,7 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Link001Body003Spacer')
 App.ActiveDocument.getObject('Link001Body003Spacer').LinkedObject = App.ActiveDocument.getObject('Body003Spacer')
 App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Link001Part001Nema17').Placement
-App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Link001Local001Body002Nema17').Placement
+App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement
 App.ActiveDocument.getObject('Link001Body003Spacer').Placement *= App.ActiveDocument.getObject('Local002Body001Spacer').Placement.inverse()
 App.ActiveDocument.recompute()
 
@@ -2146,7 +2227,7 @@ App.ActiveDocument.getObject('Part003Engine').newObject('App::Link', 'Part001Nem
 App.ActiveDocument.getObject('Part001Nema17Part003Engine').LinkedObject = App.ActiveDocument.getObject('Part001Nema17')
 App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Body005SpacerPart003Engine').Placement
 App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Local002Body001Spacer').Placement
-App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Link001Local001Body002Nema17').Placement.inverse()
+App.ActiveDocument.getObject('Part001Nema17Part003Engine').Placement *= App.ActiveDocument.getObject('Local001Body002Nema17').Placement.inverse()
 App.ActiveDocument.recompute()
 
 
