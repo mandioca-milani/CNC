@@ -2223,6 +2223,220 @@ App.ActiveDocument.recompute()
 Gui.ActiveDocument.ActiveView.setActiveObject('part', None)
 
 
+# Body003Support
+
+if App.ActiveDocument.getObject('Body003Support'):
+    App.ActiveDocument.getObject('Body003Support').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body003Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body003Support')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body003Support'))
+
+
+# Sketch001Body003Support
+
+if App.ActiveDocument.getObject('Sketch001Body003Support'):
+    App.ActiveDocument.removeObject('Sketch001Body003Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Support').newObject('Sketcher::SketchObject', 'Sketch001Body003Support')
+App.ActiveDocument.getObject('Sketch001Body003Support').Support = (App.ActiveDocument.getObject(
+    'XY_Plane' + App.ActiveDocument.getObject('Body003Support').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch001Body003Support').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.LineSegment(App.Vector(-1, 1, 0), App.Vector(1, 1, 0)))  # 0
+geoList.append(Part.LineSegment(App.Vector(1, 1, 0), App.Vector(1, -1, 0)))  # 1
+geoList.append(Part.LineSegment(App.Vector(1, -1, 0), App.Vector(-1, -1, 0)))  # 2
+geoList.append(Part.LineSegment(App.Vector(-1, -1, 0), App.Vector(-1, 1, 0)))  # 3
+App.ActiveDocument.getObject('Sketch001Body003Support').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 2, 1, 1))  # 0
+conList.append(Sketcher.Constraint('Coincident', 1, 2, 2, 1))  # 1
+conList.append(Sketcher.Constraint('Coincident', 2, 2, 3, 1))  # 2
+conList.append(Sketcher.Constraint('Coincident', 3, 2, 0, 1))  # 3
+conList.append(Sketcher.Constraint('Horizontal', 0))  # 4
+conList.append(Sketcher.Constraint('Vertical', 1))  # 5
+conList.append(Sketcher.Constraint('Symmetric', 2, 1, 2, 2, -2))  # 6
+conList.append(Sketcher.Constraint('Symmetric', 0, 1, 2, 2, -1))  # 7
+conList.append(Sketcher.Constraint('Distance', 0, App.ActiveDocument.getObject('Body001Spacer').Shape.BoundBox.XLength))  # 8
+conList.append(Sketcher.Constraint('Distance', 1, App.ActiveDocument.getObject('Body001Spacer').Shape.BoundBox.YLength))  # 9
+App.ActiveDocument.getObject('Sketch001Body003Support').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pad001Body003Support
+
+if App.ActiveDocument.getObject('Pad001Body003Support'):
+    App.ActiveDocument.removeObject('Pad001Body003Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Support').newObject('PartDesign::Pad', 'Pad001Body003Support')
+App.ActiveDocument.getObject('Pad001Body003Support').Profile = App.ActiveDocument.getObject('Sketch001Body003Support')
+App.ActiveDocument.getObject('Pad001Body003Support').Length = 22/2 + 1*25.4/2
+App.ActiveDocument.getObject('Pad001Body003Support').Midplane = True
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body003Support').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# Sketch002Body003Support
+
+if App.ActiveDocument.getObject('Sketch002Body003Support'):
+    App.ActiveDocument.removeObject('Sketch002Body003Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Support').newObject('Sketcher::SketchObject', 'Sketch002Body003Support')
+App.ActiveDocument.getObject('Sketch002Body003Support').Support = (App.ActiveDocument.getObject('Pad001Body003Support'), ['Face6'])
+App.ActiveDocument.getObject('Sketch002Body003Support').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 2))  # 0
+App.ActiveDocument.getObject('Sketch002Body003Support').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 3, -1, 1))  # 0
+conList.append(Sketcher.Constraint('Diameter', 0, 5/16*25.4))  # 1
+App.ActiveDocument.getObject('Sketch002Body003Support').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pocket001Body003Support
+
+if App.ActiveDocument.getObject('Pocket001Body003Support'):
+    App.ActiveDocument.removeObject('Pocket001Body003Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Support').newObject('PartDesign::Pocket', 'Pocket001Body003Support')
+App.ActiveDocument.getObject('Pocket001Body003Support').Profile = App.ActiveDocument.getObject('Sketch002Body003Support')
+App.ActiveDocument.getObject('Pocket001Body003Support').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch002Body003Support').Visibility = False
+
+
+# ShapeColor
+
+App.ActiveDocument.getObject('Body003Support').ViewObject.ShapeColor = (0.0, 0.6, 1.0, 0.0)
+
+
+# Body004Support
+
+if App.ActiveDocument.getObject('Body004Support'):
+    App.ActiveDocument.getObject('Body004Support').removeObjectsFromDocument()
+    App.ActiveDocument.removeObject('Body004Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.addObject('PartDesign::Body', 'Body004Support')
+App.ActiveDocument.recompute()
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', App.ActiveDocument.getObject('Body004Support'))
+
+
+# Sketch001Body004Support
+
+if App.ActiveDocument.getObject('Sketch001Body004Support'):
+    App.ActiveDocument.removeObject('Sketch001Body004Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Support').newObject('Sketcher::SketchObject', 'Sketch001Body004Support')
+App.ActiveDocument.getObject('Sketch001Body004Support').Support = (App.ActiveDocument.getObject(
+    'XY_Plane' + App.ActiveDocument.getObject('Body004Support').Origin.Name.replace('Origin', '')), [''])
+App.ActiveDocument.getObject('Sketch001Body004Support').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.LineSegment(App.Vector(-1, 1, 0), App.Vector(1, 1, 0)))  # 0
+geoList.append(Part.LineSegment(App.Vector(1, 1, 0), App.Vector(1, -1, 0)))  # 1
+geoList.append(Part.LineSegment(App.Vector(1, -1, 0), App.Vector(-1, -1, 0)))  # 2
+geoList.append(Part.LineSegment(App.Vector(-1, -1, 0), App.Vector(-1, 1, 0)))  # 3
+App.ActiveDocument.getObject('Sketch001Body004Support').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 2, 1, 1))  # 0
+conList.append(Sketcher.Constraint('Coincident', 1, 2, 2, 1))  # 1
+conList.append(Sketcher.Constraint('Coincident', 2, 2, 3, 1))  # 2
+conList.append(Sketcher.Constraint('Coincident', 3, 2, 0, 1))  # 3
+conList.append(Sketcher.Constraint('Horizontal', 0))  # 4
+conList.append(Sketcher.Constraint('Vertical', 1))  # 5
+conList.append(Sketcher.Constraint('Symmetric', 2, 1, 2, 2, -2))  # 6
+conList.append(Sketcher.Constraint('Symmetric', 0, 1, 2, 2, -1))  # 7
+conList.append(Sketcher.Constraint('Distance', 0, App.ActiveDocument.getObject('Body002Spacer').Shape.BoundBox.XLength))  # 8
+conList.append(Sketcher.Constraint('Distance', 1, App.ActiveDocument.getObject('Body002Spacer').Shape.BoundBox.YLength))  # 9
+App.ActiveDocument.getObject('Sketch001Body004Support').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pad001Body004Support
+
+if App.ActiveDocument.getObject('Pad001Body004Support'):
+    App.ActiveDocument.removeObject('Pad001Body004Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Support').newObject('PartDesign::Pad', 'Pad001Body004Support')
+App.ActiveDocument.getObject('Pad001Body004Support').Profile = App.ActiveDocument.getObject('Sketch001Body004Support')
+App.ActiveDocument.getObject('Pad001Body004Support').Length = 22/2 + 1*25.4/2
+App.ActiveDocument.getObject('Pad001Body004Support').Midplane = True
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch001Body004Support').Visibility = False
+
+Gui.ActiveDocument.ActiveView.setActiveObject('pdbody', None)
+
+
+# Sketch002Body004Support
+
+if App.ActiveDocument.getObject('Sketch002Body004Support'):
+    App.ActiveDocument.removeObject('Sketch002Body004Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Support').newObject('Sketcher::SketchObject', 'Sketch002Body004Support')
+App.ActiveDocument.getObject('Sketch002Body004Support').Support = (App.ActiveDocument.getObject('Pad001Body004Support'), ['Face6'])
+App.ActiveDocument.getObject('Sketch002Body004Support').MapMode = 'FlatFace'
+App.ActiveDocument.recompute()
+
+geoList = []
+geoList.append(Part.Circle(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 2))  # 0
+App.ActiveDocument.getObject('Sketch002Body004Support').addGeometry(geoList, False)
+
+conList = []
+conList.append(Sketcher.Constraint('Coincident', 0, 3, -1, 1))  # 0
+conList.append(Sketcher.Constraint('Diameter', 0, 5/16*25.4))  # 1
+App.ActiveDocument.getObject('Sketch002Body004Support').addConstraint(conList)
+
+App.ActiveDocument.recompute()
+
+
+# Pocket001Body004Support
+
+if App.ActiveDocument.getObject('Pocket001Body004Support'):
+    App.ActiveDocument.removeObject('Pocket001Body004Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Support').newObject('PartDesign::Pocket', 'Pocket001Body004Support')
+App.ActiveDocument.getObject('Pocket001Body004Support').Profile = App.ActiveDocument.getObject('Sketch002Body004Support')
+App.ActiveDocument.getObject('Pocket001Body004Support').Type = 'ThroughAll'
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Sketch002Body004Support').Visibility = False
+
+
+# ShapeColor
+
+App.ActiveDocument.getObject('Body004Support').ViewObject.ShapeColor = (0.0, 0.6, 1.0, 0.0)
+
+
 # Group001Support
 
 if App.ActiveDocument.getObject('Group001Support'):
@@ -2234,6 +2448,8 @@ App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.get
 App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Body002Support'))
 App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Part001Support'))
 App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Part002Support'))
+App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Body003Support'))
+App.ActiveDocument.getObject('Group001Support').addObject(App.ActiveDocument.getObject('Body004Support'))
 App.ActiveDocument.recompute()
 
 
@@ -2242,6 +2458,8 @@ App.ActiveDocument.recompute()
 for obj in App.ActiveDocument.getObject('Group001Support').Group:
     obj.Placement = App.Placement(App.Vector(0, 0, 0), App.Rotation(0, 0, 0))
 
+App.ActiveDocument.getObject('Group001Spacer').Visibility = True
+App.ActiveDocument.getObject('Group001Support').Visibility = True
 
 # YAxis
 
