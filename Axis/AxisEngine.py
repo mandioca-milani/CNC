@@ -340,7 +340,7 @@ if App.ActiveDocument.getObject('Sketch001Body003Nema17'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('Sketcher::SketchObject', 'Sketch001Body003Nema17')
-App.ActiveDocument.getObject('Sketch001Body003Nema17').Support = (App.ActiveDocument.getObject('Pad001Body003Nema17'), ['Face2'])
+App.ActiveDocument.getObject('Sketch001Body003Nema17').Support = (App.ActiveDocument.getObject('Pad001Body003Nema17'), ['Face1'])
 App.ActiveDocument.getObject('Sketch001Body003Nema17').MapMode = 'FlatFace'
 App.ActiveDocument.recompute()
 
@@ -390,7 +390,7 @@ if App.ActiveDocument.getObject('Chamfer001Body003Nema17'):
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Chamfer', 'Chamfer001Body003Nema17')
 App.ActiveDocument.getObject('Chamfer001Body003Nema17').Base = (
-    App.ActiveDocument.getObject('Pad002Body003Nema17'), ['Edge1', 'Edge2', 'Edge5', 'Edge25', ])
+    App.ActiveDocument.getObject('Pad002Body003Nema17'), ['Edge26', 'Edge31', 'Edge4', 'Edge29', ])
 App.ActiveDocument.getObject('Chamfer001Body003Nema17').Size = 3
 App.ActiveDocument.recompute()
 
@@ -403,7 +403,7 @@ if App.ActiveDocument.getObject('Hole001Body003Nema17'):
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Hole', 'Hole001Body003Nema17')
 App.ActiveDocument.getObject('Hole001Body003Nema17').Profile = (
-    App.ActiveDocument.getObject('Chamfer001Body003Nema17'), ['Edge30', 'Edge29', 'Edge32', 'Edge31', ])
+    App.ActiveDocument.getObject('Chamfer001Body003Nema17'), ['Edge32', 'Edge31', 'Edge34', 'Edge33', ])
 App.ActiveDocument.getObject('Hole001Body003Nema17').Diameter = 6
 App.ActiveDocument.getObject('Hole001Body003Nema17').Depth = 3
 App.ActiveDocument.getObject('Hole001Body003Nema17').Reversed = True
@@ -432,22 +432,22 @@ if App.ActiveDocument.getObject('Point004Body003Nema17'):
     App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Point', 'Point001Body003Nema17')
-App.ActiveDocument.getObject('Point001Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge45')]
+App.ActiveDocument.getObject('Point001Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge47')]
 App.ActiveDocument.getObject('Point001Body003Nema17').MapMode = 'CenterOfCurvature'
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Point', 'Point002Body003Nema17')
-App.ActiveDocument.getObject('Point002Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge43')]
+App.ActiveDocument.getObject('Point002Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge45')]
 App.ActiveDocument.getObject('Point002Body003Nema17').MapMode = 'CenterOfCurvature'
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Point', 'Point003Body003Nema17')
-App.ActiveDocument.getObject('Point003Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge49')]
+App.ActiveDocument.getObject('Point003Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge51')]
 App.ActiveDocument.getObject('Point003Body003Nema17').MapMode = 'CenterOfCurvature'
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('Body003Nema17').newObject('PartDesign::Point', 'Point004Body003Nema17')
-App.ActiveDocument.getObject('Point004Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge47')]
+App.ActiveDocument.getObject('Point004Body003Nema17').Support = [(App.ActiveDocument.getObject('Hole001Body003Nema17'), 'Edge49')]
 App.ActiveDocument.getObject('Point004Body003Nema17').MapMode = 'CenterOfCurvature'
 App.ActiveDocument.recompute()
 
@@ -745,6 +745,7 @@ if App.ActiveDocument.getObject('Local001Body001Coupling'):
 
 App.ActiveDocument.getObject('Body001Coupling').newObject('PartDesign::CoordinateSystem', 'Local001Body001Coupling')
 App.ActiveDocument.getObject('Local001Body001Coupling').Support = [(App.ActiveDocument.getObject('Hole001Body001Coupling'), 'Edge7')]
+App.ActiveDocument.getObject('Local001Body001Coupling').AttachmentOffset = App.Placement(App.Vector(0, 0, 7.5), App.Vector(0, 0, 1), 90)
 App.ActiveDocument.getObject('Local001Body001Coupling').MapMode = 'InertialCS'
 App.ActiveDocument.recompute()
 
