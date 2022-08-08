@@ -1713,6 +1713,16 @@ App.ActiveDocument.getObject('Group001Spacer').addObject(App.ActiveDocument.getO
 App.ActiveDocument.recompute()
 
 
+# ShapeColor
+
+App.ActiveDocument.getObject('Body001Spacer').ViewObject.ShapeColor = (0.3, 0.3, 1.0, 0.0)
+App.ActiveDocument.getObject('Body002Spacer').ViewObject.ShapeColor = (0.3, 0.3, 1.0, 0.0)
+App.ActiveDocument.getObject('Body003Spacer').ViewObject.ShapeColor = (0.3, 0.3, 1.0, 0.0)
+App.ActiveDocument.getObject('Body004Spacer').ViewObject.ShapeColor = (0.3, 0.3, 1.0, 0.0)
+App.ActiveDocument.getObject('Body005Spacer').ViewObject.ShapeColor = (0.3, 0.3, 1.0, 0.0)
+App.ActiveDocument.getObject('Body006Spacer').ViewObject.ShapeColor = (0.3, 0.3, 1.0, 0.0)
+
+
 # Placement
 
 for obj in App.ActiveDocument.getObject('Group001Spacer').Group:
