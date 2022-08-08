@@ -1414,6 +1414,21 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('PointNut001Body003Spacer').Visibility = False
 
 
+# LocalSupport001Body003Spacer
+
+if App.ActiveDocument.getObject('LocalSupport001Body003Spacer'):
+    App.ActiveDocument.removeObject('LocalSupport001Body003Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Spacer').newObject('PartDesign::CoordinateSystem', 'LocalSupport001Body003Spacer')
+App.ActiveDocument.getObject('LocalSupport001Body003Spacer').Support = [(App.ActiveDocument.getObject('Pocket001Body003Spacer'), 'Edge39')]
+App.ActiveDocument.getObject('LocalSupport001Body003Spacer').MapMode = 'SectionOfRevolution'
+App.ActiveDocument.getObject('LocalSupport001Body003Spacer').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Rotation(-90, 0, 90))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('LocalSupport001Body003Spacer').Visibility = False
+
+
 # Sketch002Body003Spacer
 
 if App.ActiveDocument.getObject('Sketch002Body003Spacer'):
@@ -1508,6 +1523,21 @@ App.ActiveDocument.getObject('PointNut001Body004Spacer').MapMode = 'CenterOfCurv
 App.ActiveDocument.recompute()
 
 App.ActiveDocument.getObject('PointNut001Body004Spacer').Visibility = False
+
+
+# LocalSupport001Body004Spacer
+
+if App.ActiveDocument.getObject('LocalSupport001Body004Spacer'):
+    App.ActiveDocument.removeObject('LocalSupport001Body004Spacer')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Spacer').newObject('PartDesign::CoordinateSystem', 'LocalSupport001Body004Spacer')
+App.ActiveDocument.getObject('LocalSupport001Body004Spacer').Support = [(App.ActiveDocument.getObject('Pocket001Body004Spacer'), 'Edge39')]
+App.ActiveDocument.getObject('LocalSupport001Body004Spacer').MapMode = 'SectionOfRevolution'
+App.ActiveDocument.getObject('LocalSupport001Body004Spacer').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Rotation(-90, 0, 90))
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('LocalSupport001Body004Spacer').Visibility = False
 
 
 # Body005Spacer
@@ -2325,9 +2355,24 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Sketch002Body003Support').Visibility = False
 
 
+# LocalSpacer001Body003Support
+
+if App.ActiveDocument.getObject('LocalSpacer001Body003Support'):
+    App.ActiveDocument.removeObject('LocalSpacer001Body003Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body003Support').newObject('PartDesign::CoordinateSystem', 'LocalSpacer001Body003Support')
+App.ActiveDocument.getObject('LocalSpacer001Body003Support').Support = [(App.ActiveDocument.getObject('Pocket001Body003Support'), 'Edge12')]
+App.ActiveDocument.getObject('LocalSpacer001Body003Support').MapMode = 'SectionOfRevolution'
+App.ActiveDocument.getObject('LocalSpacer001Body003Support').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 90)
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('LocalSpacer001Body003Support').Visibility = False
+
+
 # ShapeColor
 
-App.ActiveDocument.getObject('Body003Support').ViewObject.ShapeColor = (0.0, 0.6, 1.0, 0.0)
+App.ActiveDocument.getObject('Body003Support').ViewObject.ShapeColor = (0.0, 0.6, 0.5, 0.0)
 
 
 # Body004Support
@@ -2432,9 +2477,24 @@ App.ActiveDocument.recompute()
 App.ActiveDocument.getObject('Sketch002Body004Support').Visibility = False
 
 
+# LocalSpacer001Body004Support
+
+if App.ActiveDocument.getObject('LocalSpacer001Body004Support'):
+    App.ActiveDocument.removeObject('LocalSpacer001Body004Support')
+    App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('Body004Support').newObject('PartDesign::CoordinateSystem', 'LocalSpacer001Body004Support')
+App.ActiveDocument.getObject('LocalSpacer001Body004Support').Support = [(App.ActiveDocument.getObject('Pocket001Body004Support'), 'Edge12')]
+App.ActiveDocument.getObject('LocalSpacer001Body004Support').MapMode = 'SectionOfRevolution'
+App.ActiveDocument.getObject('LocalSpacer001Body004Support').AttachmentOffset = App.Placement(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 90)
+App.ActiveDocument.recompute()
+
+App.ActiveDocument.getObject('LocalSpacer001Body004Support').Visibility = False
+
+
 # ShapeColor
 
-App.ActiveDocument.getObject('Body004Support').ViewObject.ShapeColor = (0.0, 0.6, 1.0, 0.0)
+App.ActiveDocument.getObject('Body004Support').ViewObject.ShapeColor = (0.0, 0.6, 0.5, 0.0)
 
 
 # Group001Support
@@ -2529,6 +2589,16 @@ App.ActiveDocument.getObject('Link001Part001Support').Placement *= App.ActiveDoc
 App.ActiveDocument.recompute()
 
 
+# Body003SupportPart001Support
+
+App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'Body003SupportPart001Support')
+App.ActiveDocument.getObject('Body003SupportPart001Support').LinkedObject = App.ActiveDocument.getObject('Body003Support')
+App.ActiveDocument.getObject('Body003SupportPart001Support').Placement *= App.ActiveDocument.getObject('Link001Body003Spacer').Placement
+App.ActiveDocument.getObject('Body003SupportPart001Support').Placement *= App.ActiveDocument.getObject('LocalSupport001Body003Spacer').Placement
+App.ActiveDocument.getObject('Body003SupportPart001Support').Placement *= App.ActiveDocument.getObject('LocalSpacer001Body003Support').Placement.inverse()
+App.ActiveDocument.recompute()
+
+
 # LinkNut001Body003Spacer
 
 App.ActiveDocument.getObject('Part001Engine').newObject('App::Link', 'LinkNut001Body003Spacer')
@@ -2573,6 +2643,15 @@ App.ActiveDocument.getObject('Part001SupportPart002Engine').LinkedObject = App.A
 App.ActiveDocument.getObject('Part001SupportPart002Engine').Placement *= App.ActiveDocument.getObject('Body004SpacerPart002Engine').Placement
 App.ActiveDocument.getObject('Part001SupportPart002Engine').Placement *= App.ActiveDocument.getObject('Local003Body002Spacer').Placement
 App.ActiveDocument.getObject('Part001SupportPart002Engine').Placement *= App.ActiveDocument.getObject('Local001Body001Support').Placement.inverse()
+App.ActiveDocument.recompute()
+
+# Body004SupportPart001Support
+
+App.ActiveDocument.getObject('Part002Engine').newObject('App::Link', 'Body004SupportPart001Support')
+App.ActiveDocument.getObject('Body004SupportPart001Support').LinkedObject = App.ActiveDocument.getObject('Body004Support')
+App.ActiveDocument.getObject('Body004SupportPart001Support').Placement *= App.ActiveDocument.getObject('Body004SpacerPart002Engine').Placement
+App.ActiveDocument.getObject('Body004SupportPart001Support').Placement *= App.ActiveDocument.getObject('LocalSupport001Body004Spacer').Placement
+App.ActiveDocument.getObject('Body004SupportPart001Support').Placement *= App.ActiveDocument.getObject('LocalSpacer001Body004Support').Placement.inverse()
 App.ActiveDocument.recompute()
 
 
