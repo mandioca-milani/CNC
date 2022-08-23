@@ -100,7 +100,6 @@ class Bearing:
         self.document.recompute()
 
     def __revolution001body001(self, name):
-
         self.revolution001body001 = self.body001.newObject('PartDesign::Revolution', name)
         self.revolution001body001.Profile = self.sketch001body001
         self.revolution001body001.ReferenceAxis = (self.sketch001body001, ['V_Axis'])
